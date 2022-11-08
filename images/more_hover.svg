@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="45px" height="45px" viewBox="0 0 45 45" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>编组 7备份 2</title>
+    <defs>
+        <circle id="path-1" cx="22.5" cy="22.5" r="22.5"></circle>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="45" height="45" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组-7备份-2">
+            <circle id="椭圆形备份-4" fill="#94070a" cx="22.5" cy="22.5" r="18.5"></circle>
+            <use id="椭圆形" stroke="#94070a" mask="url(#mask-2)" stroke-width="2" stroke-dasharray="3,3" xlink:href="#path-1"></use>
+            <polyline id="路径-21备份" stroke="#FFFFFF" points="21 17 21 24.5556141 28.5791966 24.5556141"></polyline>
+        </g>
+    </g>
+</svg>

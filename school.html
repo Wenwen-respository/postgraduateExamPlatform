@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>院校信息板块</title>
+    <!-- 收音机icon -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css"/>
+    <link rel="stylesheet" href="./font1/iconfont.css" />
+     <!-- 彩色icon -->
+     <link rel="stylesheet" href="./font2/iconfont.css">
+
+    
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/school.css" />
+    <link rel="stylesheet" href="./css/slide-nav.css" />
+    <link rel="stylesheet" href="./css/player.css" />
+    <link rel="stylesheet" href="./css/drag.css">
+    <link rel="stylesheet" href="./css/calender.css">
+    <link rel="stylesheet" href="./css/clock.css">
+    <!-- 问题界面 -->
+    <link rel="stylesheet" href="./font_3332416_td1j0l1qgvn/iconfont.css">
+    <link rel="stylesheet" href="./css/question.css">
+    <link rel="stylesheet" href="./css/myQuestion.css">
+
+    <script src="./js/drag.js"></script>
+    <script src="./js/school.js"></script>
+    <script src="./js/nav.js"></script>
+    <script src="./js/player.js"></script>
+    <script src="./js/calender.js"></script>
+    <script src="./js/question.js"></script>
+    <script src="./js/clock.js"></script>
+  </head>
+  <body>
+    <div class="school">
+      <ul class="school-ul">
+        <li class="school-box1 school-box" id="discuss">
+            <div class="slide-nav">
+                <ul>
+                  <li>
+                    <a href="#discuss">
+                      <i class="iconfont">&#xe709;</i>
+                      <p>讨论房</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#question">
+                      <i class="iconfont">&#xe80c;</i>
+                      <p>问题大解</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#room">
+                      <i class="iconfont">&#xe66d;</i>
+                      <p>my房间</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="./school.html">
+                      <i class="iconfont">&#xe670;</i>
+                      <p>首页</p>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+        </li>
+        <li class="school-bgc school-box">
+          <div class="open-door-pro" id="room"></div>
+                <div class="clock">
+            <div class="inner-circle">
+              <div class="hands">
+                <div class="dots"></div>
+                <div class="hand hour-hand"></div>
+                <div class="hand minute-hand"></div>
+                <div class="hand second-hand"></div>
+              </div>
+            </div>
+                </div>
+                <div class="radio-wraper room-content">
+                  <!-- 收音机容器 -->
+                  <div class="radio-container">
+                    <!-- 收音机播放器 -->
+                    <div class="player">
+                      <!-- 播放器音乐信息和音轨部分 -->
+                      <div class="player-track">
+                        <!-- 专辑名 -->
+                        <div class="album-name"></div>
+                        <!-- 音乐信息：歌手-音乐名 -->
+                        <div class="track-name"></div>
+                        <!-- 音乐时间 -->
+                        <div class="track-time">
+                          <div class="current-time"></div>
+                          <div class="total-time"></div>
+                        </div>
+                        <!-- 进度盒子 -->
+                        <div class="progress-box">
+                          <div class="hover-time"></div>
+                          <div class="hover-bar"></div>
+                          <div class="progress-bar"></div>
+                        </div>
+                      </div>
+                      <!-- 播放器封面和控制器部分 -->
+                      <div class="player-content">
+                        <!-- 专辑封面 -->
+                        <div class="album-cover">
+                          <img src="./mp3/cover/自习音乐.png" alt="" class="active" />
+                          <img src="./mp3/cover/自习音乐2.png" > <img src="./mp3/cover/自习音乐3.png" alt="">
+                        </div>
+                        <!-- 控制器，只有三个：上一曲 播放暂停 下一曲 -->
+                        <div class="play-controls">
+                          <div class="control">
+                            <div class="button play-prev">
+                              <i class="fa fa-step-backward"></i>
+                            </div>
+                          </div>
+                          <div class="control">
+                            <div class="button play-pause">
+                              <i class="fa fa-play"></i>
+                            </div>
+                          </div>
+                          <div class="control">
+                            <div class="button play-next">
+                              <i class="fa fa-step-forward"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="calender-wrap room-content">
+                  <div class="calender-box">
+                    <div class="top">
+                      <button type="button" class="pre-mon">上个月</button>
+                      <div id="month"></div>
+                      <button type="button" class="next-mon">下个月</button>
+                    </div>
+                    <div class="week">
+                      <ul>
+                        <li class="evrday">日</li>
+                        <li class="evrday">一</li>
+                        <li class="evrday">二</li>
+                        <li class="evrday">三</li>
+                        <li class="evrday">四</li>
+                        <li class="evrday">五</li>
+                        <li class="evrday">六</li>
+                      </ul>
+                    </div>
+                    <div id="day"></div>
+                  </div>
+                  <div class="do">
+                      <div class="do-top">
+                      <p class="do-time"></p>
+                      <span class="undo-banner">to do list:</span>
+                      <div class="right-do">
+                        <i class="iconfont add-icon-one">&#xe624;</i>
+                        <i class="iconfont history-icon">&#xe675;</i>
+                    </div>
+                  </div>
+                      <ul>
+                          <li><span class="do-circle"></span><span class="do-content" contenteditable="true">7:00 起床洗漱</span></li>
+                          <li><span class="do-circle"></span><span class="do-content" contenteditable="true">记历年真题考过的词汇</span></li>
+                          <li><span class="do-circle"></span><span class="do-content" contenteditable="true">做全书上的概率部分或概率讲义</span></li>
+                          <li><span class="do-circle"></span><span class="do-content" contenteditable="true">直接怼1000题，然后仔细看答案解析，觉得答案解析还不够的定位到精讲精练再认真把这一块看一遍。对答案时不要将对错直接写在题目上 各种分析整理各种背</span></li>
+                          <li><span class="do-circle"></span><span class="do-content" contenteditable="true">官网指定的参考书，能收集到历年真题的一定要认真研究，官网指定的参考书一定要认真看，找考同一门专业课的学长学姐咨询</span></li>
+                          <li><span class="do-circle"></span><span class="do-content" contenteditable="true">23:30准备睡觉</span></li>
+                      </ul>
+                  </div>
+                </div>
+                <div class="note-content room-content " id="note-content">
+                    <div class="note-top">
+                        <p>计划清单</p> 
+                        <p class="do-time"></p> 
+                    </div>
+                  <div class="undo-ban">
+              <div class="undo">
+                  <div class="do-top">
+                  <span class="undo-banner">to do list:</span>
+                  <div class="right-do">
+                      <i class="iconfont add-icon-one">&#xe624;</i>
+                      <i class="iconfont history-icon">&#xe675;</i>
+                  </div>
+              </div>
+                  <ul>
+                      <li><span class="do-circle"></span><span class="do-content" contenteditable="true">7:00 起床洗漱</span></li>
+                      <li><span class="do-circle"></span><span class="do-content" contenteditable="true">记历年真题考过的词汇</span></li>
+                      <li><span class="do-circle"></span><span class="do-content" contenteditable="true">做全书上的概率部分或概率讲义</span></li>
+                      <li><span class="do-circle"></span><span class="do-content" contenteditable="true">直接怼1000题，然后仔细看答案解析，觉得答案解析还不够的定位到精讲精练再认真把这一块看一遍。对答案时不要将对错直接写在题目上，最后快速翻一翻留个眼熟多好，没必要跟辅导班笔记一样的，各种分析整理各种背</span></li>
+                      <li><span class="do-circle"></span><span class="do-content" contenteditable="true">官网指定的参考书，能收集到历年真题的一定要认真研究，官网指定的参考书一定要认真看，找考同一门专业课的学长学姐咨询</span></li>
+                      <li><span class="do-circle"></span><span class="do-content" contenteditable="true">23:30准备睡觉</span></li>
+                  </ul>
+              </div>
+              <div class="often">
+                  <ul>
+                  <p>最近常做：</p>
+                      <li>会让发动机查看不热JFK但是vi</li>
+                      <li>会让发动机查看不热JFK但是vi</li>
+                      <li>会让发动机查看不热JFK但是vi</li>
+                      <li>会让发动机查看不热JFK但是vi</li>
+                      <li>会让发动机查看不热JFK但是vi</li>
+                  </ul>
+              </div>
+                </div>
+                <div class="note-banner">
+              <div class="note">
+                  <div class="do-top">
+                      <span class="undo-banner">need to learn:</span>
+                      <div class="right-do">
+                      <input type="file" id="file-up" accept=".doc,.docx,.ppt,.pptx,.txt,.jpg,.png,.xls,.xlsx" multiple="true" title="点击上传文件"/>
+                          <i class="iconfont add-icon-two">&#xec4d;</i>
+                          <i class="iconfont history-icon_two">&#xe65d;</i>
+                      </div>
+                  </div>
+                  <ul>
+                     <li>
+                      <i class='iconfont'>&#xe6a1;</i>
+                      <span class='note-title'>hugijm,lsxjiogklcx</span>
+                      <br/>
+                      <span class='note-size'>jgoif</span>
+                      <i class="iconfont delete-icon">&#xe606;</i>
+                      <i class="iconfont preview-icon">&#xe660;</i>
+                  </li>
+                  <li>
+                      <i class='iconfont'>&#xe6a1;</i>
+                      <span class='note-title'>hugijm,lsxjiogklcx</span>
+                      <br/>
+                      <span class='note-size'>jgoif</span>
+                      <i class="iconfont delete-icon">&#xe606;</i>
+                      <i class="iconfont preview-icon">&#xe660;</i>
+                  </li>
+                  </ul>
+              </div>
+              <div class="delete-history">
+                  <ul>
+                  <p>最近删除：</p>
+                  <!-- <li>
+                      <i class='iconfont'>&#xe6a1;</i>
+                      <span class='note-title'>hugijm,lsxjiogklcx</span>
+                      <br/>
+                      <span class='note-size'>jgoif</span>
+                      <i class="iconfont preview-icon">&#xe660;</i>
+                  </li>
+                  <li>
+                      <i class='iconfont'>&#xe6a1;</i>
+                      <span class='note-title'>hugijm,lsxjiogklcx</span>
+                      <br/>
+                      <span class='note-size'>jgoif</span>
+                      <i class="iconfont preview-icon">&#xe660;</i>
+                  </li>
+                  <li>
+                      <i class='iconfont'>&#xe6a1;</i>
+                      <span class='note-title'>hugijm,lsxjiogklcx</span>
+                      <br/>
+                      <span class='note-size'>jgoif</span>
+                      <i class="iconfont preview-icon">&#xe660;</i>
+                  </li>
+                  <li>
+                      <i class='iconfont'>&#xe6a1;</i>
+                      <span class='note-title'>hugijm,lsxjiogklcx</span>
+                      <br/>
+                      <span class='note-size'>jgoif</span>
+                      <i class="iconfont preview-icon">&#xe660;</i>
+                  </li>
+                  <li>
+                      <i class='iconfont'>&#xe6a1;</i>
+                      <span class='note-title'>hugijm,lsxjiogklcx</span>
+                      <br/>
+                      <span class='note-size'>jgoif</span>
+                      <i class="iconfont preview-icon">&#xe660;</i>
+                  </li> -->
+                  </ul>
+              </div>
+                </div>
+          <!-- <div style="width: 900px; overflow: hidden;height: 700px;" class="iframe-banner">
+              <iframe src="./【微信公众号：启鑫云课堂】2022年考研数学（一）真题.pdf"  width='890' height='700' frameborder="0" id="ifm" scrolling="no"  style="overflow: hidden;" ></iframe>
+              </iframe>
+            </div> -->
+                </div>
+                <!-- <div class="shelf-banner room-content">
+                  <div id="side-menu" class="side-menu">
+                    <ul>
+                      <li class="menu-item">
+                        <i class="iconfont">&#xe66d;</i>
+                        <span class="menu-text">回到房间</span>
+                        <div class="popover">回到房间</div>
+                      </li>
+                      <li class="menu-item">
+                        <i class="iconfont">&#xe6a6;</i>
+                        <span class="menu-text">真题</span>
+                        <div class="popover">真题</div>
+                      </li>
+                      <li class="menu-item">
+                        <i class="iconfont">&#xe712;</i>
+                        <span class="menu-text">试题、大纲</span>
+                        <div class="popover">试题、大纲</div>
+                      </li>
+                      <li class="menu-item">
+                        <i class="iconfont">&#xe69b;</i>
+                        <span class="menu-text">笔记</span>
+                        <div class="popover">笔记</div>
+                      </li>
+                      <li class="menu-item">
+                        <i class="iconfont">&#xe6a4;</i>
+                        <span class="menu-text">随心画</span>
+                        <div class="popover">随心画</div>
+                      </li>
+                      <li class="menu-item">
+                        <i class="iconfont">&#xe6a5;</i>
+                        <span class="menu-text">收藏夹</span>
+                        <div class="popover">收藏夹</div>
+                      </li>
+                      <li class="menu-item">
+                        <i class="iconfont">&#xe855;</i>
+                        <span class="menu-text">下载记录</span>
+                        <div class="popover">下载记录</div>
+                      </li>
+                    </ul>
+                    <li id="toogle" class="menu-item toogle">
+                      <i class="iconfont">&#xeb15;</i>
+                    </li>
+                  </div>
+                </div> -->
+                <div class="clock-banner" id="clock-circle">
+                  <div class="mouse-inner-circle"></div>
+                </div>
+                <div class="radio circle" id="radio-circle">
+                  <div class="mouse-inner-circle"></div>
+                </div>
+                <div class="calender-banner circle" id="calender-circle">
+                  <div class="mouse-inner-circle"></div>
+                </div>
+                <div class="plan circle" id="plan-circle">
+                  <div class="mouse-inner-circle"></div>
+                </div>
+                <div class="shelf-banner circle" id="shelf-circle">
+                  <div class="mouse-inner-circle"></div>
+                </div>
+              <div class="slide-nav">
+                <ul>
+                  <li>
+                    <a href="#discuss">
+                      <i class="iconfont">&#xe709;</i>
+                      <p>讨论房</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#question">
+                      <i class="iconfont">&#xe80c;</i>
+                      <p>问题大解</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#room">
+                      <i class="iconfont">&#xe66d;</i>
+                      <p>my房间</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="./school.html">
+                      <i class="iconfont">&#xe670;</i>
+                      <p>首页</p>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+        </li>
+        <li class="school-box2 school-box">
+          <div class="school-button discuss-button">
+            <i class="iconfont">&#xe624;</i>
+          </div>
+          <div class="left-school-button school-button room-button">
+            <i class="iconfont">&#xe6a7;</i>
+          </div>
+          <div class="school-button question-button">
+            <i class="iconfont">&#xe75e;</i>
+          </div>
+          <div class="slide-nav">
+            <ul>
+              <li>
+                <a href="#discuss">
+                  <i class="iconfont">&#xe709;</i>
+                  <p>讨论房</p>
+                </a>
+              </li>
+              <li>
+                <a href="#question">
+                  <i class="iconfont">&#xe80c;</i>
+                  <p>问题大解</p>
+                </a>
+              </li>
+              <li>
+                <a href="#room">
+                  <i class="iconfont">&#xe66d;</i>
+                  <p>my房间</p>
+                </a>
+              </li>
+              <li>
+                <a href="./school.html">
+                  <i class="iconfont">&#xe670;</i>
+                  <p>首页</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="school-box3 school-box" id="question">
+          <div class="question-banner">
+          <div class="langhua1 langhua">
+            <img src="./images/langhua2.png" alt="">
+        </div>
+        <div class="langhua2 langhua">
+            <img src="./images/langhua3.png" alt="">
+        </div>
+        <div class="langhua3 langhua">
+            <img src="./images/langhua2.png" alt="">
+        </div>
+        <div class="bank">
+            <!-- 海浪提醒 -->
+            <div class="wave-text">点击海浪，刷新问题</div>
+            <img src="./images/bank.png" alt="">
+        </div>
+        <!-- 点击海浪先出现提醒，防止用户误点 -->
+        <!-- <div class="langhua-backdrop"></div> -->
+        <div class="langhua-warning">
+            <div class="text">点击海浪会刷新贝壳的问题，是否继续？</div>
+            <div class="yes btn">是</div>
+            <div class="no btn">否</div>
+        </div>
+        <!-- 左下角 回到首页 螃蟹 -->
+        <div class="back-index">
+            <!-- <div class="crab-text">点击螃蟹，回到首页</div> -->
+        </div>
+        <!-- 右下角 我的问题 石头 -->
+        <div class="my-question">
+            <!-- <div class="stone-text">点击石头，发起提问</div> -->
+        </div>
+        <div class="my-question-backdrop"></div>
+        <div class="my-question-box">
+            <div class="close close-question"><i class="iconfont">&#xe66e;</i></div>
+            <div class="header">
+                <div class="left nav active">发起提问</div>
+                <div class="middle nav">搜索提问</div>
+                <div class="right nav">历史提问</div>
+            </div>
+            <!-- 发起提问 -->
+            <div class="now-content content active">
+                <div class="ask">
+                    <div class="top">
+                        <input type="text" name="title" class="questionHeader" maxlength="30" placeholder="标题" />
+                        <div class="questionBody" contenteditable="true"></div>
+                        <!-- 表情包 -->
+                        <!-- <div>
+                            <img class="qCustomize" src="images/th.jpg">
+                        </div> -->
+                        <div class="titleSize">
+                            <span id="reality">0</span> / <span id="realize">30</span>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="left">
+                            <span data-id="0"><i class="iconfont">&#xe602;</i></span>
+                            <span data-id="1"><i class="iconfont">&#xec80;</i></span>
+                        </div>
+                        <div class="right">
+                            <button class="send-button">发送</button>
+                        </div>
+                        <div class="function" hidden>
+                            <!-- 表情包 -->
+                            <div class="customize" hidden>
+                                <ul>
+    
+                                    <!-- 下面这一个是添加表情包的样式操作 -->
+                                    <li class="addCustomize">
+                                        <input type="file" name="filename" multiple="multiple" />
+                                        <span>+</span>
+                                    </li>
+                                </ul>
+                            </div>
+    
+                            <!-- 图片 -->
+                            <div class="image" hidden>
+                                <div class="add">
+                                    <input type="file" name="filename" multiple="multiple">
+                                    <span>+</span>
+                                    <!--                               -->
+                                </div>
+                                <!--                            <img src="images/th.jpg" alt="">-->
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 搜索提问 -->
+            <div class="search-content content">
+                <div class="search-box">
+                    <div class="left"><input type="text" class="search-input"></div>
+                    <div class="right"><button class="search-btn">搜索</button></div>
+                    <!-- 搜索相关 -->
+                    <div class="search-link">
+                        <ul>
+                            <li>相关1</li>
+                            <li>相关2</li>
+                            <li>相关3</li>
+                            <li>相关4</li>
+                            <li>相关5</li>
+                            <li>相关6</li>
+                            <li>相关7</li>
+                            <li>相关8</li>
+                            <li>相关9</li>
+                            <li>相关10</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 搜索发现模块 -->
+                <div class="search-find">
+                    <h3>搜索发现</h3>
+                    <ul>
+                        <li>考研英语作文</li>
+                        <li>复试面试常见问题</li>
+                        <li>考研最后50天</li>
+                        <li>考研网上确认</li>
+                        <li>院校报录比怎么查</li>
+                        <li>院校考研真题怎么找</li>
+                        <li>考研数学模拟卷推荐</li>
+                        <li>院校代码查询系统</li>
+                        <li>复试被刷还能调剂吗</li>
+                        <li>复试差额比</li>
+                    </ul>
+                </div>
+                <!-- 搜索出来的问题 -->
+                <div class="search-question">
+                    <div class="question-item">
+                        <h2 class="question"><span class="tag">问题</span>第一次考研需要注意哪些问题?</h2>
+                        <div class="analysis"><span class="tag">内容</span>暂无内容</div>
+                        <div class="answer-area">
+                            <div class="answer-box">
+                                <div class="top">
+                                    <div class="avatar"><img src="./images/user.png" alt=""></div>
+                                    <div class="info">
+                                        <div class="name">回答者1</div>
+                                        <div class="time">两小时前</div>
+                                    </div>
+                                </div>
+                                <div class="middle">
+                                    第一次考研一定要全面了解考研，结合自身情况选择合适考研目标，做好相应复习规划并坚持到考研结束呀！具体而言，我们要了解考研，明确考研目标并坚持考研复习，做好万全准备呀！
+                                </div>
+                                <div class="bottom">
+                                    <span class="comment"><i class="iconfont">&#xe891;</i>评论</span>
+                                    <span class="like"><i class="iconfont">&#xec7f;</i>点赞</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="question-item">
+                        <h2 class="question"><span class="tag">问题</span>第一次考研需要注意哪些问题?</h2>
+                        <div class="analysis"><span class="tag">内容</span>暂无内容</div>
+                        <div class="answer-area">
+                            <div class="answer-box">
+                                <div class="top">
+                                    <div class="avatar"><img src="./images/user.png" alt=""></div>
+                                    <div class="info">
+                                        <div class="name">回答者1</div>
+                                        <div class="time">两小时前</div>
+                                    </div>
+                                </div>
+                                <div class="middle">
+                                    第一次考研一定要全面了解考研，结合自身情况选择合适考研目标，做好相应复习规划并坚持到考研结束呀！具体而言，我们要了解考研，明确考研目标并坚持考研复习，做好万全准备呀！
+                                </div>
+                                <div class="bottom">
+                                    <span class="comment"><i class="iconfont">&#xe891;</i>评论</span>
+                                    <span class="like"><i class="iconfont">&#xec7f;</i>点赞</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 历史提问 -->
+            <div class="history-content content">
+                <ul>
+                    <li>
+                        <div class="top">
+                            <a href="./answer.html" target="_blank">第一次考研需要注意哪些问题？</a>
+    
+                        </div>
+                        <div class="bottom">
+                            <div class="like-num">获赞数：10</div>
+                            <div class="answer-num">回答数：2</div>
+                            <div class="time">2022-10-20 18:15</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="top">
+                            <a href="./answer.html" target="_blank">第一次考研需要注意哪些问题？</a>
+    
+                        </div>
+                        <div class="bottom">
+                            <div class="like-num">获赞数：10</div>
+                            <div class="answer-num">回答数：2</div>
+                            <div class="time">2022-10-20 18:15</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="beike-area">
+            <div class="beike1 beike">
+                <img src="./images/beike1.png" alt="">
+    
+            </div>
+            <div class="beike2 beike">
+                <img src="./images/beike2.png" alt="">
+    
+            </div>
+            <div class="beike3 beike">
+                <img src="./images/beike3.png" alt="">
+    
+            </div>
+            <div class="beike4 beike">
+                <img src="./images/beike4.png" alt="">
+    
+            </div>
+            <div class="beike5 beike">
+                <img src="./images/beike5.png" alt="">
+    
+            </div>
+        </div>
+        <!-- 点击贝壳出现的问题框 -->
+        <div class="beike-hiddenBox">
+            <div class="beike-hiddenBox-inner">
+                <div class="close close-beike"><i class="iconfont">&#xe66e;</i></div>
+                <h2 class="question"><span class="tag">问题</span>第一次考研需要注意哪些问题?</h2>
+                <div class="analysis"><span class="tag">内容</span>暂无内容</div>
+                <div class="answer-area">
+                    <div class="answer-box">
+                        <div class="top">
+                            <div class="avatar"><img src="./images/user.png" alt=""></div>
+                            <div class="info">
+                                <div class="name">回答者1</div>
+                                <div class="time">两小时前</div>
+                            </div>
+                        </div>
+                        <div class="middle">
+                            第一次考研一定要全面了解考研，结合自身情况选择合适考研目标，做好相应复习规划并坚持到考研结束呀！具体而言，我们要了解考研，明确考研目标并坚持考研复习，做好万全准备呀！
+                        </div>
+                        <div class="bottom">
+                            <span class="comment"><i class="iconfont">&#xe891;</i>评论</span>
+                            <span class="like"><i class="iconfont">&#xec7f;</i>点赞</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide-nav">
+            <ul>
+              <li>
+                <a href="#discuss">
+                  <i class="iconfont">&#xe709;</i>
+                  <p>讨论房</p>
+                </a>
+              </li>
+              <li>
+                <a href="#question">
+                  <i class="iconfont">&#xe80c;</i>
+                  <p>问题大解</p>
+                </a>
+              </li>
+              <li>
+                <a href="#room">
+                  <i class="iconfont">&#xe66d;</i>
+                  <p>my房间</p>
+                </a>
+              </li>
+              <li>
+                <a href="./school.html">
+                  <i class="iconfont">&#xe670;</i>
+                  <p>首页</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

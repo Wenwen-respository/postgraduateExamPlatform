@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>导航栏</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/player.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="./font1/iconfont.css">
+    <script src="./js/player.js"></script>
+  
+  </head>
+  <body>
+    <div class="radio circle" id="radio-circle"></div>
+    <div class="upload-mus">
+      <div class="upload-wrap">
+    <input type="file"  placeholder="上传" value="ddd" id="file-up"
+                accept=".mp3, .mkv, .wma"multiple="true"  title=" "/>
+              <div id="upload"><i class="iconfont">&#xe67b;</i></div>
+              <div id="audio">
+                <ul>
+
+                </ul>
+              </div>
+            </div>
+            </div>
+          <div class="radio-wraper">
+            <!-- 收音机容器 -->
+            <div class="radio-container">
+              <!-- 收音机播放器 -->
+              <div class="player">
+                <!-- 播放器音乐信息和音轨部分 -->
+                <div class="player-track">
+                  <!-- 专辑名 -->
+                  <div class="album-name"></div>
+                  <!-- 音乐信息：歌手-音乐名 -->
+                  <div class="track-name"></div>
+                  <!-- 音乐时间 -->
+                  <div class="track-time">
+                    <div class="current-time"></div>
+                    <div class="total-time"></div>
+                  </div>
+                  <!-- 进度盒子 -->
+                  <div class="progress-box">
+                    <div class="hover-time"></div>
+                    <div class="hover-bar"></div>
+                    <div class="progress-bar"></div>
+                  </div>
+                </div>
+                <!-- 播放器封面和控制器部分 -->
+                <div class="player-content">
+                  <!-- 专辑封面 -->
+                  <div class="album-cover">
+                    <img src="./mp3/cover/自习音乐.png" alt="" class="active" />
+                    <img src="./mp3/cover/自习音乐2.png" > <img src="./mp3/cover/自习音乐3.png" alt="">
+                  </div>
+                  <!-- 控制器，只有三个：上一曲 播放暂停 下一曲 -->
+                  <div class="play-controls">
+                    <div class="control">
+                      <div class="button play-prev">
+                        <i class="fa fa-step-backward"></i>
+                      </div>
+                    </div>
+                    <div class="control">
+                      <div class="button play-pause">
+                        <i class="fa fa-play"></i>
+                      </div>
+                    </div>
+                    <div class="control">
+                      <div class="button play-next">
+                        <i class="fa fa-step-forward"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+  </body>
+</html>

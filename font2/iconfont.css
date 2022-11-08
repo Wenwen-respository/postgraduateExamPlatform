@@ -1,0 +1,157 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3748869 */
+  /* Color fonts */
+  src: 
+       url('iconfont.woff2?t=1667579177996') format('woff2'),
+       url('iconfont.woff?t=1667579177996') format('woff'),
+       url('iconfont.ttf?t=1667579177996') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shanchu:before {
+  content: "\e62b";
+}
+
+.icon-shanchu1:before {
+  content: "\e606";
+}
+
+.icon-shanchu_:before {
+  content: "\e687";
+}
+
+.icon-shanchu4:before {
+  content: "\e86d";
+}
+
+.icon-shanchu5:before {
+  content: "\e613";
+}
+
+.icon-tianjia:before {
+  content: "\e611";
+}
+
+.icon-exe-refuse-classification-primary:before {
+  content: "\eac2";
+}
+
+.icon-shanchu6:before {
+  content: "\e645";
+}
+
+.icon-zengjia:before {
+  content: "\e659";
+}
+
+.icon-zengjia1:before {
+  content: "\e6c5";
+}
+
+.icon-tianjia1:before {
+  content: "\e809";
+}
+
+.icon-jia:before {
+  content: "\e7f9";
+}
+
+.icon-shanchujilu:before {
+  content: "\e65d";
+}
+
+.icon-jiahao:before {
+  content: "\ec4d";
+}
+
+.icon-jilu:before {
+  content: "\e61e";
+}
+
+.icon-shijian:before {
+  content: "\e635";
+}
+
+.icon-busy:before {
+  content: "\e675";
+}
+
+.icon-huiyijilu:before {
+  content: "\e762";
+}
+
+.icon-zuotijilu:before {
+  content: "\e61a";
+}
+
+.icon-lishijilu:before {
+  content: "\e604";
+}
+
+.icon-jilu1:before {
+  content: "\e624";
+}
+
+.icon-history-full:before {
+  content: "\ea10";
+}
+
+.icon-zitiyulan:before {
+  content: "\ec86";
+}
+
+.icon-yulan:before {
+  content: "\e660";
+}
+
+.icon-yulan1:before {
+  content: "\e649";
+}
+
+.icon-yulanmoshi:before {
+  content: "\e60d";
+}
+
+.icon-xlsx:before {
+  content: "\e679";
+}
+
+.icon-xlsx1:before {
+  content: "\e605";
+}
+
+.icon-tupian2:before {
+  content: "\e6a1";
+}
+
+.icon-tupian4:before {
+  content: "\f7e4";
+}
+
+.icon-PPT:before {
+  content: "\e680";
+}
+
+.icon-pdf1:before {
+  content: "\e684";
+}
+
+.icon-txtwenjian:before {
+  content: "\e686";
+}
+
+.icon-docb:before {
+  content: "\e68a";
+}
+
+.icon-word:before {
+  content: "\e68f";
+}
+

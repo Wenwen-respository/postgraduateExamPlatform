@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>问题详情</title>
+    <link rel="stylesheet" href="./font_3332416_td1j0l1qgvn/iconfont.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/answer.css">
+    <script src="./js/answer.js"></script>
+</head>
+
+<body>
+    <!-- 发起提问的编辑框 -->
+    <div class="start-ask-box-wraper">
+        <!-- 关闭按钮 -->
+        <i class="start-ask-box-close iconfont">&#xe66e;</i>
+    </div>
+    <!-- 里面的编辑问题框  -->
+    <div class="start-ask-box-ask">
+        <!-- 标题 -->
+        <div class="top" contenteditable="true">
+            <div class="title" contenteditable="true"></div>
+            <!-- 一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十 -->
+            <div class="titleSize">
+                <span id="reality">0</span> / <span id="realize">30</span>
+            </div>
+        </div>
+        <!-- 内容 -->
+        <div class="bottom" contenteditable="true"></div>
+        <div class="send-btn">发表</div>
+        <!-- 侧边工具栏（表情和图片） -->
+        <div class="left">
+            <div class="expression"><i class="iconfont">&#xe602;</i></div>
+            <div class="photo"><i class="iconfont">&#xec80;</i></div>
+        </div>
+        <!-- 表情包的盒子 -->
+        <div class="expression-box"></div>
+    </div>
+    <!-- 头部 -->
+    <div class="header">
+        <div class="header-inner">
+            <div class="logo left"></div>
+            <div class="search-question">
+                <div class="left"><input type="text" class="search-input" placeholder="搜索提问"></div>
+                <div class="right"><button class="search-button">搜索</button></div>
+                <!-- 搜索相关 -->
+                <div class="search-link">
+                    <ul>
+                        <li>相关1</li>
+                        <li>相关2</li>
+                        <li>相关3</li>
+                        <li>相关4</li>
+                        <li>相关5</li>
+                        <li>相关6</li>
+                        <li>相关7</li>
+                        <li>相关8</li>
+                        <li>相关9</li>
+                        <li>相关10</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="start-ask">发起提问</div>
+        </div>
+    </div>
+    <!-- 问题展示 -->
+    <div class="question-wraper">
+        <!-- 问题题目 -->
+        <div class="question-display w">
+            <!-- 提问者的信息 -->
+            <div class="asker clearfix">
+                <div class="avatar left"><img src="./images/user.png" alt=""></div>
+                <div class="user-name left">提问者</div>
+                <div class="attention-user left"> +关注</div>
+            </div>
+            <!-- 问题题目 -->
+            <div class="question-title clearfix">
+                <div class="text">第一次考研会遇到什么问题？</div>
+                <div class="like right">点赞</div>
+                <div class="reply right">写回答</div>
+            </div>
+        </div>
+        <!-- 问题内容 -->
+        <div class="analysis-display w">
+            问题内容问题内容问题内容问题内容问题内容问题内容问题内容
+            <!-- <img src="./images/pre.jpg" alt=""> -->
+        </div>
+    </div>
+    <!-- 写回答 -->
+    <div class="edit-answer w">
+        <div class="top"></div>
+        <div class="edit" contenteditable="true"></div>
+    </div>
+    <!-- 回答区 -->
+    <div class="answer-display w">
+        <ul>
+            <div class="answer-num-display">2个回答</div>
+            <li class="answer">
+                <div class="top">
+                    <div class="avatar"><img src="./images/user.png" alt=""></div>
+                    <div class="info">
+                        <div class="name">回答者1</div>
+                        <div class="time">两小时前</div>
+                    </div>
+                </div>
+                <div class="middle">
+                    第一次考研一定要全面了解考研，结合自身情况选择合适考研目标，做好相应复习规划并坚持到考研结束呀！具体而言，我们要了解考研，明确考研目标并坚持考研复习，做好万全准备呀！
+                </div>
+                <div class="bottom">
+                    <span><i class="iconfont">&#xe8b0;</i>分享</span>
+                    <span class="comment-btn"><i class="iconfont">&#xe891;</i>评论</span>
+                    <span class="like"><i class="iconfont">&#xec7f;</i>点赞</span>
+                </div>
+                <!-- 评论 -->
+                <div class="comment-content">
+                    <!-- 我的评论 -->
+                    <div class="my-comment">
+                        <div class="clearfix">
+                            <div class="avatar left"><img src="./images/user.png" alt=""></div>
+                            <div class="my-comment-div left" contenteditable="true"></div>
+                        </div>
+                        <div class="other">
+                            <div class="expression left"><i class="iconfont">&#xe602;</i>表情</div>
+                            <div class="send right">发表</div>
+                        </div>
+                    </div>
+                    <!-- 全部评论 -->
+                    <div class="all-comment">
+                        <div class="comment-num">2条评论</div>
+                        <div class="comment-box">
+                            <div class="comment-info clearfix">
+                                <div class="avatar left"><img src="./images/user.png" alt=""></div>
+                                <div class="comment-name left">评论者1</div>
+                            </div>
+                            <div class="comment-text">
+                                没错没错
+                            </div>
+                        </div>
+                        <div class="comment-box">
+                            <div class="comment-info clearfix">
+                                <div class="avatar left"><img src="./images/user.png" alt=""></div>
+                                <div class="comment-name left">评论者2</div>
+                            </div>
+                            <div class="comment-text">
+                                哈哈哈红红火火恍恍惚惚红红火火恍恍惚惚红红火火恍恍惚惚红红火火恍恍惚惚红红火火恍恍火火恍恍惚惚红红火火恍恍惚惚红红火火恍恍惚惚红红火火恍恍惚惚火火恍恍惚惚红红火火恍恍惚惚红红火火恍恍惚惚红红火火恍恍惚惚惚惚
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="answer">
+                <div class="top">
+                    <div class="avatar"><img src="./images/user.png" alt=""></div>
+                    <div class="info">
+                        <div class="name">回答者2</div>
+                        <div class="time">两小时前</div>
+                    </div>
+                </div>
+                <div class="middle">
+                    第一次考研一定要全面了解考研，结合自身情况选择合适考研目标，做好相应复习规划并坚持到考研结束呀！具体而言，我们要了解考研，明确考研目标并坚持考研复习，做好万全准备呀！
+                </div>
+                <div class="bottom">
+                    <span><i class="iconfont">&#xe8b0;</i>分享</span>
+                    <span class="comment-btn"><i class="iconfont">&#xe891;</i>评论</span>
+                    <span class="like"><i class="iconfont">&#xec7f;</i>点赞</span>
+                </div>
+                <!-- 评论 -->
+                <div class="comment-content">
+                    <!-- 我的评论 -->
+                    <div class="my-comment">
+                        <div class="clearfix">
+                            <div class="avatar left"><img src="./images/user.png" alt=""></div>
+                            <div class="my-comment-div left" contenteditable="true"></div>
+                        </div>
+                        <div class="other">
+                            <div class="expression left"><i class="iconfont">&#xe602;</i>表情</div>
+                            <div class="send right">发表</div>
+                        </div>
+                    </div>
+                    <!-- 全部评论 -->
+                    <div class="all-comment">
+                        <div class="comment-num">2条评论</div>
+                        <div class="comment-box">
+                            <div class="comment-info clearfix">
+                                <div class="avatar left"><img src="./images/user.png" alt=""></div>
+                                <div class="comment-name left">评论者1</div>
+                            </div>
+                            <div class="comment-text">
+                                没错没错
+                            </div>
+                        </div>
+                        <div class="comment-box">
+                            <div class="comment-info clearfix">
+                                <div class="avatar left"><img src="./images/user.png" alt=""></div>
+                                <div class="comment-name left">评论者2</div>
+                            </div>
+                            <div class="comment-text">
+                                哈哈哈红红火火恍恍惚惚红红火火恍恍惚惚红红火火恍恍惚惚红红火火恍恍惚惚红红火火恍恍火火恍恍惚惚红红火火恍恍惚惚红红火火恍恍惚惚红红火火恍恍惚惚火火恍恍惚惚红红火火恍恍惚惚红红火火恍恍惚惚红红火火恍恍惚惚惚惚
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- 搜索出来的问题 -->
+    <div class="answer-search-question w">
+        <div class="answer-search-item">
+            <h2 class="question"><span class="tag">问题</span>第一次考研需要注意哪些问题?</h2>
+            <div class="analysis"><span class="tag">内容</span>暂无内容</div>
+            <div class="answer-area">
+                <div class="answer-box">
+                    <div class="top">
+                        <div class="avatar"><img src="./images/user.png" alt=""></div>
+                        <div class="info">
+                            <div class="name">回答者1</div>
+                            <div class="time">两小时前</div>
+                        </div>
+                    </div>
+                    <div class="middle">
+                        第一次考研一定要全面了解考研，结合自身情况选择合适考研目标，做好相应复习规划并坚持到考研结束呀！具体而言，我们要了解考研，明确考研目标并坚持考研复习，做好万全准备呀！
+                    </div>
+                    <div class="bottom">
+                        <span class="comment"><i class="iconfont">&#xe891;</i>评论</span>
+                        <span class="like"><i class="iconfont">&#xec7f;</i>点赞</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="answer-search-item">
+            <h2 class="question"><span class="tag">问题</span>第一次考研需要注意哪些问题?</h2>
+            <div class="analysis"><span class="tag">内容</span>暂无内容</div>
+            <div class="answer-area">
+                <div class="answer-box">
+                    <div class="top">
+                        <div class="avatar"><img src="./images/user.png" alt=""></div>
+                        <div class="info">
+                            <div class="name">回答者1</div>
+                            <div class="time">两小时前</div>
+                        </div>
+                    </div>
+                    <div class="middle">
+                        第一次考研一定要全面了解考研，结合自身情况选择合适考研目标，做好相应复习规划并坚持到考研结束呀！具体而言，我们要了解考研，明确考研目标并坚持考研复习，做好万全准备呀！
+                    </div>
+                    <div class="bottom">
+                        <span class="comment"><i class="iconfont">&#xe891;</i>评论</span>
+                        <span class="like"><i class="iconfont">&#xec7f;</i>点赞</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="answer-search-item">
+            <h2 class="question"><span class="tag">问题</span>第一次考研需要注意哪些问题?</h2>
+            <div class="analysis"><span class="tag">内容</span>暂无内容</div>
+            <div class="answer-area">
+                <div class="answer-box">
+                    <div class="top">
+                        <div class="avatar"><img src="./images/user.png" alt=""></div>
+                        <div class="info">
+                            <div class="name">回答者1</div>
+                            <div class="time">两小时前</div>
+                        </div>
+                    </div>
+                    <div class="middle">
+                        第一次考研一定要全面了解考研，结合自身情况选择合适考研目标，做好相应复习规划并坚持到考研结束呀！具体而言，我们要了解考研，明确考研目标并坚持考研复习，做好万全准备呀！
+                    </div>
+                    <div class="bottom">
+                        <span class="comment"><i class="iconfont">&#xe891;</i>评论</span>
+                        <span class="like"><i class="iconfont">&#xec7f;</i>点赞</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<!-- <script src="js/axios.js"></script>
+<script src="js/parse/requestParam.js"></script>
+<script src="js/api/aApi.js"></script> -->
+
+
+</html>

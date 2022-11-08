@@ -1,0 +1,364 @@
+.note-content{
+    width: 940px;
+    height: 700px;
+    margin: 0 auto;
+    background-image: url(../images/jihua.png);
+    background-size: cover;
+    border-radius: 20px;
+    position: absolute;
+    left: 20%;
+    top: 4%;
+    cursor: pointer;
+    /* opacity: 0; */
+    /* display: none; */
+    z-index: 111111;
+    pointer-events: none;
+}
+.note-top{
+    height: 140px;
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
+    margin-top: 25px;
+    padding-top: 100px;
+    position: relative;
+}
+.note-top::after{
+    content: '';
+    display: inline-block;
+    width: 700px;
+    text-align: center;
+    height: 3px;
+    border-radius: 10px;
+    background-color: #f4bf9b;
+    margin-bottom: 30px;
+}
+.note-top p{
+    /* padding-top: 100px; */
+    color: #9b562b;
+    line-height: 50px;
+}
+.note-top p:nth-child(2){
+    font-size: 23px;
+    /* margin-left: 320px; */
+}
+.undo-ban{
+    float: right;
+    margin-right: 60px;
+}
+.note-banner{
+    float: left;
+    margin-left: 38px;
+}
+.undo-ban,
+.note-banner{
+    position: relative;
+    width: 400px;
+}
+.undo,.note{
+    width: 400px;
+    /* min-height: 500px; */
+    /* background-image: url(../images/1.jpg); */
+    background-size: cover;
+    /* background-color: beige; */
+    border-radius: 20px;
+    border: 1px solid #aaa;
+    margin: 10px;
+    margin-top: 10px;
+    overflow: auto;
+    position: relative;
+    height: 400px;
+    /* box-shadow: 5px 5px 30px #acabab; */
+    /* display: none; */
+    /* opacity: .96; */
+}
+.note{
+    direction: rtl;
+    /* text-align:left; */
+}
+.note i{
+    font-size: 30px;
+    float: left;
+    margin-top: 5px;
+    margin-right: 16px;
+}
+.note ul li{
+    background-color: rgb(245, 245, 220);
+    margin: 10px 0px;
+    width: 335px;
+    height: 40px;
+    padding: 10px 13px;
+    border-radius: 8px;
+}
+.note-banner .note-title{
+    font-weight: 700;
+    display: inline-block;
+    width: 170px;
+    height: 19px;
+    line-height: 19px;
+    overflow: hidden;
+    direction: ltr;
+    text-overflow: ellipsis;
+}
+.note ul li .note-size{
+    margin-left: 13px;
+    font-size: 14px;
+    color: #aaa;
+    line-height: 30px;
+    float: left;
+}
+.undo::-webkit-scrollbar,
+.note::-webkit-scrollbar,
+.delete-history::-webkit-scrollbar {/*滚动条整体样式*/
+    width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/
+    height: 10px;
+}
+.undo::-webkit-scrollbar-thumb,
+.note::-webkit-scrollbar-thumb,
+.delete-history::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+    border-radius: 36px;
+    -webkit-box-shadow: inset 0 0 5px rgba(203, 197, 197, 0.2);
+    background: #ecefee;
+}
+.undo::-webkit-scrollbar-track,
+.note::-webkit-scrollbar-track,
+.delete-history::-webkit-scrollbar-track{/*滚动条里面轨道*/
+    -webkit-box-shadow: inset 0 0 5px rgba(47, 46, 46, 0.2);
+    border-radius: 36px;
+    background: #ffffff;
+}
+.undo ul{
+    padding: 10px 10px 10px 0;
+}
+.note ul{
+    padding: 0px 15px;
+}
+.undo ul li{
+    margin: 3px 8px;
+    outline: none;
+    text-indent: -26px;
+    margin-left: 2em;
+    padding: 0px 12px 5px 10px;
+}
+.undo ul li::after{
+    content: '';
+    height: 4px;
+    width: 330px;
+    display: inline-block;
+    border-radius: 9px;
+    background-color: #e0cbad;
+}
+.undo .do-circle{
+    width: 15px;
+    height: 15px;
+    /* border-radius: 50%; */
+    margin-right: 10px;
+    vertical-align: middle;
+    margin-bottom: 3px;
+    border: 1px solid rgb(104, 100, 100);
+    display: inline-block;
+    position: relative;
+}
+.undo .do-content{
+    outline: none;
+    cursor: text;
+}
+.undo-banner{
+    display: inline-block;
+    font-size: 30px;
+    margin-top: 15px;
+    margin-left: 25px;
+    font-weight: 700;
+}
+.undo ul li span{
+    line-height: 25px;
+    /* text-decoration: line-through; */
+    cursor: pointer;
+}
+.undo .do-time{
+    margin-left: 226px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.right-do{
+    float: right;
+    margin-top: 13px;
+    position: relative;
+}
+.right-do i{
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.do-top{
+    padding: 0 20px 9px 20px;
+    z-index: 1111111;
+    transition: all .3s;
+    border-top-left-radius: 10px;
+    direction: ltr;
+    /* position: fixed; */
+    /* background-color:pink ; */
+}
+.right-do input{
+    position: absolute;
+    left: 0px;
+    top: -30px;
+    background-color: pink;
+    color: #fff;
+    height: 60px;
+    width: 40px;
+    /* 取消默认 有待改善 */
+    opacity: 0;
+    filter: 'alpha(opacity=0)';
+    cursor: pointer;
+}
+.right-do .history-icon_two{
+    font-size: 25px;
+    margin-top: 1px;
+}
+
+.often ul,
+.delete-history ul{
+    padding: 10px;
+}
+.often ul li,
+.delete-history ul li{
+    padding: 10px;
+    margin: 3px 0;
+    font-size: 14px;
+    cursor: pointer;
+    border: 3px solid rgb(255, 229, 200);
+    border-radius: 3px;
+    background-color: rgb(255, 229, 200);
+}
+.often ul li:hover,
+.delete-history ul li:hover{
+    border: 3px solid #fff;
+}
+.often,
+.delete-history{
+    min-height: 100px;
+    max-height: 250px;
+    overflow: hidden;
+    width: 250px;
+    border-radius: 5px;
+    background-color: rgb(219, 244, 244);
+    position: absolute;
+    z-index: 1111111111111;
+    top: 2%;
+    right: -53%;
+    display: none;
+}
+.often p,
+.delete-history p{
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.note-banner .delete-icon,
+.note-banner .preview-icon{
+    float: right;
+    margin-top: -10px;
+    margin-left: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 30px;
+    /* margin-bottom: 20px; */
+}
+.undo ul .finish .do-circle{
+    background-color: blue;
+}
+.undo ul .finish .do-content{
+    text-decoration: line-through;
+}
+.delete-history .note-size{
+    margin-left: 8px;
+    font-size: 14px;
+    color: #aaa;
+}
+.delete-history i{
+    font-size: 30px;
+    margin-right: 13px;
+    margin-top: 4px;
+    float: left;
+}
+.delete-history{
+    width: 300px;
+    max-height: 252px;
+    overflow: auto;
+    /* max-height: 500px; */
+    right: -73%;
+    top: 4%;
+    margin-top: 16px;
+    /* display: none; */
+}
+.delete-history .delete-icon{
+    display: none;
+}
+.delete-history ul li{
+    margin: 7px 0;
+}
+.note-banner .delete-history .preview-icon{
+    margin-top: -16px;
+}
+.delete-history ul{
+    padding: 20px 15px;
+}
+.note-banner .delete-history .note-title{
+    width: 155px;
+    line-height: 19px;
+    height: 19px;
+}
+.ifm{
+    margin-top: -20px;
+    margin-bottom: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(215, 238, 230);
+}
+body::-webkit-scrollbar-track{
+    width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
+}
+body::-webkit-scrollbar-thumb{/*滚动条里面小方块*/
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px rgba(203, 197, 197, 0.2);
+    background: #ecefee;
+}
+body::-webkit-scrollbar-track{/*滚动条里面轨道*/
+    -webkit-box-shadow: inset 0 0 5px rgba(47, 46, 46, 0.2);
+    border-radius: 10px;
+    background: #ffffff;
+}
+/* .ifame-banner{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+} */
+/*- scrollbar -*/
+.ifm::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+.ifm::-webkit-scrollbar-thumb{
+    background-color: #999;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+.ifm::-webkit-scrollbar-thumb:vertical:hover{
+    background-color: #666;
+}
+.ifm::-webkit-scrollbar-thumb:vertical:active{
+    background-color: #333;
+}
+.ifm::-webkit-scrollbar-button{
+    display: none;
+}
+.ifm::-webkit-scrollbar-track{
+    background-color: #f1f1f1;
+}

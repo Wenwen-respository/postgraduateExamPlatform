@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>日历</title>
+     <!-- 收音机icon -->
+     <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css"/>
+     <link rel="stylesheet" href="./font1/iconfont.css" />
+     <!-- 彩色icon -->
+     <link rel="stylesheet" href="./font2/iconfont.css">
+     <link rel="stylesheet" href="./css/normalize.css" />
+     <link rel="stylesheet" href="./css/reset.css" />
+     <link rel="stylesheet" href="./css/school.css" />
+     <link rel="stylesheet" href="./css/slide-nav.css" />
+     <link rel="stylesheet" href="./css/player.css" />
+     <link rel="stylesheet" href="./css/drag.css">
+     <link rel="stylesheet" href="./css/calender.css">
+     <!-- <script src="./js/drag.js"></script> -->
+     <!-- <script src="./js/school.js"></script> -->
+     <!-- <script src="./js/nav.js"></script> -->
+     <!-- <script src="./js/player.js"></script> -->
+     <script src="./js/calender.js"></script>
+  </head>
+  <body>
+    <div class="calender-box">
+      <div class="top">
+        <button type="button" class="pre-mon">上个月</button>
+        <div id="month"></div>
+        <button type="button" class="next-mon">下个月</button>
+      </div>
+      <div class="week">
+        <ul>
+          <li class="evrday">日</li>
+          <li class="evrday">一</li>
+          <li class="evrday">二</li>
+          <li class="evrday">三</li>
+          <li class="evrday">四</li>
+          <li class="evrday">五</li>
+          <li class="evrday">六</li>
+        </ul>
+      </div>
+      <div id="day"></div>
+    </div>
+    <div class="do">
+        <div class="do-top">
+        <p class="do-time"></p>
+        <span class="undo-banner">to do list:</span>
+        <div class="right-do">
+          <i class="iconfont add-icon-one">&#xe624;</i>
+          <i class="iconfont history-icon">&#xe675;</i>
+      </div>
+    </div>
+        <ul>
+            <li><span class="do-circle"></span><span class="do-content" contenteditable="true">7:00 起床洗漱</span></li>
+            <li><span class="do-circle"></span><span class="do-content" contenteditable="true">记历年真题考过的词汇</span></li>
+            <li><span class="do-circle"></span><span class="do-content" contenteditable="true">做全书上的概率部分或概率讲义</span></li>
+            <li><span class="do-circle"></span><span class="do-content" contenteditable="true">直接怼1000题，然后仔细看答案解析，觉得答案解析还不够的定位到精讲精练再认真把这一块看一遍。对答案时不要将对错直接写在题目上 各种分析整理各种背</span></li>
+            <li><span class="do-circle"></span><span class="do-content" contenteditable="true">官网指定的参考书，能收集到历年真题的一定要认真研究，官网指定的参考书一定要认真看，找考同一门专业课的学长学姐咨询</span></li>
+            <li><span class="do-circle"></span><span class="do-content" contenteditable="true">23:30准备睡觉</span></li>
+        </ul>
+    </div>
+  </body>
+</html>

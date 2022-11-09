@@ -1,57 +1,50 @@
-body{
-    width: 1536px;
-    background-size: cover;
-    background-image: url(../images/desk.jpg);
-}
 .do{
-    width: 450px;
-    min-height: 100px;
-    background-image: url(../images/1.jpg);
-    background-size: contain;
-    background-position: -6.2px -2px;
-    /* background-color: beige; */
-    border-radius: 10px;
-    border: 1px solid #aaa;
+    width: 455px;
+    background-image: url(../images/calender.jpg);
+    background-size: cover;
+    border-radius: 20px;
+    background-position: -3px -2px;
     margin: 10px;
     margin-top: 10px;
     overflow: auto;
-    max-height: 380px;
     position: relative;
-    box-shadow: 5px 5px 30px #acabab;
-    /* display: none; */
-    /* opacity: .96; */
+    height: 378px;
+    opacity: 0;
+    transition: all .3s;
 }
 .do::-webkit-scrollbar,
-.delete-history::-webkit-scrollbar {/*滚动条整体样式*/
-    width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/
-    height: 1px;
+.often::-webkit-scrollbar {
+    width: 10px;   
+    height: 10px;
 }
 .do::-webkit-scrollbar-thumb,
-.delete-history::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+.often::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
     border-radius: 36px;
     -webkit-box-shadow: inset 0 0 5px rgba(203, 197, 197, 0.2);
     background: #ecefee;
 }
 .do::-webkit-scrollbar-track,
-.delete-history::-webkit-scrollbar-track{/*滚动条里面轨道*/
+.often::-webkit-scrollbar-track{/*滚动条里面轨道*/
     -webkit-box-shadow: inset 0 0 5px rgba(47, 46, 46, 0.2);
     border-radius: 36px;
     background: #ffffff;
 }
 .do ul{
-    padding: 10px;
-    padding-top: 0;
+    margin-left: -11px;
+    padding: 2px 0px 10px 0px;
 }
 .do ul li{
-    margin: 3px 8px;
-    padding: 0 12px 5px 12px;
+    margin: 3px 25px;
     outline: none;
-    /* color:; */
+    line-height: 22px;
+    text-indent: -26px;
+    margin-left: 2em;
+    padding: 0px 12px 5px 30px;
 }
 .do ul li::after{
     content: '';
     height: 4px;
-    width: 380px;
+    width: 360px;
     display: inline-block;
     border-radius: 9px;
     background-color: #e0cbad;
@@ -59,7 +52,6 @@ body{
 .do .do-circle{
     width: 15px;
     height: 15px;
-    /* border-radius: 50%; */
     margin-right: 10px;
     vertical-align: middle;
     margin-bottom: 3px;
@@ -71,26 +63,21 @@ body{
     outline: none;
     cursor: text;
 }
-.do-banner{
-    display: inline-block;
+.do .undo-banner{
+    display: block;
     font-size: 30px;
-    margin-top: 15px;
+    margin-top: 55px;
     margin-left: 25px;
     font-weight: 700;
 }
-.do ul li span{
-    line-height: 25px;
-    /* text-decoration: line-through; */
-    cursor: pointer;
-}
 .do .do-time{
-    margin-left: 226px;
-    margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 18px;
+    line-height: 30px;
+    margin-left: 45px;
 }
-.right-do{
+.do .right-do{
     float: right;
-    margin-top: 13px;
+    margin-top: -25px;
     position: relative;
 }
 .right-do i{
@@ -101,42 +88,56 @@ body{
     cursor: pointer;
 }
 .do-top{
-    padding: 20px 20px 9px 20px;
+    padding: 0 20px 9px 20px;
     z-index: 1111111;
     transition: all .3s;
     border-top-left-radius: 10px;
-    /* background-color: ; */
-}
-.right-do input{
-    position: absolute;
-    left: 0px;
-    top: -30px;
-    background-color: pink;
-    color: #fff;
-    height: 60px;
-    width: 40px;
-    /* 取消默认 有待改善 */
-    opacity: 0;
-    filter: 'alpha(opacity=0)';
-    cursor: pointer;
+    direction: ltr;
 }
 .right-do .history-icon_two{
     font-size: 25px;
     margin-top: 1px;
 }
+.often ul li{
+    padding: 10px;
+    margin: 8px 0;
+    line-height: 1.6;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 3px;
+    background-color: #fffbf0;
+}
+.often{
+    min-height: 100px;
+    max-height: 300px;
+    overflow: auto;
+    border-radius: 5px;
+    background-color: #e0c6ad;
+    position: absolute;
+    z-index: 1111111111111;
+    top: 8%;
+    right: -80%;
+    display: none;
+}
+.often p{
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
 .calender-box {
     line-height: 40px;
     font-size: 16px;
     text-align: center;
-    width: 600px;
-    height: 640px;
+    width: 490px;
+    height: 540px;
     border: 1px #ccc solid;
     position: absolute;
     top: 50%;
     left: 51.4%;
     transform: translateX(-50%) translateY(-50%);
     color: #000;
-    padding: 30px 120px;
+    padding: 35px 110px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 3px 3px 10px rgb(68, 68, 68);
@@ -167,9 +168,9 @@ body{
     width: 100%;
   }
   .evrday {
-    width: 85px;
-    height: 85px;
-    line-height: 85px;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
     float: left;
     font-size: 20px;
     cursor: pointer;

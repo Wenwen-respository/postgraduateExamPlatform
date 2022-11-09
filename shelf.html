@@ -6,54 +6,146 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>书架</title>
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./font1/iconfont.css">
   <link rel="stylesheet" href="./css/shelf.css">
   <script src="./js/shelf.js"></script>
 </head>
 
 <body>
+  <div class="shelf-wrapper">
   <div id="side-menu" class="side-menu">
     <ul>
-      <li class="menu-item">
+      <li class="menu-item back-first">
         <i class="iconfont">&#xe66d;</i>
         <span class="menu-text">回到房间</span>
         <div class="popover">回到房间</div>
       </li>
-      <li class="menu-item">
+      <li class="menu-item shelf-item">
         <i class="iconfont">&#xe6a6;</i>
         <span class="menu-text">真题</span>
         <div class="popover">真题</div>
       </li>
-      <li class="menu-item">
+      <li class="menu-item shelf-item">
         <i class="iconfont">&#xe712;</i>
         <span class="menu-text">试题、大纲</span>
         <div class="popover">试题、大纲</div>
       </li>
-      <li class="menu-item">
+      <li class="menu-item shelf-item">
         <i class="iconfont">&#xe69b;</i>
         <span class="menu-text">笔记</span>
         <div class="popover">笔记</div>
       </li>
-      <li class="menu-item">
+      <li class="menu-item shelf-item">
         <i class="iconfont">&#xe6a4;</i>
         <span class="menu-text">随心画</span>
         <div class="popover">随心画</div>
       </li>
-      <li class="menu-item">
-        <i class="iconfont">&#xe6a5;</i>
-        <span class="menu-text">收藏夹</span>
-        <div class="popover">收藏夹</div>
-      </li>
-      <li class="menu-item">
-        <i class="iconfont">&#xe855;</i>
-        <span class="menu-text">下载记录</span>
-        <div class="popover">下载记录</div>
-      </li>
     </ul>
-    <li id="toogle" class="menu-item toogle">
+    <div id="toogle" class="menu-item toogle">
       <i class="iconfont">&#xeb15;</i>
-    </li>
+    </div>
   </div>
+  <div class="shelf-banner">
+    <div class="real-banner shelf-content">
+      <div class="real-search">
+        <div class="input-banner">
+        <input type="text" placeholder="输入你想要搜索的内容" class="shelf-input">
+        <i class="iconfont">&#xe63c;</i>
+      </div>
+        <div class="real-tips">
+          <ul>
+            <li><a href="javascript:;">护肤第九课机动车年检的好成绩</a></li>
+            <li><a href="javascript:;">护肤第九课机动车年肤第九课机动车年肤第九课机动车年肤第九课机动车年肤第九课机动车年检的好成绩</a></li>
+            <li><a href="javascript:;">护肤第九课机动车年检的好成绩</a></li>
+          </ul>
+        </div>
+        <div class="real-history">
+          <ul>
+           <li><a href="javascript:;">bbbb</a></li>
+           <li><a href="javascript:;">bbbb</a></li>
+           <li><a href="javascript:;">bbbb</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="try-banner shelf-content">
+      <div class="real-search">
+        <div class="input-banner">
+        <input type="text" placeholder="输入你想要搜索的内容" class="shelf-input">
+        <i class="iconfont">&#xe63c;</i>
+      </div>
+        <div class="real-tips">
+          <ul>
+            <li><a href="javascript:;">护肤第九课机动车年检的好成绩</a></li>
+            <li><a href="javascript:;">护肤第九课机动车年肤第九课机动车年肤第九课机动车年肤第九课机动车年肤第九课机动车年检的好成绩</a></li>
+            <li><a href="javascript:;">护肤第九课机动车年检的好成绩</a></li>
+          </ul>
+        </div>
+        <div class="real-history">
+          <ul>
+           <li><a href="javascript:;">bbbb</a></li>
+           <li><a href="javascript:;">bbbb</a></li>
+           <li><a href="javascript:;">bbbb</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="shelf-note shelf-content">
+      <div class="shelf-note-ban">
+        <div class="shelf-note-add shelf-fir">
+          <ul>
+            <li>恐惧和有共同奋斗</li>
+            <li>恐惧和有共同奋斗</li>
+            <li>恐惧和有共同奋斗</li>
+            <li>恐惧和有共同奋斗</li>
+            <li>恐惧和有共同奋斗</li>
+          </ul>
+          <div class="note-one">
+            <i class="iconfont">&#xe809;</i>
+            <span>添加文件夹</span>
+          </div>
+        </div>
+        <div class="shelf-note-add shelf-sec">
+          <ul>
+            <li>恐惧和有共同奋斗</li>
+            <li>恐惧和有共同奋斗</li>
+            <li>恐惧和有共同奋斗</li>
+            <li>恐惧和有共同奋斗</li>
+            <li>恐惧和有共同奋斗</li>
+          </ul>
+          <div class="note-two">
+            <i class="iconfont">&#xe809;</i>
+            <span>添加文件</span>
+          </div>
+        </div>
+        <div class="note-add-content">
+          <div class="add-top" contenteditable="true">
+            <p>标题</p>
+          </div>
+          <div class="shelf-note-content" contenteditable="true">
+            输入笔记
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="shelf-canvas shelf-content">
+      <div class="shelf-note-add shelf-fir">
+        <ul>
+          <li>恐惧和有共同奋斗</li>
+          <li>恐惧和有共同奋斗</li>
+          <li>恐惧和有共同奋斗</li>
+          <li>恐惧和有共同奋斗</li>
+          <li>恐惧和有共同奋斗</li>
+        </ul>
+        <div class="note-one">
+          <i class="iconfont">&#xe809;</i>
+          <span>添加文件夹</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
-
 </html>

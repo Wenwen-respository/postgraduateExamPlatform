@@ -125,7 +125,7 @@ html{
     border-radius: 50%;
     background-color: transparent;
     border: solid 4px #fff;
-    opacity: 0;
+    /* opacity: 0; */
     transition: all .6s;
     cursor: pointer;
   }
@@ -141,13 +141,10 @@ html{
     top: 40%;
     left: 88%;
 }
-.circle.clock-banner{
-    top: 54%;
-    left: 7%;
-}
 .circle.shelf-banner{
-    top: 12.5%;
+    top: 52%;
     left: 6%;
+    opacity: 0;
 }
 .mouse-inner-circle{
     width: 25px;
@@ -161,4 +158,13 @@ html{
 }
 .room-active{
     display: block;
+}
+.share-circle{
+    opacity: 0;
+}
+.clock{
+    display: none;
+}
+#radio-circle{
+    opacity: 0;
 }

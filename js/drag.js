@@ -47,15 +47,15 @@ window.addEventListener('load', function () {
                     note_ul.appendChild(file_li);
                 }
                 else {
-                    alert("陛下的的文件过大 本庙有点小 容不下")
+                    console.log("陛下的的文件过大 本庙有点小 容不下");
                 }
             } else {
-                alert("陛下的的文件z容不下")
+                console.log("陛下的的文件z容不下")
             }
         }
         var a=document.querySelectorAll('.note ul li .delete-icon').length;
         for(let i=0;i<a;i++){
-        console.log(a);
+        // console.log(a);
             document.querySelectorAll('.note ul li .delete-icon')[i].index=i;
         }
         return a;
@@ -110,9 +110,9 @@ window.addEventListener('load', function () {
     })
 
     // 点击上传文件
-    const file_up = document.querySelector(".add-icon-two");
+    const file_up = document.querySelector("#file-up");
     var delete_history=document.querySelector('.delete-history ul');
-    file_up.addEventListener('click', function (e) {
+    file_up.addEventListener('change', function (e) {
         // 获取上传的文件集合
         var files = e.target.files;
         console.log("files: ", files);
@@ -157,7 +157,6 @@ window.addEventListener('load', function () {
                  if(Is==false){
                     console.log("co");
                     console.log(this.index);
-
                     // 最近删除
                         let delete_li = document.createElement('li');
                         console.log(document.querySelectorAll('.note ul li')[this.index].innerHTML);
@@ -173,6 +172,7 @@ window.addEventListener('load', function () {
                 })
         }
             
+        // 删除历史记录
         const deleteHistory = document.querySelector(".history-icon_two");
         const deleteHis=document.querySelector('.delete-history');
         
@@ -205,42 +205,47 @@ window.addEventListener('load', function () {
     var undo_li = document.querySelectorAll('.undo ul li .do-content');
     var unfa=false;
     // 点击添加icon 添加待做
-    const add_icon_one = document.querySelector('.add-icon-one');
-    const history_icon = document.querySelector('.history-icon');
-    add_icon_one.addEventListener('click', function () {
-        const undo_add_li = document.createElement('li');
-        let uncontent = "添加事项...";
-        undo_add_li.innerHTML = "<span class='do-circle'></span><span class='do-content' contenteditable='true'>" + uncontent + "</span>"
-         //  待做内容添加
-         undo_add_li.style.color = "#aaa";
-         undo_add_li.style.fontSize = "14px";
-         let do_content=document.querySelector('.do-content');
-             undo_add_li.addEventListener('keydown', function () {
-                 // console.log("ff");
-                 if(do_content.innerHTML==""){
-                 // console.log("dd");
-                     undo_add_li.style.color = "#333";
-                     undo_add_li.style.fontSize = "16px";
-                 }
-             })
-        if (undo_li_all.length > 0) {
-            //第一个参数是要插入的元素，第二个参数是在最前面插入
-            undo_ul.insertBefore(undo_add_li, document.querySelectorAll('.undo ul li')[0]);
-        } else {
-            undo_ul.appendChild(undo_add_li);
-        }
-        // f();
-    })
+    const add_icon_one = document.querySelectorAll('.add-icon-one');
+    const history_icon = document.querySelectorAll('.history-icon');
+    for(let i=0;i<add_icon_one.length;i++){
+        add_icon_one[i].addEventListener('click', function () {
+            console.log(add_icon_one[i]);
+                const undo_add_li = document.createElement('li');
+                let uncontent = "添加事项...";
+                undo_add_li.innerHTML = "<span class='do-circle'></span><span class='do-content' contenteditable='true'>" + uncontent + "</span>"
+                 //  待做内容添加
+                 undo_add_li.style.color = "#aaa";
+                 undo_add_li.style.fontSize = "14px";
+                 let do_content=document.querySelector('.do-content');
+                     undo_add_li.addEventListener('keydown', function () {
+                         // console.log("ff");
+                         if(do_content.innerHTML==""){
+                         // console.log("dd");
+                             undo_add_li.style.color = "#333";
+                             undo_add_li.style.fontSize = "16px";
+                         }
+                     })
+                if (undo_li_all.length > 0) {
+                    //第一个参数是要插入的元素，第二个参数是在最前面插入
+                    undo_ul.insertBefore(undo_add_li, document.querySelectorAll('.undo ul li')[0]);
+                } else {
+                    undo_ul.appendChild(undo_add_li);
+                }
+                // f();
+            })
+    }
+   
 
-    // 圆圈已完成部分 横线
-    // 删除
+
+    // 改变索引
     function g(){
         for(let i=0;i<document.querySelectorAll('.undo ul li ').length;i++){
             // console.log(document.querySelectorAll('.undo ul li ').length);
             document.querySelectorAll('.undo ul li .do-circle')[i].index=i;
         }
     }
-
+    // 圆圈已完成部分 横线
+    // 删除
     let undoUL=document.querySelector('.undo ul');
     let undoLi=document.querySelectorAll('.undo ul li');
     let do_content=document.querySelectorAll('.undo ul li .do-content');
@@ -255,13 +260,13 @@ window.addEventListener('load', function () {
             g();
         })
         if(undoUL.innerHTML==""){
-            this.alert("空");
+            console.log("空");
         }
         
     }
    
+    // 已完成 横线添加
     function f(){
-        // g();
         for (let i = 0; i < document.querySelectorAll('.undo ul li').length; i++) {
                  document.querySelectorAll('.undo ul li .do-circle')[i].addEventListener('click', function (e) {
                     e.stopPropagation();
@@ -284,11 +289,6 @@ window.addEventListener('load', function () {
     f();
        
     
-
-
-
-
-
     // 便签头部固定
     // undo.addEventListener('scroll', function () {
     //     if (undo.scrollTop > 500) {
@@ -303,7 +303,7 @@ window.addEventListener('load', function () {
     //     }
     // })
 
-    // 便签上时间
+    // 便签上的时间
     var currentDate = new Date();
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth() + 1;
@@ -316,17 +316,19 @@ window.addEventListener('load', function () {
     
     // // 经常做的事
     const often = document.querySelector('.often');
-    history_icon.addEventListener('click', function (e) {
-        console.log("c");
-        e.stopPropagation();
-        // 出现和消失
-        if (often.style.display == "block") {
-            often.style.display = "none";
-        }
-        else {
-            often.style.display = "block";
-        }
-    })
+    for(let i=0;i<history_icon.length;i++){
+        history_icon[i].addEventListener('click', function (e) {
+            console.log("c");
+            e.stopPropagation();
+            // 出现和消失
+            if (often.style.display == "block") {
+                often.style.display = "none";
+            }
+            else {
+                often.style.display = "block";
+            }
+        })
+    }
     document.addEventListener('click', function () {
         often.style.display = "none";
     })
@@ -342,7 +344,6 @@ window.addEventListener('load', function () {
             document.querySelector('.undo ul').insertBefore(creat_li, document.querySelectorAll('.undo ul li')[0]);
         })
     }
-
 
     // 便签拖拽
     function dragFunc(id) {
@@ -367,6 +368,8 @@ window.addEventListener('load', function () {
         };
     }
     dragFunc('note-content');
+    dragFunc('calender');
+
 
 
 

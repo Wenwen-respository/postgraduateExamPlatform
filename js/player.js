@@ -14,11 +14,14 @@ window.addEventListener('load', function () {
         hover_bar = this.document.querySelector('.hover-bar'),
         progress_bar = this.document.querySelector('.progress-bar'),
         play_prev = this.document.querySelector('.play-prev'),
-        play_next = this.document.querySelector('.play-next');
+        play_next = this.document.querySelector('.play-next'),
+        radio_circle = this.document.querySelector('#radio-circle');
+    radio_wraper = this.document.querySelector('.radio-wraper');
+
     // 专辑名数组
-    let albums = ['听雨', '南乡子', '待花开'];
-    // 歌曲信息数组
-    let track_names = ['长风-听雨（纯音乐）', '雁夜风-南乡子', '白鸿-待花开'];
+    let albums = ['听雨', '南乡子', '待花开','仙后 - 豆花之歌（翻自 Pianoboy高至豪）'];
+    // 歌曲信息数组(歌手)
+    let track_names = ['长风-听雨（纯音乐）', '雁夜风-南乡子', '白鸿-待花开','仙后 '];
 
     // 定义变量
     let progress_t, //鼠标在进度条上悬停的位置
@@ -236,5 +239,4 @@ window.addEventListener('load', function () {
     // 初始化播放器
     initPlayer();
 
-   
 })

@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>院校信息板块</title>
+    <title>考研</title>
     <!-- 收音机icon -->
     <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css"/>
     <link rel="stylesheet" href="./font1/iconfont.css" />
      <!-- 彩色icon -->
      <link rel="stylesheet" href="./font2/iconfont.css">
-
-    
+    <!--重置  -->
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/reset.css" />
+
     <link rel="stylesheet" href="./css/school.css" />
     <link rel="stylesheet" href="./css/slide-nav.css" />
     <link rel="stylesheet" href="./css/player.css" />
@@ -25,49 +25,25 @@
     <link rel="stylesheet" href="./css/question.css">
     <link rel="stylesheet" href="./css/myQuestion.css">
 
-    <script src="./js/drag.js"></script>
     <script src="./js/school.js"></script>
     <script src="./js/nav.js"></script>
     <script src="./js/player.js"></script>
     <script src="./js/calender.js"></script>
     <script src="./js/question.js"></script>
     <script src="./js/clock.js"></script>
+    <script src="./js/drag.js"></script>
   </head>
   <body>
     <div class="school">
       <ul class="school-ul">
+        <!-- 讨论房 -->
         <li class="school-box1 school-box" id="discuss">
-            <div class="slide-nav">
-                <ul>
-                  <li>
-                    <a href="#discuss">
-                      <i class="iconfont">&#xe709;</i>
-                      <p>讨论房</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#question">
-                      <i class="iconfont">&#xe80c;</i>
-                      <p>问题大解</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#room">
-                      <i class="iconfont">&#xe66d;</i>
-                      <p>my房间</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="./school.html">
-                      <i class="iconfont">&#xe670;</i>
-                      <p>首页</p>
-                    </a>
-                  </li>
-                </ul>
-              </div>
+          <!-- 侧边栏 -->
         </li>
+        <!-- 房间 -->
         <li class="school-bgc school-box">
           <div class="open-door-pro" id="room"></div>
+          <!-- 时钟 -->
                 <div class="clock">
             <div class="inner-circle">
               <div class="hands">
@@ -78,7 +54,8 @@
               </div>
             </div>
                 </div>
-                <div class="radio-wraper room-content">
+                <!-- 收音机 -->
+                <div class="radio-wraper">
                   <!-- 收音机容器 -->
                   <div class="radio-container">
                     <!-- 收音机播放器 -->
@@ -131,8 +108,9 @@
                     
                   </div>
                 </div>
+                <!-- 日历 -->
                 <div class="calender-wrap room-content">
-                  <div class="calender-box">
+                  <div class="calender-box" id="calender">
                     <div class="top">
                       <button type="button" class="pre-mon">上个月</button>
                       <div id="month"></div>
@@ -153,8 +131,8 @@
                   </div>
                   <div class="do">
                       <div class="do-top">
-                      <p class="do-time"></p>
-                      <span class="undo-banner">to do list:</span>
+                      <p class="undo-banner">to do list:</p>
+                      <span class="do-time"></span>
                       <div class="right-do">
                         <i class="iconfont add-icon-one">&#xe624;</i>
                         <i class="iconfont history-icon">&#xe675;</i>
@@ -170,6 +148,7 @@
                       </ul>
                   </div>
                 </div>
+                <!-- 便签 -->
                 <div class="note-content room-content " id="note-content">
                     <div class="note-top">
                         <p>计划清单</p> 
@@ -196,9 +175,10 @@
               <div class="often">
                   <ul>
                   <p>最近常做：</p>
+                  <i class="iconfont add-icon-three">&#xe67a;</i>
+                      <li>会让发动机查看不热JFK让发看不热JFK让发动机查看不热JFK但是vi但是vi</li>
                       <li>会让发动机查看不热JFK但是vi</li>
-                      <li>会让发动机查看不热JFK但是vi</li>
-                      <li>会让发动机查看不热JFK但是vi</li>
+                      <li>会看不热JFK让发不JFK让发不热JFK但是JFK但是vi</li>
                       <li>会让发动机查看不热JFK但是vi</li>
                       <li>会让发动机查看不热JFK但是vi</li>
                   </ul>
@@ -279,94 +259,22 @@
               </iframe>
             </div> -->
                 </div>
-                <!-- <div class="shelf-banner room-content">
-                  <div id="side-menu" class="side-menu">
-                    <ul>
-                      <li class="menu-item">
-                        <i class="iconfont">&#xe66d;</i>
-                        <span class="menu-text">回到房间</span>
-                        <div class="popover">回到房间</div>
-                      </li>
-                      <li class="menu-item">
-                        <i class="iconfont">&#xe6a6;</i>
-                        <span class="menu-text">真题</span>
-                        <div class="popover">真题</div>
-                      </li>
-                      <li class="menu-item">
-                        <i class="iconfont">&#xe712;</i>
-                        <span class="menu-text">试题、大纲</span>
-                        <div class="popover">试题、大纲</div>
-                      </li>
-                      <li class="menu-item">
-                        <i class="iconfont">&#xe69b;</i>
-                        <span class="menu-text">笔记</span>
-                        <div class="popover">笔记</div>
-                      </li>
-                      <li class="menu-item">
-                        <i class="iconfont">&#xe6a4;</i>
-                        <span class="menu-text">随心画</span>
-                        <div class="popover">随心画</div>
-                      </li>
-                      <li class="menu-item">
-                        <i class="iconfont">&#xe6a5;</i>
-                        <span class="menu-text">收藏夹</span>
-                        <div class="popover">收藏夹</div>
-                      </li>
-                      <li class="menu-item">
-                        <i class="iconfont">&#xe855;</i>
-                        <span class="menu-text">下载记录</span>
-                        <div class="popover">下载记录</div>
-                      </li>
-                    </ul>
-                    <li id="toogle" class="menu-item toogle">
-                      <i class="iconfont">&#xeb15;</i>
-                    </li>
-                  </div>
-                </div> -->
-                <div class="clock-banner" id="clock-circle">
-                  <div class="mouse-inner-circle"></div>
-                </div>
+                <!-- 书架 -->
+                <!-- 分别对应的按钮 -->
                 <div class="radio circle" id="radio-circle">
                   <div class="mouse-inner-circle"></div>
                 </div>
-                <div class="calender-banner circle" id="calender-circle">
+                <div class="calender-banner circle share-circle">
                   <div class="mouse-inner-circle"></div>
                 </div>
-                <div class="plan circle" id="plan-circle">
+                <div class="plan circle share-circle">
                   <div class="mouse-inner-circle"></div>
                 </div>
-                <div class="shelf-banner circle" id="shelf-circle">
+                <div class="shelf-banner circle">
                   <div class="mouse-inner-circle"></div>
                 </div>
-              <div class="slide-nav">
-                <ul>
-                  <li>
-                    <a href="#discuss">
-                      <i class="iconfont">&#xe709;</i>
-                      <p>讨论房</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#question">
-                      <i class="iconfont">&#xe80c;</i>
-                      <p>问题大解</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#room">
-                      <i class="iconfont">&#xe66d;</i>
-                      <p>my房间</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="./school.html">
-                      <i class="iconfont">&#xe670;</i>
-                      <p>首页</p>
-                    </a>
-                  </li>
-                </ul>
-              </div>
         </li>
+        <!-- 首页 -->
         <li class="school-box2 school-box">
           <div class="school-button discuss-button">
             <i class="iconfont">&#xe624;</i>
@@ -377,35 +285,8 @@
           <div class="school-button question-button">
             <i class="iconfont">&#xe75e;</i>
           </div>
-          <div class="slide-nav">
-            <ul>
-              <li>
-                <a href="#discuss">
-                  <i class="iconfont">&#xe709;</i>
-                  <p>讨论房</p>
-                </a>
-              </li>
-              <li>
-                <a href="#question">
-                  <i class="iconfont">&#xe80c;</i>
-                  <p>问题大解</p>
-                </a>
-              </li>
-              <li>
-                <a href="#room">
-                  <i class="iconfont">&#xe66d;</i>
-                  <p>my房间</p>
-                </a>
-              </li>
-              <li>
-                <a href="./school.html">
-                  <i class="iconfont">&#xe670;</i>
-                  <p>首页</p>
-                </a>
-              </li>
-            </ul>
-          </div>
         </li>
+        <!-- 问题 -->
         <li class="school-box3 school-box" id="question">
           <div class="question-banner">
           <div class="langhua1 langhua">
@@ -656,34 +537,34 @@
             </div>
           </div>
         </div>
-        <div class="slide-nav">
-            <ul>
-              <li>
-                <a href="#discuss">
-                  <i class="iconfont">&#xe709;</i>
-                  <p>讨论房</p>
-                </a>
-              </li>
-              <li>
-                <a href="#question">
-                  <i class="iconfont">&#xe80c;</i>
-                  <p>问题大解</p>
-                </a>
-              </li>
-              <li>
-                <a href="#room">
-                  <i class="iconfont">&#xe66d;</i>
-                  <p>my房间</p>
-                </a>
-              </li>
-              <li>
-                <a href="./school.html">
-                  <i class="iconfont">&#xe670;</i>
-                  <p>首页</p>
-                </a>
-              </li>
-            </ul>
-          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="slide-nav">
+      <ul>
+        <li>
+          <a href="#discuss">
+            <i class="iconfont">&#xe709;</i>
+            <p>讨论房</p>
+          </a>
+        </li>
+        <li>
+          <a href="#question">
+            <i class="iconfont">&#xe80c;</i>
+            <p>问题大解</p>
+          </a>
+        </li>
+        <li>
+          <a href="#room">
+            <i class="iconfont">&#xe66d;</i>
+            <p>my房间</p>
+          </a>
+        </li>
+        <li>
+          <a href="./index.html">
+            <i class="iconfont">&#xe670;</i>
+            <p>首页</p>
+          </a>
         </li>
       </ul>
     </div>

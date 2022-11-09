@@ -76,8 +76,9 @@ window.addEventListener('load',function(){
       }
       var clickDay = document.querySelectorAll("#day .evrday");
       for (let z = 0; z < clickDay.length; z++) {
-      // console.log(clickDay[z]);
-        clickDay[z].addEventListener("click", function (e) {
+        // 日历里面的便签上的时间
+        if(clickDay[z].innerHTML !== ""){
+          clickDay[z].addEventListener("click", function (e) {
             e.stopPropagation();
             for (var i = 0; i < clickDay.length; i++) {
                 if(clickDay[z].innerHTML !== day){
@@ -85,10 +86,14 @@ window.addEventListener('load',function(){
                 }
             }
             this.style.backgroundColor = '#f5e5ac';
-        //   alert(document.getElementById("month").innerHTML+clickDay[z].innerHTML+"日");
-          calender_do.innerHTML="日期："+document.getElementById("month").innerHTML+clickDay[z].innerHTML+"日";
-          doWhat.style.display="block";
+          console.log(document.getElementById("month").innerHTML+clickDay[z].innerHTML+"日");
+          calender_do.innerHTML="Date："+document.getElementById("month").innerHTML+clickDay[z].innerHTML+"日";
+
+          // console.log(calender_do.innerHTML);
+          doWhat.style.opacity="1";
         });
+        }
+       
        
         // 本天不显示其他效果
         if(clickDay[z].innerHTML == day){
@@ -104,7 +109,7 @@ window.addEventListener('load',function(){
         }
       }
       document.addEventListener('click',function(){
-        doWhat.style.display="none";
+        doWhat.style.opacity="0";
     })
     doWhat.addEventListener('click',function(e){
         e.stopPropagation();

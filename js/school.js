@@ -13,7 +13,7 @@ window.addEventListener('load', function () {
 
     //房间出现 
     school_left_buttons.addEventListener('click', function () {
-        console.log("ee");
+        // console.log("ee");
         school_left_buttons.style.transform = "scale(10)";
         school_left_buttons.style.transition = "all .6s";
         school_left_buttons.style.top = "500px";
@@ -44,30 +44,61 @@ window.addEventListener('load', function () {
     school_bgc.addEventListener('click',function(){
         // console.log("ss");
         open_door_back.classList.add('bgc');
+        let clock=document.querySelector('.clock');
         // school_bgc.style.backgroundImage="url(../images/open-door-pro.jpg)";
         // school_bgc.style.backgroundSize="contain";
         setTimeout(function(){
-         school_bgc.style.backgroundImage="url(../images/desk.jpg)";
+         school_bgc.style.backgroundImage="url(./images/desk.jpg)";
          school_bgc.style.transition="all .9s";
         open_door_back.classList.remove('bgc');
         open_door_back.style.display="none";
+        clock.style.display="block";
         },2200)
-        // open_door_back.style.display="block";
 
     })
 
+    const radio_wraper = document.querySelector('.radio-wraper');
+    const shelf_banner = document.querySelector('.shelf-banner');
     let  radio_circle =document.querySelector('#radio-circle');
-     // 点击收音机圆点控制收音机区域的出现
-     radio_circle.addEventListener('click', function () {
+    // 收音机圈圈出现消失以及点击
+    radio_circle.addEventListener('mouseover', function () {
+        radio_circle.style.opacity=1;
+    })
+    radio_circle.addEventListener('mouseout', function () {
+        radio_circle.style.opacity=0;
+    })
+    radio_circle.addEventListener('click', function () {
         if (radio_wraper.style.display == "block") {
             radio_wraper.style.display = "none";
         } else {
             radio_wraper.style.display = "block";
         }
     })
-    const circle=document.querySelectorAll('.circle');
+    // 书架圈圈出现消失以及点击
+    shelf_banner.addEventListener('mouseover', function () {
+        shelf_banner.style.opacity=1;
+    })
+    shelf_banner.addEventListener('mouseout', function () {
+        shelf_banner.style.opacity=0;
+    })
+    shelf_banner.addEventListener('click', function () {
+        // window.location.href="../shelf.html";
+        window.open("../shelf.html");
+    })
+         
+
+    // 按钮出现以及对应内容的点击
+    const circle=document.querySelectorAll('.share-circle');
     const room_content=document.querySelectorAll('.room-content');
-    const radio_wraper = document.querySelector('.radio-wraper');
+    // for(let i=0;i< room_content.length;i++){
+    //     room_content[i].index=i;
+    //     console.log(room_content[i]);
+    //     document.addEventListener('click', function () {
+    //     if(room_content[i].classList.contains('room-active')){
+    //             room_content[i].classList.remove('room-active');
+    //     }
+    //         })        
+// }
     for(let i=0;i<circle.length;i++){
         circle[i].index = i;
         circle[i].addEventListener('mouseover',function(){
@@ -82,12 +113,23 @@ window.addEventListener('load', function () {
             }
                 room_content[this.index].className = room_content[this.index].className +" room-active";
         })
-        // document.addEventListener('click', function () {
-        //     console.log("dd");
-        //     room_content[i].style.classList("room-active");
-        // })
     }
-   
+  
+    // var clickTimer = null;
+    // function btnClick() {
+    //     clearTimeout(clickTimer);  //首先清除计时器
+    //     clickTimer = setTimeout(() => {
+    //         console.log("单击==")
+    //     },200);
+    // }
 
+    // function btndbClick() {
+    //     clearTimeout(clickTimer);
+    //     console.log("双击---");
+    // }
+    // radio_circle.addEventListener('click', function () {
+    //     btnClick();
+    //     btndbClick();
+    // })
 
 })

@@ -2,7 +2,7 @@
     width: 940px;
     height: 700px;
     margin: 0 auto;
-    background-image: url(../images/jihua.png);
+    background-image: url(../images/1.png);
     background-size: cover;
     border-radius: 20px;
     position: absolute;
@@ -12,7 +12,6 @@
     /* opacity: 0; */
     /* display: none; */
     z-index: 111111;
-    pointer-events: none;
 }
 .note-top{
     height: 140px;
@@ -20,7 +19,7 @@
     text-align: center;
     font-size: 50px;
     margin-top: 25px;
-    padding-top: 100px;
+    padding-top: 70px;
     position: relative;
 }
 .note-top::after{
@@ -40,7 +39,8 @@
 }
 .note-top p:nth-child(2){
     font-size: 23px;
-    /* margin-left: 320px; */
+    margin-top: 8px;
+    margin-left: 40px;
 }
 .undo-ban{
     float: right;
@@ -87,7 +87,7 @@
     margin: 10px 0px;
     width: 335px;
     height: 40px;
-    padding: 10px 13px;
+    padding: 10px 16px;
     border-radius: 8px;
 }
 .note-banner .note-title{
@@ -99,6 +99,7 @@
     overflow: hidden;
     direction: ltr;
     text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .note ul li .note-size{
     margin-left: 13px;
@@ -109,36 +110,40 @@
 }
 .undo::-webkit-scrollbar,
 .note::-webkit-scrollbar,
-.delete-history::-webkit-scrollbar {/*滚动条整体样式*/
+.delete-history::-webkit-scrollbar,
+.often::-webkit-scrollbar {/*滚动条整体样式*/
     width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/
     height: 10px;
 }
 .undo::-webkit-scrollbar-thumb,
 .note::-webkit-scrollbar-thumb,
-.delete-history::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+.delete-history::-webkit-scrollbar-thumb,
+.often::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
     border-radius: 36px;
     -webkit-box-shadow: inset 0 0 5px rgba(203, 197, 197, 0.2);
     background: #ecefee;
 }
 .undo::-webkit-scrollbar-track,
 .note::-webkit-scrollbar-track,
-.delete-history::-webkit-scrollbar-track{/*滚动条里面轨道*/
+.delete-history::-webkit-scrollbar-track,
+.often::-webkit-scrollbar-track{/*滚动条里面轨道*/
     -webkit-box-shadow: inset 0 0 5px rgba(47, 46, 46, 0.2);
     border-radius: 36px;
     background: #ffffff;
 }
 .undo ul{
-    padding: 10px 10px 10px 0;
+    margin-left: -11px;
+    padding: 10px 0px 10px 0px;
 }
 .note ul{
     padding: 0px 15px;
 }
 .undo ul li{
-    margin: 3px 8px;
+    margin: 3px 25px;
     outline: none;
     text-indent: -26px;
     margin-left: 2em;
-    padding: 0px 12px 5px 10px;
+    padding: 0px 12px 5px 30px;
 }
 .undo ul li::after{
     content: '';
@@ -218,37 +223,30 @@
     font-size: 25px;
     margin-top: 1px;
 }
-
-.often ul,
-.delete-history ul{
-    padding: 10px;
-}
 .often ul li,
 .delete-history ul li{
     padding: 10px;
-    margin: 3px 0;
+    margin: 8px 0;
+    line-height: 1.6;
     font-size: 14px;
     cursor: pointer;
-    border: 3px solid rgb(255, 229, 200);
     border-radius: 3px;
-    background-color: rgb(255, 229, 200);
+    background-color: #fffbf0;
 }
-.often ul li:hover,
-.delete-history ul li:hover{
-    border: 3px solid #fff;
+.delete-history ul li{
+    line-height: 1.2;
 }
 .often,
 .delete-history{
     min-height: 100px;
-    max-height: 250px;
-    overflow: hidden;
-    width: 250px;
+    max-height: 300px;
+    overflow: auto;
     border-radius: 5px;
-    background-color: rgb(219, 244, 244);
+    background-color: #e0c6ad;
     position: absolute;
     z-index: 1111111111111;
-    top: 2%;
-    right: -53%;
+    top: 8%;
+    right: -80%;
     display: none;
 }
 .often p,
@@ -284,26 +282,26 @@
     margin-top: 4px;
     float: left;
 }
+.often ul,
 .delete-history{
     width: 300px;
     max-height: 252px;
-    overflow: auto;
-    /* max-height: 500px; */
     right: -73%;
-    top: 4%;
-    margin-top: 16px;
+    top: 8%;
     /* display: none; */
 }
 .delete-history .delete-icon{
     display: none;
 }
-.delete-history ul li{
+.delete-history ul li,
+.often ul li{
     margin: 7px 0;
 }
 .note-banner .delete-history .preview-icon{
     margin-top: -16px;
 }
-.delete-history ul{
+.delete-history ul,
+.often ul{
     padding: 20px 15px;
 }
 .note-banner .delete-history .note-title{
@@ -311,6 +309,7 @@
     line-height: 19px;
     height: 19px;
 }
+/* 内联框架 预览部分*/
 .ifm{
     margin-top: -20px;
     margin-bottom: 30px;
@@ -318,47 +317,25 @@
     border-radius: 10px;
     background-color: rgb(215, 238, 230);
 }
-body::-webkit-scrollbar-track{
-    width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/
+/* body::-webkit-scrollbar-track{
+    width: 10px;    
     height: 1px;
 }
-body::-webkit-scrollbar-thumb{/*滚动条里面小方块*/
+body::-webkit-scrollbar-thumb{
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 5px rgba(203, 197, 197, 0.2);
     background: #ecefee;
 }
-body::-webkit-scrollbar-track{/*滚动条里面轨道*/
+body::-webkit-scrollbar-track{
     -webkit-box-shadow: inset 0 0 5px rgba(47, 46, 46, 0.2);
     border-radius: 10px;
     background: #ffffff;
-}
-/* .ifame-banner{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: auto;
 } */
-/*- scrollbar -*/
-.ifm::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
+.add-icon-three{
+    float: right;
+    margin-top: -30px;
+    margin-right: 5px;
 }
-.ifm::-webkit-scrollbar-thumb{
-    background-color: #999;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-}
-.ifm::-webkit-scrollbar-thumb:vertical:hover{
-    background-color: #666;
-}
-.ifm::-webkit-scrollbar-thumb:vertical:active{
-    background-color: #333;
-}
-.ifm::-webkit-scrollbar-button{
-    display: none;
-}
-.ifm::-webkit-scrollbar-track{
-    background-color: #f1f1f1;
+.often i{
+    font-size: 20px;
 }

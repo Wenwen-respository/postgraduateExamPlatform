@@ -1,0 +1,688 @@
+.discuss-room {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+/* 背景 */
+.discuss-room-bg {
+    width: 100%;
+    height: 100vh;
+    background-color: #b3cdde;
+}
+
+.discuss-room-bg img {
+    width: 100%;
+    height: 100%;
+}
+
+/* 包含搜索框的顶部 */
+.discuss-room-top {
+    position: absolute;
+    top: 70px;
+    right: 150px;
+    /* transform: translateX(-50%); */
+    width: 900px;
+    height: 100px;
+    /* background-color: pink; */
+    z-index: 2;
+}
+
+/* .discuss-room-top .left {
+    float: left;
+} */
+
+.discuss-room-top .left .class {
+    /* display: none; */
+    position: relative;
+    float: left;
+    width: 60px;
+    margin-right: 50px;
+    text-align: center;
+    height: 100px;
+    line-height: 100px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #c2761c;
+    cursor: pointer;
+}
+
+.discuss-room-top .left .class-hiddenBox {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    /* height: 174px; */
+    height: 0;
+    background-color: #e1bb82;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height ease .5s;
+}
+
+.discuss-room-top .left .class-hiddenBox.active {
+    height: 174px;
+}
+
+.discuss-room-top .left .class-hiddenBox ul {
+    padding: 10px 0;
+}
+
+.discuss-room-top .left .class-hiddenBox ul li {
+    text-align: center;
+    padding: 5px 28px;
+    cursor: pointer;
+}
+
+.discuss-room-top .left .class-hiddenBox ul li:hover {
+    background-color: #f8e4cb;
+}
+
+.discuss-room-top .left .class .class-arrow {
+    position: absolute;
+    top: 45px;
+    right: -30px;
+    width: 0px;
+    height: 0px;
+    border: 12px solid #c2761c;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+
+.discuss-room-top .left .search {
+    position: relative;
+    float: left;
+    margin-top: 15px;
+    width: 700px;
+    height: 70px;
+    border-radius: 70px;
+    background-color: #b3dbf0;
+    opacity: 0.6;
+}
+
+.discuss-room-top .left .search .search-input {
+    padding: 0 70px;
+    width: 100%;
+    height: 70px;
+    border: 0;
+    outline: none;
+    font-size: 25px;
+    box-sizing: border-box;
+    background-color: transparent;
+}
+
+
+.discuss-room-top .left .search .search-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    line-height: 70px;
+    font-size: 35px;
+    font-weight: 600;
+    color: #e3be85;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.discuss-room-top .left .search .search-button:active {
+    transform: scale(95%);
+}
+
+/* .discuss-room-top .right {
+    float: right;
+} */
+
+.discuss-room-top .right .new-create {
+    margin-top: 25px;
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 50px;
+    background-color: #e7c69e;
+    cursor: pointer;
+    color: #c2761c;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.discuss-room-top .right .new-create:active {
+    transform: scale(95%);
+}
+
+/* 新建房间弹出盒子  */
+.new-create-box {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px 50px 20px;
+    width: 500px;
+    height: 300px;
+    border-radius: 50px;
+    background-color: #fffbf0;
+    z-index: 3;
+    border: 4px solid #e7c69e;
+    box-sizing: border-box;
+    transition: all 1s;
+}
+
+.new-create-box.active1 {
+    display: block;
+    opacity: 1;
+    animation: create-appear 1s;
+    animation-fill-mode: forwards;
+}
+
+.new-create-box.active2 {
+    display: none;
+    opacity: 0;
+    animation: create-disappear 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes create-appear {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes create-disappear {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* 房间名称 */
+.new-create-box .room-name {
+    position: relative;
+    height: 30px;
+    padding-left: 100px;
+    /* background-color: pink; */
+    margin-bottom: 20px;
+    /* border-radius: 5px; */
+}
+
+.new-create-box .room-name span {
+    position: absolute;
+    left: -6px;
+    bottom: 0;
+    width: 110px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background-color: #facd91;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fffbf0;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.new-create-box .room-name input {
+    padding-left: 20px;
+    width: 270px;
+    height: 28px;
+    border: 0;
+    outline: none;
+    background-color: #eee7e1;
+    border-radius: 10px;
+}
+
+/* 创建时长 */
+.new-create-box .room-type {
+    position: relative;
+    height: 30px;
+    padding-left: 100px;
+    margin-bottom: 20px;
+    /* background-color: pink; */
+}
+
+.new-create-box .room-type span {
+    position: absolute;
+    left: -6px;
+    bottom: 0;
+    width: 110px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background-color: #facd91;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fffbf0;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+/* .new-create-box .time-long .progress-bar {
+    padding-left: 20px;
+    width: 272px;
+    height: 30px;
+    border: 0;
+    outline: none;
+    background-color: #eee7e1;
+    border-radius: 10px;
+} */
+.new-create-box .room-type input {
+    padding-left: 20px;
+    width: 270px;
+    height: 28px;
+    border: 0;
+    outline: none;
+    background-color: #eee7e1;
+    border-radius: 10px;
+}
+
+/* 房间人数 */
+.new-create-box .people-num {
+    position: relative;
+    height: 30px;
+    padding-left: 100px;
+    margin-bottom: 20px;
+    /* background-color: pink; */
+}
+
+.new-create-box .people-num span {
+    position: absolute;
+    left: -6px;
+    bottom: 0;
+    width: 110px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background-color: #facd91;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fffbf0;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+/* .new-create-box .people-num .progress-bar {
+    padding-left: 20px;
+    width: 272px;
+    height: 30px;
+    border: 0;
+    outline: none;
+    background-color: #eee7e1;
+    border-radius: 10px;
+} */
+.new-create-box .people-num input {
+    padding-left: 20px;
+    width: 270px;
+    height: 28px;
+    border: 0;
+    outline: none;
+    background-color: #eee7e1;
+    border-radius: 10px;
+}
+
+/* 房间性质选择 */
+.room-select {
+    margin-bottom: 15px;
+}
+
+.room-select span:nth-child(1) {
+    font-size: 14px;
+    font-weight: 600;
+    color: #9b8254;
+    margin-right: 20px;
+}
+
+.room-select span:nth-child(2),
+.room-select span:nth-child(3) {
+    margin-right: 20px;
+    font-size: 12px;
+    color: #ccae83;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.room-select span:nth-child(2) label,
+.room-select span:nth-child(3) label {
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.room-select span:nth-child(2) input,
+.room-select span:nth-child(3) input {
+    background-color: #c2761c;
+    color: #c2761c;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+/* 创建房间的标签 */
+.new-create-box .tag {
+    position: absolute;
+    top: -30px;
+    left: 30px;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #cf6f3d;
+    box-shadow: 6px 6px 1px 1px #c69c6c;
+    transform: rotate(-10deg);
+    transform-origin: left bottom;
+    z-index: -1;
+}
+
+/* 创建房间按钮 */
+.create-button {
+    margin: 0 auto;
+    width: 100px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50px;
+    background-color: #e7c69e;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* 遮罩层 */
+.black-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #333;
+    opacity: 0.3;
+    z-index: -1;
+    transition: all 0.1s;
+}
+
+.create-button:active {
+    transform: scale(95%);
+}
+
+/* 推荐房间模块包含刷新按钮 */
+.recommend-room-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: absolute;
+    top: 220px;
+    right: 150px;
+    /* transform: translateX(-50%); */
+    width: 900px;
+    height: 500px;
+    /* background-color: pink; */
+}
+
+.recommend-room-area .refresh-button {
+    position: absolute;
+    top: 0px;
+    right: -120px;
+    width: 100px;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #c4761c;
+    background-color: #e7c69e;
+    cursor: pointer;
+}
+
+.recommend-room-area .refresh-button:active {
+    transform: scale(0.95);
+}
+
+.recommend-room {
+    position: relative;
+    float: left;
+    width: 290px;
+    height: 215px;
+    padding: 20px 20px 10px;
+    border-radius: 35px;
+    background-color: #f8e4cb;
+    box-shadow: 3px 16px 2px 1px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+
+.recommend-room .top {
+    height: 30px;
+    /* background-color: #fefeb4; */
+}
+
+.recommend-room .top .room-name {
+    float: left;
+    max-width: 240px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #e1bb82;
+}
+
+.recommend-room .top .more {
+    float: right;
+    margin-top: 3px;
+}
+
+.recommend-room .top .more i {
+    font-size: 20px;
+    font-weight: 600;
+    color: #e1bb82;
+    cursor: pointer;
+}
+
+.recommend-room .middle {
+    height: 115px;
+    /* background-color: aqua; */
+    /* margin-bottom: 10px; */
+}
+
+.recommend-room .middle .left .cover-box {
+    float: left;
+    width: 170px;
+    height: 115px;
+    background-color: #f7c789;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.recommend-room .middle .left .cover-box img {
+    width: 100%;
+    height: 100%;
+}
+
+.recommend-room .middle .right {
+    width: 80px;
+    /* background-color: #e7c69e; */
+}
+
+.recommend-room .middle .right .lock {
+    text-align: center;
+    height: 80px;
+}
+
+.recommend-room .middle .right .lock i {
+    line-height: 80px;
+    font-size: 40px;
+    font-weight: 600;
+    color: #e7c69e;
+}
+
+.recommend-room .middle .right .live {
+    padding-left: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #e1bb82;
+}
+
+.recommend-room .bottom {
+    height: 40px;
+    line-height: 40px;
+}
+
+.recommend-room .bottom .id-box {
+    font-size: 18px;
+    font-weight: 600;
+    color: #e1bb82;
+    margin-left: 20px;
+}
+
+.recommend-room .bottom .enter-box {
+    width: 80px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #c2761c;
+    border-radius: 10px;
+    background-color: #e7c69e;
+    cursor: pointer;
+}
+
+/* 云 */
+.cloud-group {
+    position: absolute;
+
+    width: 2000px;
+    height: 1000px;
+    background-image: url(../images/cloud-group.png);
+    background-size: cover;
+    z-index: 10;
+}
+
+.cloud-group1 {
+    top: 0;
+    left: 0;
+}
+
+.cloud-group1.active {
+    animation: away1 2s;
+    animation-fill-mode: forwards
+}
+
+@keyframes away1 {
+    0% {
+        top: 0;
+        left: 0;
+    }
+
+    100% {
+        top: -1000px;
+        left: -2000px;
+    }
+}
+
+.cloud-group2 {
+    top: 0;
+    right: 0;
+}
+
+.cloud-group2.active {
+    animation: away2 2s;
+    animation-fill-mode: forwards
+}
+
+@keyframes away2 {
+    0% {
+        top: 0;
+        right: 0;
+    }
+
+    100% {
+        top: -1000px;
+        right: -2000px;
+    }
+}
+
+.cloud-group3 {
+    bottom: 0;
+    left: 0;
+}
+
+.cloud-group3.active {
+    animation: away3 2s;
+    animation-fill-mode: forwards
+}
+
+@keyframes away3 {
+    0% {
+        bottom: 0;
+        left: 0;
+    }
+
+    100% {
+        bottom: -1000px;
+        left: -2000px;
+    }
+}
+
+.cloud-group4 {
+    bottom: 0;
+    right: 0;
+}
+
+.cloud-group4.active {
+    animation: away4 2s;
+    animation-fill-mode: forwards
+}
+
+@keyframes away4 {
+    0% {
+        bottom: 0;
+        right: 0;
+    }
+
+    100% {
+        bottom: -1000px;
+        right: -2000px;
+    }
+}
+
+/* 楼 */
+.floor-wraper {
+    position: absolute;
+    top: 0px;
+    left: 30px;
+    width: 415px;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+/* 滚动条滑块 */
+.floor-wraper::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: none;
+    background: transparent;
+}
+
+/* 滚动条轨道 */
+.floor-wraper::-webkit-scrollbar-track {
+    -webkit-box-shadow: none;
+    background: transparent;
+}
+
+.floor {
+    width: 415px;
+    height: 920px;
+    background-image: url(../images/floor.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: -10px;
+}

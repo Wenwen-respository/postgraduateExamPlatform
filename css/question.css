@@ -288,7 +288,7 @@
     opacity: 0;
     position: absolute;
     left: 50%;
-    top: 400px;
+    top: 300px;
     transform: translateX(-50%);
     width: 400px;
     /* height: 350px; */
@@ -314,22 +314,22 @@
 /* beike-hiddenBox弹出 */
 @keyframes beike-hiddenBox-popup {
     0% {
-        top: 500px;
+        top: 400px;
     }
 
     100% {
-        top: 400px;
+        top: 300px;
     }
 }
 
 /* beike-hiddenBox弹回 */
 @keyframes beike-hiddenBox-popback {
     0% {
-        top: 400px;
+        top: 300px;
     }
 
     100% {
-        top: 500px;
+        top: 400px;
     }
 }
 

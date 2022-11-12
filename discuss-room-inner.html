@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>房间详情</title>
+    <link rel="shortcut icon" href="./favicon/favicon3.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./font3/iconfont.css">
+    <link rel="stylesheet" href="./css/discuss-room-together.css">
+    <link rel="stylesheet" href="./css/discuee-room-inner.css">
+    <script src="./js/discuss-room-inner.js"></script>
+</head>
+<div class="discuss-room-inner-bg">
+    <img src="./images/discuss.jpg" alt="">
+</div>
+<!-- 头部信息模块 -->
+<div class="discuss-header">
+    <div class="return-button left">返回讨论房首页</div>
+    <div class="room-name">23年暨南大学考研冲鸭</div>
+    <div class="start-discuss right">进入讨论</div>
+</div>
+<!-- 讨论界面 -->
+<!-- 群聊模式 -->
+<div class="group-chat discuss-interface">
+    <!-- 侧边栏 -->
+    <div class="sidebar left">
+        <div class="avatar"><img src="./images/user.png" alt=""></div>
+        <i class="group-chat-button iconfont">&#xe661;<span>群聊模式</span></i>
+        <i class="private-chat-button iconfont">&#xe69d;<span>私聊模式</span></i>
+    </div>
+    <div class="right-box right">
+        <!-- 用户列表 -->
+        <div class="user-list left">
+            <!-- <div class="user-list-search">
+                <input type="text" class="search-input">
+                <i class="search-button iconfont">&#xe636;</i>
+            </div> -->
+            <div class="room-name">群聊模式</div>
+            <div class="user-list-member">
+                <div class="title">讨论组成员：</div>
+                <div class="member">
+                    <div class="avatar left"><img src="./images/user.png" alt=""></div>
+                    <div class="name left">易研为定</div>
+                </div>
+                <div class="member">
+                    <div class="avatar left"><img src="./images/user.png" alt=""></div>
+                    <div class="name left">watermelon</div>
+                </div>
+                <div class="member">
+                    <div class="avatar left"><img src="./images/user.png" alt=""></div>
+                    <div class="name left">apple</div>
+                </div>
+                <div class="member">
+                    <div class="avatar left"><img src="./images/user.png" alt=""></div>
+                    <div class="name left">banana</div>
+                </div>
+                <div class="member">
+                    <div class="avatar left"><img src="./images/user.png" alt=""></div>
+                    <div class="name left">peach</div>
+                </div>
+                <div class="member">
+                    <div class="avatar left"><img src="./images/user.png" alt=""></div>
+                    <div class="name left">strawberry</div>
+                </div>
+                <div class="member">
+                    <div class="avatar left"><img src="./images/user.png" alt=""></div>
+                    <div class="name left">pear</div>
+                </div>
+            </div>
+        </div>
+        <!-- 对话盒子 -->
+        <div class="dialogue-box right">
+            <!-- 顶部讨论组或用户名字 -->
+            <div class="top">23年暨南大学考研冲鸭</div>
+            <!-- 对话区域 -->
+            <div class="middle dialogue">
+                <div class="speak-left speak">
+                    <!-- 头像 -->
+                    <div class="avatar"><img src="./images/user.png" alt=""></div>
+                    <div class="name">pear</div>
+                    <div class="remark">大家好！</div>
+                </div>
+                <div class="speak-left speak">
+                    <!-- 头像 -->
+                    <div class="avatar"><img src="./images/user.png" alt=""></div>
+                    <div class="name">watermelon</div>
+                    <div class="remark">大家好</div>
+                </div>
+                <div class="speak-left speak">
+                    <!-- 头像 -->
+                    <div class="avatar"><img src="./images/user.png" alt=""></div>
+                    <div class="name">apple</div>
+                    <div class="remark">大家好</div>
+                </div>
+                <div class="speak-right speak">
+                    <!-- 头像 -->
+                    <div class="avatar"><img src="./images/user.png" alt=""></div>
+                    <div class="clearfix">
+                        <div class="name">易研为定</div>
+                    </div>
+                    <div class="clearfix">
+                        <div class="remark">大家好</div>
+                    </div>
+                </div>
+            </div>
+            <!-- 底部发送模块 -->
+            <div class="bottom">
+                <input class="bottom-input left"></input>
+                <button class="bottom-send left">发送</button>
+                <div class="bottom-more right"><i class="iconfont">&#xe664;</i></div>
+            </div>
+        </div>
+    </div>
+    <!-- 关闭 -->
+    <i class="discuss-close iconfont">&#xe66e;</i>
+</div>
+<!-- 私聊模式 -->
+<div class="private-chat discuss-interface">
+    <!-- 侧边栏 -->
+    <div class="sidebar left">
+        <div class="avatar"><img src="./images/user.png" alt=""></div>
+        <i class="group-chat-button iconfont">&#xe661;<span>群聊模式</span></i>
+        <i class="private-chat-button iconfont">&#xe69d;<span>私聊模式</span></i>
+    </div>
+    <div class="right-box right right-box-public">
+        <!-- 用户列表 -->
+        <div class="user-list left">
+            <!-- <div class="user-list-search">
+                <input type="text" class="search-input">
+                <i class="search-button iconfont">&#xe636;</i>
+            </div> -->
+            <div class="room-name">私聊模式</div>
+            <div class="user-list-member">
+                <div class="title">私信列表：</div>
+                <div class="member">
+                    <div class="avatar left"><img src="./images/user.png" alt=""></div>
+                    <div class="name left">watermelon</div>
+                </div>
+            </div>
+        </div>
+        <!-- 对话盒子 -->
+        <div class="dialogue-box right">
+            <!-- 顶部讨论组或用户名字 -->
+            <div class="top">watermelon</div>
+            <!-- 对话区域 -->
+            <div class="middle dialogue">
+                <div class="speak-left speak">
+                    <!-- 头像 -->
+                    <div class="avatar"><img src="./images/user.png" alt=""></div>
+                    <div class="name">watermelon</div>
+                    <div class="remark">你好呀</div>
+                </div>
+                <div class="speak-left speak">
+                    <!-- 头像 -->
+                    <div class="avatar"><img src="./images/user.png" alt=""></div>
+                    <div class="name">watermelon</div>
+                    <div class="remark">你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀</div>
+                </div>
+                <div class="speak-right speak">
+                    <!-- 头像 -->
+                    <div class="avatar"><img src="./images/user.png" alt=""></div>
+                    <div class="clearfix">
+                        <div class="name">易研为定</div>
+                    </div>
+                    <div class="clearfix">
+                        <div class="remark">你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀你好呀</div>
+                    </div>
+                </div>
+                <div class="speak-left speak">
+                    <!-- 头像 -->
+                    <div class="avatar"><img src="./images/user.png" alt=""></div>
+                    <div class="name">watermelon</div>
+                    <div class="remark">冲冲冲</div>
+                </div>
+                <div class="speak-right speak">
+                    <!-- 头像 -->
+                    <div class="avatar"><img src="./images/user.png" alt=""></div>
+                    <div class="clearfix">
+                        <div class="name">易研为定</div>
+                    </div>
+                    <div class="clearfix">
+                        <div class="remark">冲鸭</div>
+                    </div>
+                </div>
+            </div>
+            <!-- 底部发送模块 -->
+            <div class="bottom">
+                <input class="bottom-input left"></input>
+                <button class="bottom-send left">发送</button>
+                <div class="bottom-more right"><i class="iconfont">&#xe664;</i></div>
+            </div>
+        </div>
+    </div>
+    <!-- 关闭 -->
+    <i class="discuss-close iconfont">&#xe66e;</i>
+</div>
+<!-- 研友信息 -->
+<div class="info-dotted info-dotted1">
+    <div class="info">
+        <div class="top">
+            <div class="avatar left"><img src="./images/user.png" alt=""></div>
+            <div class="follow btn">关注</div>
+            <div class="private-letter btn">私信</div>
+        </div>
+        <div class="name info-item"><i class="iconfont">&#xe8c8;</i>用户名：<span>watermelon</span></div>
+        <div class="age info-item"><i class="iconfont">&#xe8c5;</i>年龄：<span>20</span></div>
+        <div class="sex info-item"><i class="iconfont">&#xe602;</i>性别：<span>男</span></div>
+        <div class="school info-item"><i class="iconfont">&#xe634;</i>在读院校：<span>广东金融学院</span></div>
+        <div class="target info-item"><i class="iconfont">&#xe723;</i>目标院校：<span>暨南大学</span></div>
+    </div>
+</div>
+<div class="info-dotted info-dotted2">
+    <div class="info">
+        <div class="top">
+            <div class="avatar left"><img src="./images/user.png" alt=""></div>
+            <div class="follow btn">关注</div>
+            <div class="private-letter btn">私信</div>
+        </div>
+        <div class="name info-item"><i class="iconfont">&#xe8c8;</i>用户名：<span>watermelon</span></div>
+        <div class="age info-item"><i class="iconfont">&#xe8c5;</i>年龄：<span>20</span></div>
+        <div class="sex info-item"><i class="iconfont">&#xe602;</i>性别：<span>男</span></div>
+        <div class="school info-item"><i class="iconfont">&#xe634;</i>在读院校：<span>广东金融学院</span></div>
+        <div class="target info-item"><i class="iconfont">&#xe723;</i>目标院校：<span>暨南大学</span></div>
+    </div>
+</div>
+<div class="info-dotted info-dotted3">
+    <div class="info">
+        <div class="top">
+            <div class="avatar left"><img src="./images/user.png" alt=""></div>
+            <div class="follow btn">关注</div>
+            <div class="private-letter btn">私信</div>
+        </div>
+        <div class="name info-item"><i class="iconfont">&#xe8c8;</i>用户名：<span>watermelon</span></div>
+        <div class="age info-item"><i class="iconfont">&#xe8c5;</i>年龄：<span>20</span></div>
+        <div class="sex info-item"><i class="iconfont">&#xe602;</i>性别：<span>男</span></div>
+        <div class="school info-item"><i class="iconfont">&#xe634;</i>在读院校：<span>广东金融学院</span></div>
+        <div class="target info-item"><i class="iconfont">&#xe723;</i>目标院校：<span>暨南大学</span></div>
+    </div>
+</div>
+<div class="info-dotted info-dotted4">
+    <div class="info">
+        <div class="top">
+            <div class="avatar left"><img src="./images/user.png" alt=""></div>
+            <div class="follow btn">关注</div>
+            <div class="private-letter btn">私信</div>
+        </div>
+        <div class="name info-item"><i class="iconfont">&#xe8c8;</i>用户名：<span>watermelon</span></div>
+        <div class="age info-item"><i class="iconfont">&#xe8c5;</i>年龄：<span>20</span></div>
+        <div class="sex info-item"><i class="iconfont">&#xe602;</i>性别：<span>男</span></div>
+        <div class="school info-item"><i class="iconfont">&#xe634;</i>在读院校：<span>广东金融学院</span></div>
+        <div class="target info-item"><i class="iconfont">&#xe723;</i>目标院校：<span>暨南大学</span></div>
+    </div>
+</div>
+<div class="info-dotted info-dotted5">
+    <div class="info">
+        <div class="top">
+            <div class="avatar left"><img src="./images/user.png" alt=""></div>
+            <div class="follow btn">关注</div>
+            <div class="private-letter btn">私信</div>
+        </div>
+        <div class="name info-item"><i class="iconfont">&#xe8c8;</i>用户名：<span>watermelon</span></div>
+        <div class="age info-item"><i class="iconfont">&#xe8c5;</i>年龄：<span>20</span></div>
+        <div class="sex info-item"><i class="iconfont">&#xe602;</i>性别：<span>男</span></div>
+        <div class="school info-item"><i class="iconfont">&#xe634;</i>在读院校：<span>广东金融学院</span></div>
+        <div class="target info-item"><i class="iconfont">&#xe723;</i>目标院校：<span>暨南大学</span></div>
+    </div>
+</div>
+<div class="info-dotted info-dotted6">
+    <div class="info">
+        <div class="top">
+            <div class="avatar left"><img src="./images/user.png" alt=""></div>
+            <div class="follow btn">关注</div>
+            <div class="private-letter btn">私信</div>
+        </div>
+        <div class="name info-item"><i class="iconfont">&#xe8c8;</i>用户名：<span>watermelon</span></div>
+        <div class="age info-item"><i class="iconfont">&#xe8c5;</i>年龄：<span>20</span></div>
+        <div class="sex info-item"><i class="iconfont">&#xe602;</i>性别：<span>男</span></div>
+        <div class="school info-item"><i class="iconfont">&#xe634;</i>在读院校：<span>广东金融学院</span></div>
+        <div class="target info-item"><i class="iconfont">&#xe723;</i>目标院校：<span>暨南大学</span></div>
+    </div>
+</div>
+<div class="info-dotted info-dotted7">
+    <div class="info">
+        <div class="top">
+            <div class="avatar left"><img src="./images/user.png" alt=""></div>
+            <div class="follow btn">关注</div>
+            <div class="private-letter btn">私信</div>
+        </div>
+        <div class="name info-item"><i class="iconfont">&#xe8c8;</i>用户名：<span>watermelon</span></div>
+        <div class="age info-item"><i class="iconfont">&#xe8c5;</i>年龄：<span>20</span></div>
+        <div class="sex info-item"><i class="iconfont">&#xe602;</i>性别：<span>男</span></div>
+        <div class="school info-item"><i class="iconfont">&#xe634;</i>在读院校：<span>广东金融学院</span></div>
+        <div class="target info-item"><i class="iconfont">&#xe723;</i>目标院校：<span>暨南大学</span></div>
+    </div>
+</div>
+<div class="info-dotted info-dotted8">
+    <div class="info">
+        <div class="top">
+            <div class="avatar left"><img src="./images/user.png" alt=""></div>
+            <div class="follow btn">关注</div>
+            <div class="private-letter btn">私信</div>
+        </div>
+        <div class="name info-item"><i class="iconfont">&#xe8c8;</i>用户名：<span>watermelon</span></div>
+        <div class="age info-item"><i class="iconfont">&#xe8c5;</i>年龄：<span>20</span></div>
+        <div class="sex info-item"><i class="iconfont">&#xe602;</i>性别：<span>男</span></div>
+        <div class="school info-item"><i class="iconfont">&#xe634;</i>在读院校：<span>广东金融学院</span></div>
+        <div class="target info-item"><i class="iconfont">&#xe723;</i>目标院校：<span>暨南大学</span></div>
+    </div>
+</div>
+<div class="info-dotted info-dotted9">
+    <div class="info">
+        <div class="top">
+            <div class="avatar left"><img src="./images/user.png" alt=""></div>
+            <div class="follow btn">关注</div>
+            <div class="private-letter btn">私信</div>
+        </div>
+        <div class="name info-item"><i class="iconfont">&#xe8c8;</i>用户名：<span>watermelon</span></div>
+        <div class="age info-item"><i class="iconfont">&#xe8c5;</i>年龄：<span>20</span></div>
+        <div class="sex info-item"><i class="iconfont">&#xe602;</i>性别：<span>男</span></div>
+        <div class="school info-item"><i class="iconfont">&#xe634;</i>在读院校：<span>广东金融学院</span></div>
+        <div class="target info-item"><i class="iconfont">&#xe723;</i>目标院校：<span>暨南大学</span></div>
+    </div>
+</div>
+<div class="info-dotted info-dotted10">
+    <div class="info">
+        <div class="top">
+            <div class="avatar left"><img src="./images/user.png" alt=""></div>
+            <div class="follow btn">关注</div>
+            <div class="private-letter btn">私信</div>
+        </div>
+        <div class="name info-item"><i class="iconfont">&#xe8c8;</i>用户名：<span>watermelon</span></div>
+        <div class="age info-item"><i class="iconfont">&#xe8c5;</i>年龄：<span>20</span></div>
+        <div class="sex info-item"><i class="iconfont">&#xe602;</i>性别：<span>男</span></div>
+        <div class="school info-item"><i class="iconfont">&#xe634;</i>在读院校：<span>广东金融学院</span></div>
+        <div class="target info-item"><i class="iconfont">&#xe723;</i>目标院校：<span>暨南大学</span></div>
+    </div>
+</div>
+
+<body>
+
+</body>
+
+</html>

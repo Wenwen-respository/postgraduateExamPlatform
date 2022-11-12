@@ -27,6 +27,11 @@
   <link rel="stylesheet" href="./css/question.css">
   <link rel="stylesheet" href="./css/myQuestion.css">
   <link rel="stylesheet" href="./css/index.css">
+  <!-- 讨论房 -->
+  <link rel="stylesheet" href="./font3/iconfont.css">
+  <link rel="stylesheet" href="./font/iconfont.css">
+  <link rel="stylesheet" href="./css/discuss-room-together.css">
+  <link rel="stylesheet" href="./css/discuss-room.css">
 
   <script src="./js/school.js"></script>
   <script src="./js/nav.js"></script>
@@ -35,6 +40,7 @@
   <script src="./js/question.js"></script>
   <script src="./js/clock.js"></script>
   <script src="./js/drag.js"></script>
+  <script src="./js/discuss-room.js"></script>
 </head>
 
 <body>
@@ -42,7 +48,200 @@
     <ul class="school-ul">
       <!-- 讨论房 -->
       <li class="school-box1 school-box" id="discuss">
-        <!-- 侧边栏 -->
+        <div class="discuss-room">
+          <div class="discuss-room-bg">
+            <!-- <img src="./images/discuss_room_bg.jpg" alt=""> -->
+          </div>
+          <!-- 云 -->
+          <div class="cloud-group1 cloud-group"></div>
+          <div class="cloud-group2 cloud-group"></div>
+          <div class="cloud-group3 cloud-group"></div>
+          <div class="cloud-group4 cloud-group"></div>
+          <!-- 楼 -->
+          <div class="floor-wraper">
+            <div class="floor"></div>
+          </div>
+          <!-- 包含搜索框的顶部 -->
+          <div class="discuss-room-top">
+            <div class="left">
+              <!-- <div class="class">分类<i class="class-arrow"></i></div> -->
+              <div class="class-hiddenBox">
+                <ul>
+                  <li>综合</li>
+                  <li>数学</li>
+                  <li>英语</li>
+                  <li>政治</li>
+                  <li>专业课</li>
+                </ul>
+              </div>
+              <div class="search">
+                <input type="text" placeholder="输入关键词查找房间" class="search-input">
+                <i class="search-button iconfont">&#xe61a;</i>
+              </div>
+            </div>
+            <div class="right">
+              <div class="new-create">新建房间</div>
+            </div>
+          </div>
+          <!-- 新建房间弹出盒子 -->
+          <div class="new-create-box">
+            <div class="tag">创建房间</div>
+            <div class="room-name">
+              <span>房间名称</span>
+              <input type="text" placeholder="输入房间名称">
+            </div>
+            <div class="room-type">
+              <span>房间分类</span>
+              <input type="text" placeholder="输入房间分类">
+              <!-- <div class="progress-bar"></div> -->
+            </div>
+            <div class="people-num">
+              <span>房间人数</span>
+              <input type="text" placeholder="输入房间人数">
+              <!-- <div class="progress-bar"></div> -->
+            </div>
+            <div class="room-select">
+              <span>房间性质选择：</span>
+              <span><label for="public">公共房间</label><input type="radio" name="room-select" id="public"></span>
+              <span><label for="private">私密房间</label><input type="radio" name="room-select" id="private"></span>
+            </div>
+            <div class="create-button">完成创建</div>
+          </div>
+          <!-- 遮罩层 -->
+          <div class="black-mask"></div>
+          <!-- 推荐房间模块包含刷新按钮 -->
+          <div class="recommend-room-area">
+            <!-- 刷新按钮 -->
+            <div class="refresh-button">换一批</div>
+            <!-- 1 -->
+            <div class="recommend-room">
+              <div class="top">
+                <div class="room-name">23年暨南大学考研冲鸭</div>
+                <div class="more"><i class="iconfont">&#xe684;</i></div>
+              </div>
+              <div class="middle">
+                <div class="left">
+                  <div class="cover-box"><img src="./images/discuss.jpg" alt=""></div>
+                </div>
+                <div class="right">
+                  <div class="lock"><i class="iconfont">&#xe7fa;</i></div>
+                  <div class="live">在线人数：<br>10/10</div>
+                </div>
+
+              </div>
+              <div class="bottom">
+                <div class="id-box left">ID:00709940</div>
+                <div class="enter-box right">进入</div>
+              </div>
+            </div>
+            <!-- 2 -->
+            <div class="recommend-room">
+              <div class="top">
+                <div class="room-name">23年暨南大学考研冲鸭</div>
+                <div class="more"><i class="iconfont">&#xe684;</i></div>
+              </div>
+              <div class="middle">
+                <div class="left">
+                  <div class="cover-box"><img src="./images/discuss.jpg" alt=""></div>
+                </div>
+                <div class="right">
+                  <div class="lock"><i class="iconfont">&#xe7fa;</i></div>
+                  <div class="live">在线人数：<br>10/10</div>
+                </div>
+
+              </div>
+              <div class="bottom">
+                <div class="id-box left">ID:00709940</div>
+                <div class="enter-box right">进入</div>
+              </div>
+            </div>
+            <!-- 3 -->
+            <div class="recommend-room">
+              <div class="top">
+                <div class="room-name">23年暨南大学考研冲鸭</div>
+                <div class="more"><i class="iconfont">&#xe684;</i></div>
+              </div>
+              <div class="middle">
+                <div class="left">
+                  <div class="cover-box"><img src="./images/discuss.jpg" alt=""></div>
+                </div>
+                <div class="right">
+                  <div class="lock"><i class="iconfont">&#xe7fa;</i></div>
+                  <div class="live">在线人数：<br>10/10</div>
+                </div>
+
+              </div>
+              <div class="bottom">
+                <div class="id-box left">ID:00709940</div>
+                <div class="enter-box right">进入</div>
+              </div>
+            </div>
+            <!-- 4 -->
+            <div class="recommend-room">
+              <div class="top">
+                <div class="room-name">23年暨南大学考研冲鸭</div>
+                <div class="more"><i class="iconfont">&#xe684;</i></div>
+              </div>
+              <div class="middle">
+                <div class="left">
+                  <div class="cover-box"><img src="./images/discuss.jpg" alt=""></div>
+                </div>
+                <div class="right">
+                  <div class="lock"><i class="iconfont">&#xe7fb;</i></div>
+                  <div class="live">在线人数：<br>10/10</div>
+                </div>
+
+              </div>
+              <div class="bottom">
+                <div class="id-box left">ID:00709940</div>
+                <div class="enter-box right">进入</div>
+              </div>
+            </div>
+            <!-- 5 -->
+            <div class="recommend-room">
+              <div class="top">
+                <div class="room-name">23年暨南大学考研冲鸭</div>
+                <div class="more"><i class="iconfont">&#xe684;</i></div>
+              </div>
+              <div class="middle">
+                <div class="left">
+                  <div class="cover-box"><img src="./images/discuss.jpg" alt=""></div>
+                </div>
+                <div class="right">
+                  <div class="lock"><i class="iconfont">&#xe7fb;</i></div>
+                  <div class="live">在线人数：<br>10/10</div>
+                </div>
+
+              </div>
+              <div class="bottom">
+                <div class="id-box left">ID:00709940</div>
+                <div class="enter-box right">进入</div>
+              </div>
+            </div>
+            <!-- 6 -->
+            <div class="recommend-room">
+              <div class="top">
+                <div class="room-name">23年暨南大学考研冲鸭</div>
+                <div class="more"><i class="iconfont">&#xe684;</i></div>
+              </div>
+              <div class="middle">
+                <div class="left">
+                  <div class="cover-box"><img src="./images/discuss.jpg" alt=""></div>
+                </div>
+                <div class="right">
+                  <div class="lock"><i class="iconfont">&#xe7fb;</i></div>
+                  <div class="live">在线人数：<br>10/10</div>
+                </div>
+
+              </div>
+              <div class="bottom">
+                <div class="id-box left">ID:00709940</div>
+                <div class="enter-box right">进入</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </li>
       <!-- 房间 -->
       <li class="school-bgc school-box">

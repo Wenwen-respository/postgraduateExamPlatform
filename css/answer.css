@@ -531,6 +531,7 @@ li {
 
 /* 写回答 */
 .edit-answer {
+    position: relative;
     display: none;
     margin-top: 5px;
     /* height: 200px; */
@@ -540,13 +541,22 @@ li {
 .edit-answer .top {
     padding: 0 50px;
     height: 50px;
+    line-height: 50px;
     border-bottom: 1px solid #ccc;
+}
+
+.edit-answer .top i {
+    font-size: 20px;
+    font-weight: 600;
+    color: #444;
+    margin-right: 20px;
+    cursor: pointer;
 }
 
 .edit-answer .edit {
     min-height: 500px;
     font-size: 20px;
-    padding: 30px 50px;
+    padding: 30px 50px 100px;
     outline: none;
 }
 
@@ -555,6 +565,31 @@ li {
     color: #ccc;
 }
 
+.edit-answer .send-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 70px;
+    width: 100px;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    background-color: #fff;
+    border: 1px solid #444;
+    color: #444;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all ease .5s;
+}
+
+.edit-answer .send-btn:hover {
+    background-color: #ccc;
+}
+
+.edit-answer .send-btn:active {
+    transform: scale(0.95);
+}
 
 /* 搜索出来的问题的样式 */
 .question {

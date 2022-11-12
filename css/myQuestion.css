@@ -257,7 +257,7 @@
     position: relative;
 }
 
-.bottom .left {
+.ask .bottom .left {
     position: absolute;
     top: 121px;
     left: 10px;
@@ -268,13 +268,13 @@
     box-shadow: 0 0 10px 2px rgb(0 0 0 / 6%);
 }
 
-.bottom .right {
+.ask .bottom .right {
     position: absolute;
     bottom: 45px;
     right: 80px;
 }
 
-.right button {
+.ask .bottom .right button {
     border: 0;
     width: 100px;
     height: 35px;
@@ -284,13 +284,13 @@
     cursor: pointer;
 }
 
-.bottom .left span {
+.ask .bottom .left span {
     cursor: pointer;
     display: inline-block;
     margin: 10px 0 8px 10px;
 }
 
-.bottom .left span .iconfont {
+.ask .bottom .left span .iconfont {
     color: #999999;
     font-size: 30px;
 }

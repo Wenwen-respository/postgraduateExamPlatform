@@ -116,9 +116,7 @@
     height: 10px;
 }
 .undo::-webkit-scrollbar-thumb,
-.note::-webkit-scrollbar-thumb,
-.delete-history::-webkit-scrollbar-thumb,
-.often::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+.note::-webkit-scrollbar-thumb{/*滚动条里面小方块*/
     border-radius: 36px;
     -webkit-box-shadow: inset 0 0 5px rgba(203, 197, 197, 0.2);
     background: #ecefee;
@@ -130,6 +128,12 @@
     -webkit-box-shadow: inset 0 0 5px rgba(47, 46, 46, 0.2);
     border-radius: 36px;
     background: #ffffff;
+}
+.delete-history::-webkit-scrollbar-thumb,
+.often::-webkit-scrollbar-thumb {
+    border-radius: 36px;
+    -webkit-box-shadow: inset 0 0 5px rgba(203, 197, 197, 0.2);
+    background: #ffe3c8;
 }
 .undo ul{
     margin-left: -11px;
@@ -266,7 +270,7 @@
     /* margin-bottom: 20px; */
 }
 .undo ul .finish .do-circle{
-    background-color: blue;
+    background-color: #9b562b;
 }
 .undo ul .finish .do-content{
     text-decoration: line-through;
@@ -317,20 +321,6 @@
     border-radius: 10px;
     background-color: rgb(215, 238, 230);
 }
-/* body::-webkit-scrollbar-track{
-    width: 10px;    
-    height: 1px;
-}
-body::-webkit-scrollbar-thumb{
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 5px rgba(203, 197, 197, 0.2);
-    background: #ecefee;
-}
-body::-webkit-scrollbar-track{
-    -webkit-box-shadow: inset 0 0 5px rgba(47, 46, 46, 0.2);
-    border-radius: 10px;
-    background: #ffffff;
-} */
 .add-icon-three{
     float: right;
     margin-top: -30px;

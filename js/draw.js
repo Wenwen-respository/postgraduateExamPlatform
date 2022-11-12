@@ -1,12 +1,33 @@
 window.addEventListener('load',function(){
     const canvas = document.getElementById('canvas');
+    // canvas.getContext('2d') 获得渲染上下文和它的绘画功能
 const ctx = canvas.getContext('2d');
 let startPos = { x: undefined, y: undefined };
 let isPainting = false;
 let isErasering = false;
-let brushColor = '#F50C0C';
+let brushColor = '#000';
 let action = 'draw';
-
+// var s;
+// var flag=false;
+let toogle = document.querySelector('#toogle');
+let sideMenu = document.querySelector('#side-menu');
+// 侧边栏
+toogle.addEventListener('click', function() {
+    flag=true;
+  isCollapsible = Array.from(sideMenu.classList).includes('collapsible');
+  if (isCollapsible) {
+    // s=parseInt(window.getComputedStyle(document.querySelector('#side-menu'),null).width);
+    sideMenu.classList.remove('collapsible');
+    // console.log(s);
+    // initCanvas(s);
+  } else {
+    // 字符串里面拿整数
+    // s=parseInt(window.getComputedStyle(document.querySelector('#side-menu'),null).width);
+    sideMenu.classList.add('collapsible');
+    // console.log(s);
+    // initCanvas(s);
+  }
+})
 function initCanvas() {
   canvas.width = document.documentElement.offsetWidth;
   canvas.height = document.documentElement.offsetHeight;
@@ -14,6 +35,8 @@ function initCanvas() {
 }
 // 初始化canvas
 initCanvas();
+
+
 
 // canvas操作 - 画线
 function drawLine({ startX, startY, endX, endY, color = brushColor }) {
@@ -33,6 +56,7 @@ function drawLine({ startX, startY, endX, endY, color = brushColor }) {
   //结束绘制
   ctx.closePath();
 }
+
 // 监听canvas鼠标事件
 // 1. mousedwn 确定起始坐标，准备绘制
 canvas.addEventListener('mousedown', function (event) {
@@ -68,8 +92,10 @@ canvas.addEventListener('mouseup', function () {
   enableDownload(canvas);
 });
 
+// 下载图片 将图片先转成base64 然后进行下载
 function enableDownload(canvas) {
   const a = document.getElementById('download');
+//   利用canvas将图片转换为base64编码
   a.href = canvas.toDataURL();
 }
 
@@ -110,12 +136,16 @@ function toggleColorPanel() {
 }
 document.getElementById('color').addEventListener('click', toggleColorPanel);
 
-// 选取颜色
-document.getElementById('color-panel').addEventListener('click', function (event) {
-  if (event.target.nodeName.toLowerCase() === 'li') {
-    toggleColorPanel();
-    brushColor = event.target.dataset.color;
-    document.getElementById('color').style.setProperty('--selected-color', event.target.dataset.color);
-  }
-});
+
+// 选择画笔颜色
+let color_li=document.querySelectorAll('.color-panel li');
+let select_color=document.querySelector('.color');
+for(let i=0;i<color_li.length;i++){
+    color_li[i].index=i;
+    color_li[i].addEventListener('click',function(){
+        // alert("dd");
+        select_color.style.backgroundColor= window.getComputedStyle(color_li[i],null).backgroundColor;
+        brushColor = select_color.style.backgroundColor;
+    })
+}
 })

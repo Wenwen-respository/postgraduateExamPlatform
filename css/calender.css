@@ -12,19 +12,16 @@
     opacity: 0;
     transition: all .3s;
 }
-.do::-webkit-scrollbar,
-.often::-webkit-scrollbar {
+.do::-webkit-scrollbar{
     width: 10px;   
     height: 10px;
 }
-.do::-webkit-scrollbar-thumb,
-.often::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+.do::-webkit-scrollbar-thumb{/*滚动条里面小方块*/
     border-radius: 36px;
     -webkit-box-shadow: inset 0 0 5px rgba(203, 197, 197, 0.2);
     background: #ecefee;
 }
-.do::-webkit-scrollbar-track,
-.often::-webkit-scrollbar-track{/*滚动条里面轨道*/
+.do::-webkit-scrollbar-track{/*滚动条里面轨道*/
     -webkit-box-shadow: inset 0 0 5px rgba(47, 46, 46, 0.2);
     border-radius: 36px;
     background: #ffffff;
@@ -98,33 +95,6 @@
     font-size: 25px;
     margin-top: 1px;
 }
-.often ul li{
-    padding: 10px;
-    margin: 8px 0;
-    line-height: 1.6;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 3px;
-    background-color: #fffbf0;
-}
-.often{
-    min-height: 100px;
-    max-height: 300px;
-    overflow: auto;
-    border-radius: 5px;
-    background-color: #e0c6ad;
-    position: absolute;
-    z-index: 1111111111111;
-    top: 8%;
-    right: -80%;
-    display: none;
-}
-.often p{
-    font-weight: 700;
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
 .calender-box {
     line-height: 40px;
     font-size: 16px;
@@ -141,6 +111,8 @@
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 3px 3px 10px rgb(68, 68, 68);
+    background-image: url(../images/calender-bgc.png);
+    background-size: cover;
   }
   .top {
     font-size: 0;
@@ -161,7 +133,7 @@
 .top #month {
     width: 50%;
     display: inline-block;
-    font-size: 16px;
+    font-size: 20px;
 }
 #day{
     height: 610px;
@@ -175,7 +147,18 @@
     font-size: 20px;
     cursor: pointer;
     text-align: center;
+    position: relative;
 }
 #day .evrday:hover{
     background-color: #f5e5ac;
+}
+.c-circle{
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #252522;
+    display: inline-block;
+    position: absolute;
+    bottom: 15%;
+    left: 45%;
 }

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>原生JS实现拖拽缩放元素</title>
+ 
+    <style>
+ 
+        #box {
+            width: 200px;
+            height: 150px;
+            background: #CCC;
+            position: relative;
+        }
+        #block{
+            width: 11px;
+            height: 11px;
+            background-color: #000;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            cursor: nw-resize;
+        }
+    </style>
+ 
+</head>
+ 
+<body>
+    <div id="box">
+        <div id="block"></div>
+    </div>
+ 
+    <script>
+        
+        window.onload = function () {
+ 
+            var block = document.getElementById('block');
+            var box = document.getElementById('box');
+ 
+            block.onmousedown = function (ev) {
+ 
+                var myEvent = ev || event;
+ 
+                var distanceX = myEvent.clientX - block.offsetLeft;
+                var distanceY = myEvent.clientY - block.offsetTop;
+ 
+                document.onmousemove = function (ev) {
+                    var myEvent = ev || event;
+                    box.style.width = myEvent.clientX - distanceX + block.offsetWidth + 'px';
+                    box.style.height = myEvent.clientY - distanceY + block.offsetHeight + 'px';
+                };
+ 
+                document.onmouseup = function () {
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                };
+            };
+        };
+    </script>
+</body>
+ 
+</html>

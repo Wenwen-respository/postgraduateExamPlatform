@@ -31,14 +31,14 @@ window.addEventListener('load', function () {
     setTimeout(clock, 500);  // 递归
   }
 
-  // 点击时钟回到首页
-  let desk_clock = this.document.querySelector('.clock');
-  // console.log(desk_clock);
-  desk_clock.addEventListener('click', function () {
-    setTimeout(function () {
-      window.open('./index.html');
-    }, 500)
-  })
+  // // 点击时钟回到首页
+  // let desk_clock = this.document.querySelector('.clock');
+  // // console.log(desk_clock);
+  // desk_clock.addEventListener('click', function () {
+  //   setTimeout(function () {
+  //     window.open('./index.html');
+  //   }, 500)
+  // })
 });
 
 

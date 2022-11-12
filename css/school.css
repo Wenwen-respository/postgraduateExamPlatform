@@ -1,26 +1,25 @@
 body {
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 html {
-    position: relative;
+    /* position: relative; */
 }
 
 .school {
     position: relative;
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .school-ul {
-    width: 100vw;
-    height: 100%;
+    /* width: 100vw; */
+    /* height: 100%; */
     transition: all ease 1s;
 }
-
-.school-ul li {
-    overflow: hidden;
+.school-ul  li{
+    /* overflow: hidden; */
 }
 
 .school-button {
@@ -70,16 +69,31 @@ html {
     position: absolute;
     top: 200vh;
     cursor: pointer;
+    background-color: rgb(255, 255, 255,.8);
     background-size: cover;
+    /* background-color: #fff; */
     /* transition: all .6s; */
+}
+.sca{
+    animation: aa .8s;
+}
+@keyframes aa {
+    0%{
+        background-color: rgb(255, 255, 255,.4);
+    }
+    50%{
+        /* background-color: rgb(255, 255, 255,.4); */
+    }
+    100%{
+        background-color: rgb(255, 255, 255,.8);
+    }
 }
 
 .bgc {
     animation: bgi 2s;
     animation-fill-mode: forwards;
-    background-size: 5%;
+    background-size: cover;
 }
-
 @keyframes bgi {
     0% {
         background-image: url(../images/close-door.png);
@@ -92,27 +106,36 @@ html {
 }
 
 .open-door-pro {
-    width: 100%;
-    height: 500px;
+    width: 1100px;
+    height: 100%;
     background-image: url(../images/close-door.png);
-    background-size: contain;
-    background-position: 50% 50%;
+    background-size: cover;
+    background-position: 0 -30%;
+    margin-left: 12%;
     background-repeat: no-repeat;
-    margin-top: 300px;
     opacity: 0;
-    transition: all .3s;
-    /* animation: dd .3s; */
+    transition: all .8s;
 }
-
-/* @keyframes dd {
-    0%{
-       transform: scale(0);
-    }
-    100%{
-        transform: scale(10);
-    }
-    
-} */
+.open-circle{
+    /* background-color: aqua; */
+    width: 300px;
+    height: 500px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
+    margin-top: 220px;
+    position: absolute;
+}
+.delete-d{
+    top: 3%;
+    left: 95%;
+    position: absolute;
+}
+.delete-d i{
+    font-size: 50px;
+}
 .school-box2 {
     width: 100vw;
     height: 100%;
@@ -131,7 +154,7 @@ html {
 .school-box3 {
     position: absolute;
     top: 100vh;
-    background-color: pink;
+    /* background-color: pink; */
 }
 
 /* 上面点点 */

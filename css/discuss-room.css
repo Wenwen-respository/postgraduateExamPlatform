@@ -9,7 +9,7 @@
 .discuss-room-bg {
     width: 100%;
     height: 100vh;
-    background-color: #b3cdde;
+    background-color: #74bedf;
 }
 
 .discuss-room-bg img {
@@ -97,7 +97,7 @@
     width: 700px;
     height: 70px;
     border-radius: 70px;
-    background-color: #b3dbf0;
+    background-color: #9ad5f0;
     opacity: 0.6;
 }
 
@@ -123,7 +123,7 @@
     line-height: 70px;
     font-size: 35px;
     font-weight: 600;
-    color: #e3be85;
+    color: #444;
     opacity: 0.8;
     cursor: pointer;
 }
@@ -424,9 +424,9 @@
     justify-content: space-between;
     position: absolute;
     top: 220px;
-    right: 150px;
+    right: 175px;
     /* transform: translateX(-50%); */
-    width: 900px;
+    width: 950px;
     height: 500px;
     /* background-color: pink; */
 }
@@ -434,11 +434,12 @@
 .recommend-room-area .refresh-button {
     position: absolute;
     top: 0px;
-    right: -120px;
-    width: 100px;
+    right: -80px;
+    padding-top: 12px;
+    width: 50px;
     text-align: center;
-    height: 50px;
-    line-height: 50px;
+    height: 70px;
+    line-height: 20px;
     border-radius: 50px;
     font-size: 16px;
     font-weight: 600;
@@ -456,9 +457,9 @@
     float: left;
     width: 290px;
     height: 215px;
-    padding: 20px 20px 10px;
+    padding: 30px 20px 15px;
     border-radius: 35px;
-    background-color: #f8e4cb;
+    background-color: #9ad5f0;
     box-shadow: 3px 16px 2px 1px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
 }
@@ -470,10 +471,13 @@
 
 .recommend-room .top .room-name {
     float: left;
-    max-width: 240px;
+    max-width: 220px;
     font-size: 20px;
-    font-weight: 600;
-    color: #e1bb82;
+    font-weight: 700;
+    color: #000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .recommend-room .top .more {
@@ -484,17 +488,32 @@
 .recommend-room .top .more i {
     font-size: 20px;
     font-weight: 600;
-    color: #e1bb82;
+    color: #000;
     cursor: pointer;
 }
 
 .recommend-room .middle {
-    height: 115px;
+    height: 80px;
     /* background-color: aqua; */
     /* margin-bottom: 10px; */
 }
 
-.recommend-room .middle .left .cover-box {
+.recommend-room .middle .people-num {
+    font-size: 18px;
+    font-weight: 600;
+    color: #444;
+    margin-top: 20px;
+}
+
+.recommend-room .middle .keyword {
+    font-size: 18px;
+    font-weight: 600;
+    color: #444;
+    margin-top: 20px;
+
+}
+
+/* .recommend-room .middle .left .cover-box {
     float: left;
     width: 170px;
     height: 115px;
@@ -510,7 +529,6 @@
 
 .recommend-room .middle .right {
     width: 80px;
-    /* background-color: #e7c69e; */
 }
 
 .recommend-room .middle .right .lock {
@@ -530,7 +548,7 @@
     font-size: 12px;
     font-weight: 600;
     color: #e1bb82;
-}
+} */
 
 .recommend-room .bottom {
     height: 40px;
@@ -538,22 +556,22 @@
 }
 
 .recommend-room .bottom .id-box {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
-    color: #e1bb82;
-    margin-left: 20px;
+    color: #666;
+    margin-left: 5px;
 }
 
 .recommend-room .bottom .enter-box {
-    width: 80px;
+    padding: 0 15px;
     text-align: center;
     height: 40px;
     line-height: 40px;
     font-size: 20px;
     font-weight: 700;
-    color: #c2761c;
+    color: #000;
     border-radius: 10px;
-    background-color: #e7c69e;
+    background-color: #75c1f0;
     cursor: pointer;
 }
 
@@ -659,10 +677,10 @@
 /* 楼 */
 .floor-wraper {
     position: absolute;
-    top: 0px;
+    bottom: 0px;
     left: 30px;
-    width: 415px;
-    height: 100vh;
+    width: 300px;
+    height: 690px;
     overflow-y: auto;
 }
 
@@ -679,8 +697,8 @@
 }
 
 .floor {
-    width: 415px;
-    height: 920px;
+    width: 300px;
+    height: 690px;
     background-image: url(../images/floor.png);
     background-size: cover;
     background-repeat: no-repeat;

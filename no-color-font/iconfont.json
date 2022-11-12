@@ -6,6 +6,27 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "418321",
+      "name": "不通过的叉叉",
+      "font_class": "butongguodechacha",
+      "unicode": "e640",
+      "unicode_decimal": 58944
+    },
+    {
+      "icon_id": "800438",
+      "name": "交叉_cross79",
+      "font_class": "jiaochacross79",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "2488143",
+      "name": "叉",
+      "font_class": "cha",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
       "icon_id": "1311630",
       "name": "讨论",
       "font_class": "taolun",

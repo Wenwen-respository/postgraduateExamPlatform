@@ -435,35 +435,59 @@ position: absolute;
 .real-sec i{
   font-size: 20px;
 }
+.try p{
+  font-size: 30px;
+  padding: 20px;
+  width: 200px;
+  border: 1px solid #333;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #d5d7da;
+  box-shadow: 3px 3px 10px rgb(137, 135, 135);
+  margin-top: 120px;
+  /* position: absolute; */
+  /* left: 0; */
+  /* right: 0; */
+  /* margin: auto; */
+  /* margin-left: 36%; */
+}
 /* 试题 */
 .try-banner{
   height: 100vh;
+  /* width: 1200px; */
+  margin: auto;
   overflow: auto;
+  /* border-radius: 10px; */
   /* overflow: auto; */
   /* background-color: #d0dce9; */
 }
-.try-ban ul li{
-  width: 800px;
-  height: 150px;
-  background-color: #9aa9fd;
+.try ul li{
+  /* width: 100px; */
+  height: 30px;
+  line-height: 30px;
+  font-weight: 500;
+  font-size: 20px;
   /* margin: 10px; */
   flex-grow: 1;
 }
-.try-ban ul li:hover{
-  background-color: #fff;
+.try-content ul li{
+  margin: 30px;
+  width: 100%;
+  /* background-color: #fff; */
 }
-.try-ban ul{
-  width: 1000px;
+.try ul{
+  background-color: #9aa9fd;
+  /* width: 1000px; */
   flex-wrap: wrap;
   display: flex;
-  margin-top: 150px;
+  margin-top: 50px;
 }
 .try-ban ul li{
   padding: 20px;
 }
 .try-topic{
   font-weight: 700;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 .note-add-content .add-top{

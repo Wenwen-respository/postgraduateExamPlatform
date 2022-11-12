@@ -9,26 +9,45 @@ window.addEventListener('load', function () {
         school_bgc = document.querySelector('.school-bgc'),
         school_box1=document.querySelector('.school-box1'),
         school_box3=document.querySelector('.school-box3'),
-        open_door_back=document.querySelector('.open-door-pro');
+        open_door_back=document.querySelector('.open-door-pro'),
+        open_cicle=document.querySelector('.open-circle'),
+        delet_d=document.querySelector('.delete-d');
 
     //房间出现 
-    school_left_buttons.addEventListener('click', function () {
+    school_left_buttons.addEventListener('click', function (e) {
+        e.preventDefault()
         // console.log("ee");
-        school_left_buttons.style.transform = "scale(10)";
-        school_left_buttons.style.transition = "all .6s";
-        school_left_buttons.style.top = "500px";
-        school_left_buttons.style.left = "700px";
+        school_bgc.classList.add('sca');
         school_box1.style.top="200vh";
-            setTimeout(function () {
-                school_left_buttons.style.opacity = "0";
-                school_bgc.style.top = "0";
-                // school_bgc.style.opacity = "1";
-                school_bgc.style.zIndex=1111;
-                open_door_back.style.opacity="1";
-                // school_bgc.style.pointerEvents="auto";
-            }, 200)
+        school_left_buttons.style.opacity = "0";
+        school_bgc.style.top = "0";
+        school_bgc.style.zIndex=1111;
+        open_door_back.style.opacity="1";
+        open_door_back.style.transition="all 2s";
     })
 
+    open_cicle.addEventListener('click',function(){
+        // console.log("ss");
+        open_door_back.classList.add('bgc');
+        let clock=document.querySelector('.clock');
+        setTimeout(function(){
+        school_bgc.style.backgroundImage="url(./images/desk.jpg)";
+        school_bgc.style.transition="all .9s";
+        open_door_back.classList.remove('bgc');
+        open_door_back.style.display="none";
+        clock.style.display="block";
+        },2200)
+    })
+    delet_d.addEventListener('click',function(){
+        school_bgc.classList.remove('sca');
+        school_bgc.style.backgroundColor="transparent";
+        school_left_buttons.style.opacity = "1";
+        school_box1.style.top="0";
+        school_bgc.style.top = "200vh";
+        open_door_back.style.opacity="0";
+        open_door_back.style.transition="all .3s";
+    })
+    
     school_discuss_button.addEventListener('click', function () {
         school_ul.style.transform = "translateY(100vh)";
         school_ul.style.transition = "all .6s";
@@ -41,19 +60,9 @@ window.addEventListener('load', function () {
         school_box3.style.transition = "all .6s";
 
     })
-    school_bgc.addEventListener('click',function(){
-        // console.log("ss");
-        open_door_back.classList.add('bgc');
-        let clock=document.querySelector('.clock');
-        setTimeout(function(){
-        school_bgc.style.backgroundImage="url(./images/desk.jpg)";
-        school_bgc.style.transition="all .9s";
-        open_door_back.classList.remove('bgc');
-        open_door_back.style.display="none";
-        clock.style.display="block";
-        },2200)
-    })
+  
 
+    // const radio_wraper = document.querySelector('.radio-wraper');
     const shelf_banner = document.querySelector('.shelf-banner');
     // 书架圈圈出现消失以及点击
     shelf_banner.addEventListener('mouseover', function () {
@@ -63,6 +72,7 @@ window.addEventListener('load', function () {
         shelf_banner.style.opacity=0;
     })
     shelf_banner.addEventListener('click', function () {
+        // window.location.href="../shelf.html";
         window.location.href="../shelf.html";
     })
          

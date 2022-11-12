@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3695859 */
-  src: url('iconfont.woff2?t=1668198986575') format('woff2'),
-       url('iconfont.woff?t=1668198986575') format('woff'),
-       url('iconfont.ttf?t=1668198986575') format('truetype');
+  src: url('iconfont.woff2?t=1668246419378') format('woff2'),
+       url('iconfont.woff?t=1668246419378') format('woff'),
+       url('iconfont.ttf?t=1668246419378') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,18 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-butongguodechacha:before {
+  content: "\e640";
+}
+
+.icon-jiaochacross79:before {
+  content: "\e622";
+}
+
+.icon-cha:before {
+  content: "\e624";
 }
 
 .icon-taolun:before {

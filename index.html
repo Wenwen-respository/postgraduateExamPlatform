@@ -7,9 +7,9 @@
     <title>考研</title>
     <!-- 收音机icon -->
     <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css"/>
-    <link rel="stylesheet" href="./font1/iconfont.css" />
-     <!-- 彩色icon -->
-     <link rel="stylesheet" href="./font2/iconfont.css">
+
+    <link rel="stylesheet" href="./no-color-font/iconfont.css">
+    <link rel="stylesheet" href="./color-font/iconfont.css">
     <!--重置  -->
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/reset.css" />
@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="./css/myQuestion.css">
 
     <script src="./js/school.js"></script>
+    <script src="./js/iframe.js"></script>
     <script src="./js/nav.js"></script>
     <script src="./js/player.js"></script>
     <script src="./js/calender.js"></script>
@@ -38,7 +39,6 @@
       <ul class="school-ul">
         <!-- 讨论房 -->
         <li class="school-box1 school-box" id="discuss">
-          <!-- 侧边栏 -->
         </li>
         <!-- 房间 -->
         <li class="school-bgc school-box">
@@ -55,7 +55,7 @@
             </div>
                 </div>
                 <!-- 收音机 -->
-                <div class="radio-wraper">
+                <div class="radio-wraper room-content">
                   <!-- 收音机容器 -->
                   <div class="radio-container">
                     <!-- 收音机播放器 -->
@@ -128,6 +128,7 @@
                       </ul>
                     </div>
                     <div id="day"></div>
+                    <div class="calender-scale"></div>
                   </div>
                   <div class="do">
                       <div class="do-top">
@@ -149,7 +150,7 @@
                   </div>
                 </div>
                 <!-- 便签 -->
-                <div class="note-content room-content " id="note-content">
+                <div class="note-content room-content" id="note-content">
                     <div class="note-top">
                         <p>计划清单</p> 
                         <p class="do-time"></p> 
@@ -204,6 +205,14 @@
                       <i class="iconfont preview-icon">&#xe660;</i>
                   </li>
                   <li>
+                    <i class='iconfont'>&#xe6a1;</i>
+                    <span class='note-title'>hugijm,lsxjiogklcx</span>
+                    <br/>
+                    <span class='note-size'>jgoif</span>
+                    <i class="iconfont delete-icon">&#xe606;</i>
+                    <i class="iconfont preview-icon">&#xe660;</i>
+                </li>
+                  <li>
                       <i class='iconfont'>&#xe6a1;</i>
                       <span class='note-title'>hugijm,lsxjiogklcx</span>
                       <br/>
@@ -216,52 +225,15 @@
               <div class="delete-history">
                   <ul>
                   <p>最近删除：</p>
-                  <!-- <li>
-                      <i class='iconfont'>&#xe6a1;</i>
-                      <span class='note-title'>hugijm,lsxjiogklcx</span>
-                      <br/>
-                      <span class='note-size'>jgoif</span>
-                      <i class="iconfont preview-icon">&#xe660;</i>
-                  </li>
-                  <li>
-                      <i class='iconfont'>&#xe6a1;</i>
-                      <span class='note-title'>hugijm,lsxjiogklcx</span>
-                      <br/>
-                      <span class='note-size'>jgoif</span>
-                      <i class="iconfont preview-icon">&#xe660;</i>
-                  </li>
-                  <li>
-                      <i class='iconfont'>&#xe6a1;</i>
-                      <span class='note-title'>hugijm,lsxjiogklcx</span>
-                      <br/>
-                      <span class='note-size'>jgoif</span>
-                      <i class="iconfont preview-icon">&#xe660;</i>
-                  </li>
-                  <li>
-                      <i class='iconfont'>&#xe6a1;</i>
-                      <span class='note-title'>hugijm,lsxjiogklcx</span>
-                      <br/>
-                      <span class='note-size'>jgoif</span>
-                      <i class="iconfont preview-icon">&#xe660;</i>
-                  </li>
-                  <li>
-                      <i class='iconfont'>&#xe6a1;</i>
-                      <span class='note-title'>hugijm,lsxjiogklcx</span>
-                      <br/>
-                      <span class='note-size'>jgoif</span>
-                      <i class="iconfont preview-icon">&#xe660;</i>
-                  </li> -->
                   </ul>
               </div>
                 </div>
-          <!-- <div style="width: 900px; overflow: hidden;height: 700px;" class="iframe-banner">
-              <iframe src="./【微信公众号：启鑫云课堂】2022年考研数学（一）真题.pdf"  width='890' height='700' frameborder="0" id="ifm" scrolling="no"  style="overflow: hidden;" ></iframe>
+              <iframe src="./【微信公众号：启鑫云课堂】2022年考研数学（一）真题.pdf"  width='1000' height='720' frameborder="0" id="ifm" scrolling="no"></iframe>
               </iframe>
-            </div> -->
                 </div>
                 <!-- 书架 -->
                 <!-- 分别对应的按钮 -->
-                <div class="radio circle" id="radio-circle">
+                <div class="radio circle share-circle" id="radio-circle">
                   <div class="mouse-inner-circle"></div>
                 </div>
                 <div class="calender-banner circle share-circle">
@@ -540,30 +512,37 @@
         </li>
       </ul>
     </div>
+          <!-- 侧边栏 -->
     <div class="slide-nav">
       <ul>
         <li>
+          <a href="./index.html">
+            <i class="iconfont">&#xe670;</i>
+            <p>首页</p>
+          </a>
+        </li>
+        <li>
           <a href="#discuss">
-            <i class="iconfont">&#xe709;</i>
-            <p>讨论房</p>
+            <i class="iconfont">&#xe60c;</i>
+            <p>讨论自习</p>
           </a>
         </li>
         <li>
           <a href="#question">
             <i class="iconfont">&#xe80c;</i>
-            <p>问题大解</p>
+            <p>问题广场</p>
           </a>
         </li>
-        <li>
+        <li class="dd">
           <a href="#room">
             <i class="iconfont">&#xe66d;</i>
-            <p>my房间</p>
+            <p>个人房间</p>
           </a>
         </li>
         <li>
-          <a href="./index.html">
-            <i class="iconfont">&#xe670;</i>
-            <p>首页</p>
+          <a href="./first.html" target="_blank">
+            <i class="iconfont">&#xe63a;</i>
+            <p>新手指引</p>
           </a>
         </li>
       </ul>

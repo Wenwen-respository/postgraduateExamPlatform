@@ -23,7 +23,7 @@ a{
 .slide-nav{
     position: absolute;
     right: 0;
-    top: 30%;
+    top: 20%;
     z-index: 11111;
     transform: translateX(70px);
 }
@@ -32,10 +32,11 @@ a{
     height: 80px;
     top: 0;
     position: absolute;
-    background-color: rgb(197, 254, 254);
     border-radius: 10px;
     opacity: 0;
     pointer-events: none;
     transition: all .5s;
+    background-color: rgba(212, 247, 252);
+    color: #333;
 
 }

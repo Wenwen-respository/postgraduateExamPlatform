@@ -8,47 +8,59 @@
   <title>书架</title>
   <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./font1/iconfont.css">
+  <link rel="stylesheet" href="./color-font/iconfont.css">
+  <link rel="stylesheet" href="./no-color-font/iconfont.css">
   <link rel="stylesheet" href="./css/shelf.css">
+  <link rel="stylesheet" href="./css/draw.css">
   <script src="./js/shelf.js"></script>
+  <script src="./js/draw.js"></script>
 </head>
 
 <body>
   <div class="shelf-wrapper">
+    <!-- 侧边栏 -->
   <div id="side-menu" class="side-menu">
     <ul>
+      <!-- 回到首页 -->
       <li class="menu-item back-first">
         <i class="iconfont">&#xe66d;</i>
-        <span class="menu-text">回到房间</span>
-        <div class="popover">回到房间</div>
+        <span class="menu-text">回到首页</span>
+        <div class="popover">回到首页</div>
       </li>
-      <li class="menu-item shelf-item">
+        <!--  真题-->
+      <li class="menu-item shelf-item slide-active">
         <i class="iconfont">&#xe6a6;</i>
         <span class="menu-text">真题</span>
         <div class="popover">真题</div>
       </li>
+    <!-- 试题 -->
       <li class="menu-item shelf-item">
         <i class="iconfont">&#xe712;</i>
         <span class="menu-text">试题、大纲</span>
         <div class="popover">试题、大纲</div>
       </li>
+    <!-- 笔记 -->
       <li class="menu-item shelf-item">
         <i class="iconfont">&#xe69b;</i>
         <span class="menu-text">笔记</span>
         <div class="popover">笔记</div>
       </li>
+    <!-- 随心画 -->
       <li class="menu-item shelf-item">
         <i class="iconfont">&#xe6a4;</i>
         <span class="menu-text">随心画</span>
         <div class="popover">随心画</div>
       </li>
     </ul>
+    <!-- 箭头 -->
     <div id="toogle" class="menu-item toogle">
       <i class="iconfont">&#xeb15;</i>
     </div>
   </div>
   <div class="shelf-banner">
-    <div class="real-banner shelf-content">
+  <!--  真题-->
+    <div class="real-banner shelf-content shelf-active">
+      <!-- 搜索 -->
       <div class="real-search">
         <div class="input-banner">
         <input type="text" placeholder="输入你想要搜索的内容" class="shelf-input">
@@ -69,81 +81,289 @@
           </ul>
         </div>
       </div>
-    </div>
-    <div class="try-banner shelf-content">
-      <div class="real-search">
-        <div class="input-banner">
-        <input type="text" placeholder="输入你想要搜索的内容" class="shelf-input">
-        <i class="iconfont">&#xe63c;</i>
-      </div>
-        <div class="real-tips">
-          <ul>
-            <li><a href="javascript:;">护肤第九课机动车年检的好成绩</a></li>
-            <li><a href="javascript:;">护肤第九课机动车年肤第九课机动车年肤第九课机动车年肤第九课机动车年肤第九课机动车年检的好成绩</a></li>
-            <li><a href="javascript:;">护肤第九课机动车年检的好成绩</a></li>
-          </ul>
-        </div>
-        <div class="real-history">
-          <ul>
-           <li><a href="javascript:;">bbbb</a></li>
-           <li><a href="javascript:;">bbbb</a></li>
-           <li><a href="javascript:;">bbbb</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="shelf-note shelf-content">
-      <div class="shelf-note-ban">
-        <div class="shelf-note-add shelf-fir">
-          <ul>
-            <li>恐惧和有共同奋斗</li>
-            <li>恐惧和有共同奋斗</li>
-            <li>恐惧和有共同奋斗</li>
-            <li>恐惧和有共同奋斗</li>
-            <li>恐惧和有共同奋斗</li>
-          </ul>
-          <div class="note-one">
-            <i class="iconfont">&#xe809;</i>
-            <span>添加文件夹</span>
-          </div>
-        </div>
-        <div class="shelf-note-add shelf-sec">
-          <ul>
-            <li>恐惧和有共同奋斗</li>
-            <li>恐惧和有共同奋斗</li>
-            <li>恐惧和有共同奋斗</li>
-            <li>恐惧和有共同奋斗</li>
-            <li>恐惧和有共同奋斗</li>
-          </ul>
-          <div class="note-two">
-            <i class="iconfont">&#xe809;</i>
-            <span>添加文件</span>
-          </div>
-        </div>
-        <div class="note-add-content">
-          <div class="add-top" contenteditable="true">
-            <p>标题</p>
-          </div>
-          <div class="shelf-note-content" contenteditable="true">
-            输入笔记
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="shelf-canvas shelf-content">
-      <div class="shelf-note-add shelf-fir">
+      <!-- 下方内容 -->
+      <div class="real-content">
         <ul>
-          <li>恐惧和有共同奋斗</li>
-          <li>恐惧和有共同奋斗</li>
-          <li>恐惧和有共同奋斗</li>
-          <li>恐惧和有共同奋斗</li>
-          <li>恐惧和有共同奋斗</li>
+          <li>
+            <div class="real-lei">
+              <p><i class="iconfont top-icon">&#xe626;</i>政治</p>
+              <ul class="real-sec">
+                <li><i class="iconfont">&#xec1e;</i> 废旧的还是咖啡奶茶低价的乌克啡奶茶低价的乌克兰</li>
+                <li><i class="iconfont">&#xec1e;</i> 废旧的还是咖啡奶茶低价的乌克兰</li>
+                <li><i class="iconfont">&#xec1e;</i> 废旧的还是咖啡奶茶低价的乌克兰</li>
+                <li><i class="iconfont">&#xec1e;</i> 废旧的还是咖啡奶茶低价的乌克兰</li>
+              </ul>
+              <div class="real-bottom">
+                <a href="javascript:;">查看全部</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="real-lei">
+              <p><i class="iconfont top-icon">&#xe7d3;</i>英语一</p>
+              <ul class="real-sec">
+                <li><i class="iconfont">&#xec1e;</i> 废旧的还是咖啡奶茶低价的乌克啡奶茶低价的乌克兰</li>
+                <li><i class="iconfont">&#xec1e;</i> 废旧的还是咖啡奶茶低价的乌克兰</li>
+                <li><i class="iconfont">&#xec1e;</i> 废旧的还是咖啡奶茶低价的乌克兰</li>
+                <li><i class="iconfont">&#xec1e;</i> 废旧的还是咖啡奶茶低价的乌克兰</li>
+              </ul>
+              <div class="real-bottom">
+                <a href="javascript:;">查看全部</a>
+              </div>
+            </div>
+          </li> 
+          <li>
+            <div class="real-lei">
+              <p><i class="iconfont top-icon">&#xe7d5;</i>英语二</p>
+              <ul class="real-sec">
+                <li><i class="iconfont">&#xec1e;</i> 废旧的还是咖啡奶茶低价的乌克啡奶茶低价的乌克兰</li>
+                <li><i class="iconfont">&#xec1e;</i> 废旧的还是咖啡奶茶低价的乌克兰</li>
+                <li><i class="iconfont">&#xec1e;</i> 废旧的还是咖啡奶茶低价的乌克兰</li>
+                <li><i class="iconfont">&#xec1e;</i> 废旧的还是咖啡奶茶低价的乌克兰</li>
+              </ul>
+              <div class="real-bottom">
+                <a href="javascript:;">查看全部</a>
+              </div>
+            </div>
+          </li> 
+          <li>
+            <div class="real-lei">
+              <p>
+                <i class="iconfont top-icon">&#xe628;</i>数学一</p>
+              <ul class="real-sec">
+                <li><i class="iconfont">&#xec1e;</i> 废旧的还是咖啡奶茶低价的乌克啡奶茶低价的乌克兰</li>
+                <li><i class="iconfont">&#xec1e;</i> 废旧的还是咖啡奶茶低价的乌克兰</li>
+                <li><i class="iconfont">&#xec1e;</i> 废旧的还是咖啡奶茶低价的乌克兰</li>
+                <li><i class="iconfont">&#xec1e;</i> 废旧的还是咖啡奶茶低价的乌克兰</li>
+              </ul>
+              <div class="real-bottom">
+                <a href="javascript:;">查看全部</a>
+              </div>
+            </div>
+          </li> 
+          <li>
+            <div class="real-lei">
+              <p> <i class="iconfont top-icon">&#xe777;</i>数学二</p>
+              <ul class="real-sec">
+                <li><i class="iconfont">&#xec1e;</i> 废旧的还是咖啡奶茶低价的乌克啡奶茶低价的乌克兰</li>
+                <li><i class="iconfont">&#xec1e;</i> 废旧的还是咖啡奶茶低价的乌克兰</li>
+                <li><i class="iconfont">&#xec1e;</i> 废旧的还是咖啡奶茶低价的乌克兰</li>
+                <li><i class="iconfont">&#xec1e;</i> 废旧的还是咖啡奶茶低价的乌克兰</li>
+              </ul>
+              <div class="real-bottom">
+                <a href="javascript:;">查看全部</a>
+              </div>
+            </div>
+          </li> 
+          <li>
+            <div class="real-lei">
+              <p><i class="iconfont top-icon">&#xe6f8;</i>数学三</p>
+              <ul class="real-sec">
+                <li><i class="iconfont">&#xec1e;</i> 废旧的还是咖啡奶茶低价的乌克啡奶茶低价的乌克兰</li>
+                <li><i class="iconfont">&#xec1e;</i> 废旧的还是咖啡奶茶低价的乌克兰</li>
+                <li><i class="iconfont">&#xec1e;</i> 废旧的还是咖啡奶茶低价的乌克兰</li>
+                <li><i class="iconfont">&#xec1e;</i> 废旧的还是咖啡奶茶低价的乌克兰</li>
+              </ul>
+              <div class="real-bottom">
+                <a href="javascript:;">查看全部</a>
+              </div>
+            </div>
+          </li>
         </ul>
+      </div>
+    </div>
+    <!-- 试题 -->
+    <div class="try-banner shelf-content">
+      <!-- 搜索 -->
+      <div class="real-search">
+        <div class="input-banner">
+        <input type="text" placeholder="输入你想要搜索的内容" class="shelf-input">
+        <i class="iconfont">&#xe63c;</i>
+      </div>
+        <div class="real-tips">
+          <ul>
+            <li><a href="javascript:;">护肤第九课机动车年检的好成绩</a></li>
+            <li><a href="javascript:;">护肤第九课机动车年肤第九课机动车年肤第九课机动车年肤第九课机动车年肤第九课机动车年检的好成绩</a></li>
+            <li><a href="javascript:;">护肤第九课机动车年检的好成绩</a></li>
+          </ul>
+        </div>
+        <div class="real-history">
+          <ul>
+           <li><a href="javascript:;">bbbb</a></li>
+           <li><a href="javascript:;">bbbb</a></li>
+           <li><a href="javascript:;">bbbb</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- 内容 -->
+      <div class="try-ban">
+        <ul>
+          <li>
+            <p class="try-topic">2021年北京师范大学应用统计硕士考试大纲.txt</p>
+            <p>大学：北京师范大学</p>
+            <p>预览</p>
+          </li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+    <!-- 笔记 -->
+    <div class="shelf-note shelf-content">
+      <!-- 内容 -->
+      <div class="shelf-note-ban">
+        <!-- 二级导航 -->
+        <div class="shelf-note-add shelf-fir" id="shelf-box">
+          <ul class="note-shelf">
+            <li class="shelf-first">
+              <i class="iconfont note-icon">&#xe6c2;</i>
+             <span class="note-content">恐惧和有共同奋v有好感i送i为偶然间妇女才看见自己二斗</span>
+              <i class="down-arrow"></i>
+              <div class="shelf-sec">
+                <ul>
+                    <li>恐惧和有共同奋斗</li>
+                    <li>恐惧和有共同奋斗</li>
+                    <li>恐惧和有共同奋斗</li>
+                    <li>恐惧和有共同奋斗</li>
+                </ul>
+              </div>
+            </li>
+            <li class="shelf-first"><i class="iconfont note-icon">&#xe6c2;</i><span>恐惧和有fjikhdnkuegrfd共同奋斗</span><i class="down-arrow"></i>
+              <div class="shelf-sec">
+                <ul>
+                    <li>恐惧和有共同奋斗</li>
+                    <li>恐惧和有共同奋斗</li>
+                    <li>恐惧和有共同奋斗</li>
+                    <li>恐惧和有共同奋斗</li>
+                </ul>
+              </div>
+            </li>
+            <li class="shelf-first"><i class="iconfont note-icon">&#xe6c2;</i><span>恐惧和有共同奋斗</span><i class="down-arrow"></i>
+              <div class="shelf-sec">
+                <ul>
+                    <li>恐惧和有共同奋斗</li>
+                    <li>恐惧和有共同奋斗</li>
+                    <li>恐惧和有共同奋斗</li>
+                    <li>恐惧和有共同奋斗</li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <div class="block"></div>
+        </div>
         <div class="note-one">
+          <div class="note-one-banner">
           <i class="iconfont">&#xe809;</i>
           <span>添加文件夹</span>
         </div>
       </div>
+        <!-- 笔记内容 -->
+        <div class="note-add-content">
+          <div class="add-top">
+            <ul>
+              <li><i class="iconfont">&#xe608;</i></li>
+              <li><i class="iconfont">&#xe614;</i></li>
+              <li><i class="iconfont">&#xe615;</i></li>
+              <li><i class="iconfont">&#xeaf2;</i></li>
+              <li><i class="iconfont">&#xe704;</i></li>
+              <li class="input_icon"><i class="iconfont">&#xe630;</i><input type="file" accept="image/*" multiple="true" title=" "></li>
+              <li class="title-add">
+                <div class="select"><h1>标题一</h1></div>
+                <ul class="title-add-sec">
+                  <li><h1>标题一</h1></li>
+                  <li><h2>标题二</h2></li>
+                  <li><h3>标题三</h3></li>
+                  <li><h4>标题四</h4></li>
+                  <li><h5>标题五</h5></li>
+                  <li><h6>标题六</h6></li>
+                </ul>
+              </li>
+              <li>
+              <i class="iconfont title-i">&#xe656;</i>
+              </li>
+            </ul>
+          </div>
+          <div class="shelf-note-content" contenteditable="true">
+            输入笔记
+          </div>
+          <!-- <img src="" alt=""> -->
+        </div>
+      </div>
+      <!-- 右键导航 -->
+      <div class="menu menu-one">
+        <ul>
+          <li><i class="iconfont">&#xe658;</i>新建文件夹</li>
+        </ul>
+    </div>
+    <div class="menu-two menu">
+      <ul>
+        <li><i class="iconfont">&#xe658;</i>新建文件夹</li>
+        <li><i class="iconfont">&#xe60f;</i>新建文件</li>
+        <li><i class="iconfont">&#xe606;</i>删除文件夹</li>
+      </ul>
+    </div>
+    <div class="menu-three menu">
+      <ul>
+        <li><i class="iconfont">&#xe658;</i>删除文件</li>
+      </ul>
+    </div>
+    </div>
+    <!-- 随心画 -->
+    <div class="shelf-canvas shelf-content">
+      <!-- 画布 -->
+      <canvas id="canvas" class="draw"></canvas>
+      <!-- 颜色选择 -->
+    <div class="color-select">
+        <ul id="color-panel" class="color-panel panel">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <!-- 画画工具 -->
+    <div class="draw-tool">
+    <ul class="tools">
+      <li id="color" class="tool-item">
+        <div class="color"></div>
+      </li>
+      <li id="pencil" class="tool-item active">
+        <i class="iconfont">&#xe61f;</i>
+      </li>
+      <li id="eraser" class="tool-item">
+        <i class="iconfont">&#xe6b8;</i>
+      </li>
+      <li id="delete" class="tool-item">
+        <i class="iconfont">&#xe6c7;</i>
+      </li>
+        <li class="tool-item">
+      <a href="" id="download" download="draw" target="_blank">
+          <i class="iconfont">&#xe60a;</i>
+      </a>
+        </li>
+    </ul>
+    </div>
     </div>
   </div>
 </div>

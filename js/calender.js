@@ -47,22 +47,24 @@ window.addEventListener('load',function(){
         i < xinqi;
         i++ //循环输出天数
       ) {
-        console.log(xinqi);
+        // console.log(xinqi);
         var dayElement = document.createElement("div");
         dayElement.className = "evrday";
         // 星期为多少 就为星期前面创建多少个空盒子
         daterow.appendChild(dayElement);
-        console.log(daterow);
+        // console.log(daterow);
       }
      
       //   为每月的时间添加盒子 allday每个月份的天数
       for (var j = 1; j <= allday; j++) {
         var dayElement = document.createElement("div");
+
+        // 增加点点
         if (j < 10) {
           //给小于10的数字前面加0
-          dayElement.innerHTML = "0" + j;
+          dayElement.innerHTML = "0" + j+"<span class='c-circle'></span>";
         } else {
-          dayElement.innerHTML = j;
+          dayElement.innerHTML = j+"<span class='c-circle'></span>";
         }
 
         dayElement.className = "evrday";
@@ -87,7 +89,7 @@ window.addEventListener('load',function(){
             }
             this.style.backgroundColor = '#f5e5ac';
           console.log(document.getElementById("month").innerHTML+clickDay[z].innerHTML+"日");
-          calender_do.innerHTML="Date："+document.getElementById("month").innerHTML+clickDay[z].innerHTML+"日";
+          calender_do.innerHTML="Date："+document.getElementById("month").innerHTML+parseInt(clickDay[z].innerHTML)+" 日";
 
           // console.log(calender_do.innerHTML);
           doWhat.style.opacity="1";
@@ -151,4 +153,33 @@ window.addEventListener('load',function(){
       nex_mon.addEventListener('click',function(){
         next();
       })
+
+
+
+
+// 实现放大缩小
+function scale(contain,dot){
+  var block = document.querySelector(contain);
+  var box = document.querySelector(dot)
+
+  block.onmousedown = function (ev) {
+
+      var myEvent = ev || event;
+
+      var distanceX = myEvent.clientX - block.offsetLeft;
+      var distanceY = myEvent.clientY - block.offsetTop;
+
+      document.onmousemove = function (ev) {
+          var myEvent = ev || event;
+          box.style.width = myEvent.clientX - distanceX + block.offsetWidth + 'px';
+          box.style.height = myEvent.clientY - distanceY + block.offsetHeight + 'px';
+      };
+
+      document.onmouseup = function () {
+          document.onmousemove = null;
+          document.onmouseup = null;
+      };
+  };
+}
+    // scale('.calender-box','.calender-scale')
 })

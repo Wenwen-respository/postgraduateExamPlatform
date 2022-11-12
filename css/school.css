@@ -16,7 +16,7 @@ html{
     transition: all ease 1s;
 }
 .school-ul  li{
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .school-button {
     position: absolute;
@@ -113,7 +113,7 @@ html{
 .school-box3{
     position: absolute;
     top: 100vh;
-    background-color: pink;
+    /* background-color: pink; */
 }
 /* 上面点点 */
 .circle {

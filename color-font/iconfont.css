@@ -2,9 +2,9 @@
   font-family: "iconfont"; /* Project id 3748869 */
   /* Color fonts */
   src: 
-       url('iconfont.woff2?t=1668158134817') format('woff2'),
-       url('iconfont.woff?t=1668158134817') format('woff'),
-       url('iconfont.ttf?t=1668158134817') format('truetype');
+       url('iconfont.woff2?t=1668280357862') format('woff2'),
+       url('iconfont.woff?t=1668280357862') format('woff'),
+       url('iconfont.ttf?t=1668280357862') format('truetype');
 }
 
 .iconfont {
@@ -15,32 +15,48 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-daxue:before {
+  content: "\e653";
+}
+
+.icon-xuexiao1:before {
+  content: "\e6f6";
+}
+
+.icon-xuexiao2:before {
+  content: "\f718";
+}
+
+.icon-paiming:before {
+  content: "\faff";
+}
+
+.icon-guanjun:before {
+  content: "\e611";
+}
+
+.icon-paiming1:before {
+  content: "\e83c";
+}
+
+.icon-medal:before {
+  content: "\e610";
+}
+
+.icon-icon-test:before {
+  content: "\e636";
+}
+
+.icon-remen1:before {
+  content: "\e629";
+}
+
 .icon-shuxue1:before {
   content: "\e6f8";
 }
 
-.icon-shuxue:before {
-  content: "\e607";
-}
-
-.icon-yingyu:before {
-  content: "\e608";
-}
-
 .icon-zhuanye:before {
   content: "\e609";
-}
-
-.icon-zhengzhi:before {
-  content: "\e60a";
-}
-
-.icon-zhengzhi1:before {
-  content: "\e60f";
-}
-
-.icon-D-zhengzhifalv:before {
-  content: "\e616";
 }
 
 .icon-D-zhengzhifalv1:before {
@@ -53,14 +69,6 @@
 
 .icon-zhuanyeshuji:before {
   content: "\e777";
-}
-
-.icon-shuxue2x:before {
-  content: "\e64b";
-}
-
-.icon-yingyu2x:before {
-  content: "\e64c";
 }
 
 .icon-yingyu1:before {
@@ -99,10 +107,6 @@
   content: "\e606";
 }
 
-.icon-shanchu6:before {
-  content: "\e645";
-}
-
 .icon-tianjia1:before {
   content: "\e809";
 }
@@ -123,14 +127,6 @@
   content: "\e624";
 }
 
-.icon-yulan:before {
-  content: "\e660";
-}
-
-.icon-yulan1:before {
-  content: "\e649";
-}
-
 .icon-xlsx1:before {
   content: "\e605";
 }
@@ -149,10 +145,6 @@
 
 .icon-txtwenjian:before {
   content: "\e686";
-}
-
-.icon-docb:before {
-  content: "\e68a";
 }
 
 .icon-word:before {

@@ -1,3 +1,8 @@
+body {
+    position: relative;
+    overflow: hidden;
+}
+
 .discuss-room-inner-bg {
     width: 100%;
     height: 100vh;
@@ -14,12 +19,12 @@
     top: 0;
     width: 100%;
     height: 90px;
-    background-color: #fffbf0;
+    background-color: #fff;
     z-index: 10;
 }
 
 .return-button {
-    width: 200px;
+    width: 150px;
     /* padding: 0 20px; */
     text-align: center;
     line-height: 50px;
@@ -27,7 +32,7 @@
     font-weight: 600;
     color: #fff;
     cursor: pointer;
-    background-color: #e7c69e;
+    background-color: #74bedf;
     border-radius: 50px;
     margin-left: 50px;
     margin-top: 20px;
@@ -47,7 +52,7 @@
     font-weight: 600;
     color: #fff;
     cursor: pointer;
-    background-color: #e7c69e;
+    background-color: #74bedf;
     border-radius: 50px;
     margin-right: 50px;
     margin-top: 20px;
@@ -70,7 +75,7 @@
     transform: translateX(-50%);
     font-size: 40px;
     font-weight: 700;
-    color: #c2761c;
+    color: #74bedf;
 }
 
 .discuss-interface {
@@ -84,6 +89,7 @@
     background-color: #f6e8ce;
     transition: all 1s;
     z-index: 5;
+    cursor: pointer;
 }
 
 .discuss-interface.active {
@@ -96,7 +102,7 @@
     position: relative;
     width: 100px;
     height: 100%;
-    background-color: #fffbf0;
+    background-color: #74bedf;
 }
 
 .discuss-interface .sidebar .avatar {
@@ -109,6 +115,7 @@
     background-color: pink;
     overflow: hidden;
     cursor: pointer;
+    border: 1px solid #fff;
 }
 
 .discuss-interface .sidebar img {
@@ -123,8 +130,8 @@
     height: 40px;
     /* background-color: pink; */
     font-size: 40px;
-    font-weight: 700px;
-    color: #c7802b;
+    font-weight: 700;
+    color: #fff;
     cursor: pointer;
 }
 
@@ -168,8 +175,8 @@
     height: 40px;
     /* background-color: skyblue; */
     font-size: 40px;
-    font-weight: 700px;
-    color: #c7802b;
+    font-weight: 700;
+    color: #fff;
     cursor: pointer;
 }
 
@@ -206,7 +213,7 @@
     padding: 20px;
     width: 1000px;
     height: 600px;
-    background-color: #f6e8ce;
+    background-color: #a2ddff;
     box-sizing: border-box;
 }
 
@@ -230,7 +237,7 @@
     font-weight: 700;
     color: #fff;
     border-radius: 50px;
-    background-color: #c2761c;
+    background-color: #74bedf;
     box-sizing: border-box;
 }
 
@@ -289,7 +296,7 @@
     margin-bottom: 10px;
     font-size: 20px;
     font-weight: 600;
-    color: #99593b;
+    color: #444;
 }
 
 .discuss-interface .right-box .user-list .user-list-member .member {
@@ -298,7 +305,7 @@
     width: 250px;
     height: 50px;
     border-radius: 10px;
-    background-color: #fffbf0;
+    background-color: #ffffff;
     cursor: pointer;
 }
 
@@ -339,7 +346,7 @@
     height: 70px;
     line-height: 70px;
     text-align: center;
-    background-color: #d7c297;
+    background-color: #74bedf;
     font-size: 25px;
     font-weight: 700;
     color: #fff;
@@ -348,7 +355,7 @@
 .discuss-interface .right-box .dialogue-box .middle {
     width: 690px;
     height: 400px;
-    background-color: #fdf9ed;
+    background-color: #b6e1f3;
 }
 
 .discuss-interface .right-box .dialogue-box .middle.dialogue {
@@ -479,7 +486,7 @@
 .discuss-interface .right-box .dialogue-box .bottom {
     width: 690px;
     height: 90px;
-    background-color: #d7c297;
+    background-color: #74bedf;
 }
 
 .discuss-interface .right-box .dialogue-box .bottom .bottom-input {
@@ -502,7 +509,7 @@
     line-height: 50px;
     font-size: 20px;
     font-weight: 600;
-    color: #99593b;
+    color: #444;
     cursor: pointer;
     border: 0;
     background-color: transparent;
@@ -525,7 +532,7 @@
 .discuss-interface .right-box .dialogue-box .bottom .bottom-more i {
     font-size: 25px;
     font-weight: 700;
-    color: #99593b;
+    color: #444;
     cursor: pointer;
 }
 
@@ -560,11 +567,10 @@
 }
 
 /* 用户信息 */
-.info-dotted {
+/* .info-dotted {
     position: absolute;
     width: 80px;
     height: 80px;
-    /* background-color: pink; */
     cursor: pointer;
     z-index: 1;
 }
@@ -703,4 +709,310 @@
 .info-dotted10 {
     top: 535px;
     left: 1215px;
+} */
+
+.friend-info {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 50px;
+    margin: auto;
+    width: 600px;
+    height: 400px;
+    background-color: #ace0f8;
+    z-index: 10;
+    border-radius: 10px;
+}
+
+.friend-info .top {
+    padding: 10px;
+    background-color: #c2e9fc;
+}
+
+.friend-info .top .avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+    overflow: hidden;
+}
+
+.friend-info .top .avatar img {
+    width: 100%;
+}
+
+.friend-info .top .info {
+    margin-left: 30px;
+}
+
+.friend-info .top .info .name {
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.friend-info .top .info .other-info>span {
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.friend-info .top .right {
+    margin-top: 20px;
+    margin-right: 20px;
+    padding: 0 30px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #98cfef;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.friend-info .top .right:active {
+    transform: scale(0.95);
+}
+
+.friend-info>.left {
+    width: 60%;
+}
+
+.friend-info .left .info-item {
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.friend-info .left .info-item>i {
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+.friend-info .left .tag .tag-item {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 5px;
+    padding: 5px 10px;
+    background-color: #ede2c6;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+    cursor: pointer;
+}
+
+.friend-info>.right {
+    margin-top: 30px;
+    width: 40%;
+}
+
+.friend-info .right .self-introduction {
+    max-height: 180px;
+    border-radius: 10px;
+    background-color: #f8f4e9;
+}
+
+
+.friend-info .right .self-introduction .title {
+    padding: 10px;
+    font-weight: 600;
+    color: #333;
+}
+
+.friend-info .right .self-introduction .content {
+    padding: 10px;
+    padding-top: 0;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.friend-info .right .join-room {
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: #f8f4e9;
+}
+
+.friend-info .right .join-room .title {
+    padding: 10px;
+    font-weight: 600;
+    color: #333;
+}
+
+.friend-info .right .join-room .content {
+    padding: 10px;
+    padding-top: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.friend-info .right .join-room .content>div {
+    padding: 5px;
+}
+
+/* 点 */
+.dotted {
+    position: absolute;
+    top: 255px;
+    left: 525px;
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+    cursor: pointer;
+}
+
+.dotted.dotted1 {
+    top: 255px;
+    left: 525px;
+}
+
+.dotted.dotted2 {
+    top: 245px;
+    left: 613px;
+}
+
+.dotted.dotted3 {
+    top: 254px;
+    left: 710px;
+}
+
+.dotted.dotted4 {
+    top: 355px;
+    left: 686px;
+}
+
+.dotted.dotted5 {
+    top: 355px;
+    left: 537px;
+}
+
+.dotted.dotted6 {
+    top: 290px;
+    left: 865px;
+}
+
+.dotted.dotted7 {
+    top: 280px;
+    left: 953px;
+}
+
+.dotted.dotted8 {
+    top: 289px;
+    left: 1050px;
+}
+
+.dotted.dotted9 {
+    top: 390px;
+    left: 1026px;
+}
+
+.dotted.dotted10 {
+    top: 390px;
+    left: 877px;
+}
+
+.dotted.dotted11 {
+    top: 340px;
+    left: 1215px;
+}
+
+.dotted.dotted12 {
+    top: 330px;
+    left: 1303px;
+}
+
+.dotted.dotted13 {
+    top: 339px;
+    left: 1413px;
+}
+
+.dotted.dotted14 {
+    top: 440px;
+    left: 1392px;
+}
+
+.dotted.dotted15 {
+    top: 440px;
+    left: 1245px;
+}
+
+.dotted.dotted16 {
+    top: 489px;
+    left: 232px;
+}
+
+.dotted.dotted17 {
+    top: 468px;
+    left: 325px;
+}
+
+.dotted.dotted18 {
+    top: 475px;
+    left: 428px;
+}
+
+.dotted.dotted19 {
+    top: 573px;
+    left: 398px;
+}
+
+.dotted.dotted20 {
+    top: 573px;
+    left: 249px;
+}
+
+.dotted.dotted21 {
+    top: 499px;
+    left: 591px;
+}
+
+.dotted.dotted22 {
+    top: 487px;
+    left: 683px;
+}
+
+.dotted.dotted23 {
+    top: 487px;
+    left: 792px;
+}
+
+.dotted.dotted24 {
+    top: 581px;
+    left: 764px;
+}
+
+.dotted.dotted25 {
+    top: 581px;
+    left: 614px;
+}
+
+.dotted.dotted26 {
+    top: 505px;
+    left: 971px;
+}
+
+.dotted.dotted27 {
+    top: 480px;
+    left: 1063px;
+}
+
+.dotted.dotted28 {
+    top: 510px;
+    left: 1163px;
+}
+
+.dotted.dotted29 {
+    top: 604px;
+    left: 1141px;
+}
+
+.dotted.dotted30 {
+    top: 604px;
+    left: 993px;
 }

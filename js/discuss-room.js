@@ -56,24 +56,40 @@ window.addEventListener('load', function () {
     })
 
     // 点击跳转到讨论房内部
-    let enter = this.document.querySelectorAll('.enter-box');
-    console.log(enter);
-    for (let i = 0; i < enter.length; i++) {
-        enter[i].addEventListener('click', function () {
-            setTimeout(function () {
-                window.open('./discuss-room-inner.html');
-            }, 500);
-        })
-    }
+    // let enter = this.document.querySelectorAll('.enter-box');
+    // console.log(enter);
+    // for (let i = 0; i < enter.length; i++) {
+    //     enter[i].addEventListener('click', function () {
+    //         setTimeout(function () {
+    //             window.open('./discuss-room-inner.html');
+    //         }, 500);
+    //     })
+    // }
 
     // 点击云层散开 
     let cloud_groups = this.document.querySelectorAll('.cloud-group');
+    let cloud_bt = this.document.querySelector('.cloud-bt');
     console.log(cloud_groups);
     // cloud_groups.forEach(function (item, index, arr) {
     //     item.addEventListener('click', function () {
     //         arr[index].classList.add('active');
     //     })
     // })
+    function cloudFn() {
+        for (let i = 0; i < cloud_groups.length; i++) {
+            cloud_bt.addEventListener('click', function () {
+                for (let i = 0; i < cloud_groups.length; i++) {
+                    cloud_groups[i].classList.add('active');
+                    let delet_d = document.querySelectorAll('.delete-d');
+                    for (let i = 0; i < delet_d.length; i++) {
+                        delet_d[i].style.display = "none";
+                    }
+                    cloud_bt.style.display = "none";
+                }
+            })
+        }
+    }
+    cloudFn();
     for (let i = 0; i < cloud_groups.length; i++) {
         cloud_groups[i].addEventListener('click', function () {
             for (let i = 0; i < cloud_groups.length; i++) {
@@ -81,4 +97,31 @@ window.addEventListener('load', function () {
             }
         })
     }
+
+    // 点击了解详情，显现房间详细信息
+    let enter_box = this.document.querySelectorAll('.recommend-room .bottom .enter-box');
+    let recommend_room_area = this.document.querySelector('.recommend-room-area');
+    let room_info = this.document.querySelector('.room-info');
+    // console.log(enter_box);
+    for (let i = 0; i < enter_box.length; i++) {
+        enter_box[i].addEventListener('click', function () {
+            recommend_room_area.style.display = 'none';
+            room_info.style.display = 'block';
+        })
+    }
+    // 点击关闭，房间详细信息消失，出现推荐房间
+    let room_close = this.document.querySelector('.room-info .room-close');
+    room_close.addEventListener('click', function () {
+        recommend_room_area.style.display = 'flex';
+        room_info.style.display = 'none';
+    })
+
+    // 点击进入房间，进入讨论房内部
+    let enter_room = this.document.querySelector('.room-info .enter-room');
+    enter_room.addEventListener('click', function () {
+        setTimeout(function () {
+            window.open('./discuss-room-inner.html');
+        }, 500);
+    })
+
 })

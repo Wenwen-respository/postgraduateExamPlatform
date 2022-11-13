@@ -27,7 +27,6 @@
   <link rel="stylesheet" href="./font3/iconfont.css">
   <link rel="stylesheet" href="./font/iconfont.css">
   <link rel="stylesheet" href="./css/discuss-room-together.css">
-  <link rel="stylesheet" href="./css/discuee-room-inner.css">
   <link rel="stylesheet" href="./css/discuss-room.css">
 
   <link rel="stylesheet" href="./no-color-font/iconfont.css">
@@ -42,424 +41,302 @@
     <script src="./js/clock.js"></script>
     <script src="./js/drag.js"></script>
   <script src="./js/discuss-room.js"></script>
-</head>
-
-<body>
-  <div class="school">
-    <ul class="school-ul">
-      <!-- 讨论房 -->
-      <li class="school-box1 school-box" id="discuss">
-        <div class="discuss-room">
+  <script src="./js/discuss-room-inner.js"></script>
+  <script src="./js/first.js"></script>
+  </head>
+  <body>
+    <div class="school">
+      <ul class="school-ul">
+        <!-- 首页 -->
+        <li class="school-box2 school-box first-active">
+          <div class="first-box">
+          <div class="school-button discuss-button first-button">
+            <div class="discuss-ban">
+              <div class="discuss-bt">
+                <div class="discuss-inner"></div>
+              </div>
+              <div class="discuss-box first-bt">考研讨论房</div>
+            </div>
+          </div>
+          <div class="left-school-button school-button room-button  first-button">
+            <div class="discuss-ban">
+              <div class="discuss-bt room-bt">
+                <div class="discuss-inner"></div>
+              </div>
+            <div class="discuss-box room-box first-bt">用户房间</div>
+          </div>
+          </div>
+          <div class="school-button question-button  first-button">
+            <div class="discuss-ban">
+              <div class="discuss-bt question-bt">
+                <div class="discuss-inner"></div>
+              </div>
+            <div class="discuss-box question-box first-bt">问题广场</div>
+          </div>
+        </div>
+          </div>
+        </li>
+          <!-- 讨论房 -->
+        <li class="school-box1 school-box">
+      <div class="discuss-room">
           <div class="discuss-room-bg">
-            <!-- <img src="./images/discuss_room_bg.jpg" alt=""> -->
+              <!-- <img src="./images/discuss_room_bg.jpg" alt=""> -->
           </div>
           <!-- 云 -->
-          <div class="cloud-group1 cloud-group"></div>
-          <div class="cloud-group2 cloud-group"></div>
-          <div class="cloud-group3 cloud-group"></div>
-          <div class="cloud-group4 cloud-group"></div>
+        <div class="cloud-group1 cloud-group"></div>
+        <div class="cloud-group2 cloud-group"></div>
+        <div class="cloud-group3 cloud-group"></div>
+        <div class="cloud-group4 cloud-group"></div>
+        <div class="cloud-bt">
+         <p><i class="iconfont">&#xe60e;</i>点击拨开云雾</p> 
+          <p><i class="iconfont">&#xe627;</i>进入讨论房</p>
+        </div>
+        <div class="delete-d"><i class="iconfont">&#xe640;</i></div>
+         <!-- 拨开云雾后出现的进入讨论房页面 -->
+         <!-- <div class="discuss-door">
+          <div class="floor-wraper">
+              <div class="floor"></div>
+          </div>
+          <div class="room-name">
+              <span>考</span>
+              <span>研</span>
+              <span>讨</span>
+              <span>论</span>
+              <span>房</span>
+          </div>
+          <div class="cloud cloud1"></div>
+          <div class="cloud cloud2">
+              <div class="text">点击进入讨论房</div>
+          </div>
+          <div class="exam-time">距离考研还有:</div>
+          <div class="countdown">
+              <span class="d"></span>
+              <span class="h"></span>
+              <span class="m"></span>
+              <span class="s"></span>
+          </div>
+      </div> -->
           <!-- 楼 -->
           <div class="floor-wraper">
-            <div class="floor"></div>
+              <div class="floor"></div>
           </div>
           <!-- 包含搜索框的顶部 -->
           <div class="discuss-room-top">
-            <div class="left">
-              <!-- <div class="class">分类<i class="class-arrow"></i></div> -->
-              <div class="class-hiddenBox">
-                <ul>
-                  <li>综合</li>
-                  <li>数学</li>
-                  <li>英语</li>
-                  <li>政治</li>
-                  <li>专业课</li>
-                </ul>
+              <div class="left">
+                  <!-- <div class="class">分类<i class="class-arrow"></i></div> -->
+                  <div class="class-hiddenBox">
+                      <ul>
+                          <li>综合</li>
+                          <li>数学</li>
+                          <li>英语</li>
+                          <li>政治</li>
+                          <li>专业课</li>
+                      </ul>
+                  </div>
+                  <div class="search">
+                      <input type="text" placeholder="输入关键词查找房间" class="search-input">
+                      <i class="search-button iconfont">&#xe61a;</i>
+                  </div>
               </div>
-              <div class="search">
-                <input type="text" placeholder="输入关键词查找房间" class="search-input">
-                <i class="search-button iconfont">&#xe61a;</i>
+              <div class="right">
+                  <div class="new-create">新建房间</div>
               </div>
-            </div>
-            <div class="right">
-              <div class="new-create">新建房间</div>
-            </div>
           </div>
           <!-- 新建房间弹出盒子 -->
           <div class="new-create-box">
-            <div class="tag">创建房间</div>
-            <div class="room-name">
-              <span>房间名称</span>
-              <input type="text" placeholder="输入房间名称">
-            </div>
-            <div class="room-type">
-              <span>房间分类</span>
-              <input type="text" placeholder="输入房间分类">
-              <!-- <div class="progress-bar"></div> -->
-            </div>
-            <div class="people-num">
-              <span>房间人数</span>
-              <input type="text" placeholder="输入房间人数">
-              <!-- <div class="progress-bar"></div> -->
-            </div>
-            <div class="room-select">
-              <span>房间性质选择：</span>
-              <span><label for="public">公共房间</label><input type="radio" name="room-select" id="public"></span>
-              <span><label for="private">私密房间</label><input type="radio" name="room-select" id="private"></span>
-            </div>
-            <div class="create-button">完成创建</div>
+              <div class="tag">创建房间</div>
+              <div class="room-name">
+                  <span>房间名称</span>
+                  <input type="text" placeholder="最多可输入10个字">
+              </div>
+              <div class="room-keyword">
+                  <span>关键词</span>
+                  <input type="text" placeholder="最多可输入8个字">
+                  <!-- <div class="progress-bar"></div> -->
+              </div>
+              <div class="people-num">
+                  <span>房间人数</span>
+                  <input type="text" placeholder="最多可输入30人">
+                  <!-- <div class="progress-bar"></div> -->
+              </div>
+              <!-- 房间描述 -->
+              <div class="room-describe" contenteditable="true"></div>
+              <!-- <div class="room-select">
+            <span>房间性质选择：</span>
+            <span><label for="public">公共房间</label><input type="radio" name="room-select" id="public"></span>
+            <span><label for="private">私密房间</label><input type="radio" name="room-select" id="private"></span>
+          </div> -->
+              <div class="create-button">完成创建</div>
           </div>
           <!-- 遮罩层 -->
           <div class="black-mask"></div>
           <!-- 推荐房间模块包含刷新按钮 -->
           <div class="recommend-room-area">
-            <!-- 刷新按钮 -->
-            <div class="refresh-button">换一批</div>
-            <!-- 1 -->
-            <div class="recommend-room">
-              <div class="top">
-                <div class="room-name">23年暨南大学考研冲鸭</div>
-                <div class="more"><i class="iconfont">&#xe684;</i></div>
-              </div>
-              <div class="middle">
-                <div class="left">
+              <!-- 刷新按钮 -->
+              <div class="refresh-button">换<br>一<br>批</div>
+              <!-- 1 -->
+              <div class="recommend-room">
+                  <div class="top">
+                      <div class="room-name">23年暨南大学考研冲鸭</div>
+                      <div class="more"><i class="iconfont">&#xe601;</i></div>
+                  </div>
+                  <div class="middle">
+                      <!-- <div class="left">
                   <div class="cover-box"><img src="./images/discuss.jpg" alt=""></div>
                 </div>
                 <div class="right">
                   <div class="lock"><i class="iconfont">&#xe7fa;</i></div>
                   <div class="live">在线人数：<br>10/10</div>
-                </div>
-
+                </div> -->
+                      <div class="people-num">在线人数：<span>22</span></div>
+                      <div class="keyword">关键词：<span>22级考研</span>、<span>暨南大学</span></div>
+                  </div>
+                  <div class="bottom">
+                      <div class="id-box left">ID:00709940</div>
+                      <div class="enter-box right">了解详情</div>
+                  </div>
               </div>
-              <div class="bottom">
-                <div class="id-box left">ID:00709940</div>
-                <div class="enter-box right">进入</div>
-              </div>
-            </div>
-            <!-- 2 -->
-            <div class="recommend-room">
-              <div class="top">
-                <div class="room-name">23年暨南大学考研冲鸭</div>
-                <div class="more"><i class="iconfont">&#xe684;</i></div>
-              </div>
-              <div class="middle">
-                <div class="left">
+              <!-- 2 -->
+              <div class="recommend-room">
+                  <div class="top">
+                      <div class="room-name">23年暨南大学考研冲鸭</div>
+                      <div class="more"><i class="iconfont">&#xe601;</i></div>
+                  </div>
+                  <div class="middle">
+                      <!-- <div class="left">
                   <div class="cover-box"><img src="./images/discuss.jpg" alt=""></div>
                 </div>
                 <div class="right">
                   <div class="lock"><i class="iconfont">&#xe7fa;</i></div>
                   <div class="live">在线人数：<br>10/10</div>
-                </div>
-
+                </div> -->
+                      <div class="people-num">在线人数：<span>22</span></div>
+                      <div class="keyword">关键词：<span>22级考研</span>、<span>暨南大学</span></div>
+                  </div>
+                  <div class="bottom">
+                      <div class="id-box left">ID:00709940</div>
+                      <div class="enter-box right">了解详情</div>
+                  </div>
               </div>
-              <div class="bottom">
-                <div class="id-box left">ID:00709940</div>
-                <div class="enter-box right">进入</div>
-              </div>
-            </div>
-            <!-- 3 -->
-            <div class="recommend-room">
-              <div class="top">
-                <div class="room-name">23年暨南大学考研冲鸭</div>
-                <div class="more"><i class="iconfont">&#xe684;</i></div>
-              </div>
-              <div class="middle">
-                <div class="left">
+              <!-- 3 -->
+              <div class="recommend-room">
+                  <div class="top">
+                      <div class="room-name">23年暨南大学考研冲鸭</div>
+                      <div class="more"><i class="iconfont">&#xe601;</i></div>
+                  </div>
+                  <div class="middle">
+                      <!-- <div class="left">
                   <div class="cover-box"><img src="./images/discuss.jpg" alt=""></div>
                 </div>
                 <div class="right">
                   <div class="lock"><i class="iconfont">&#xe7fa;</i></div>
                   <div class="live">在线人数：<br>10/10</div>
-                </div>
-
+                </div> -->
+                      <div class="people-num">在线人数：<span>22</span></div>
+                      <div class="keyword">关键词：<span>22级考研</span>、<span>暨南大学</span></div>
+                  </div>
+                  <div class="bottom">
+                      <div class="id-box left">ID:00709940</div>
+                      <div class="enter-box right">了解详情</div>
+                  </div>
               </div>
-              <div class="bottom">
-                <div class="id-box left">ID:00709940</div>
-                <div class="enter-box right">进入</div>
-              </div>
-            </div>
-            <!-- 4 -->
-            <div class="recommend-room">
-              <div class="top">
-                <div class="room-name">23年暨南大学考研冲鸭</div>
-                <div class="more"><i class="iconfont">&#xe684;</i></div>
-              </div>
-              <div class="middle">
-                <div class="left">
+              <!-- 4 -->
+              <div class="recommend-room">
+                  <div class="top">
+                      <div class="room-name">23年暨南大学考研冲鸭</div>
+                      <div class="more"><i class="iconfont">&#xe601;</i></div>
+                  </div>
+                  <div class="middle">
+                      <!-- <div class="left">
                   <div class="cover-box"><img src="./images/discuss.jpg" alt=""></div>
                 </div>
                 <div class="right">
-                  <div class="lock"><i class="iconfont">&#xe7fb;</i></div>
+                  <div class="lock"><i class="iconfont">&#xe7fa;</i></div>
                   <div class="live">在线人数：<br>10/10</div>
-                </div>
-
+                </div> -->
+                      <div class="people-num">在线人数：<span>22</span></div>
+                      <div class="keyword">关键词：<span>22级考研</span>、<span>暨南大学</span></div>
+                  </div>
+                  <div class="bottom">
+                      <div class="id-box left">ID:00709940</div>
+                      <div class="enter-box right">了解详情</div>
+                  </div>
               </div>
-              <div class="bottom">
-                <div class="id-box left">ID:00709940</div>
-                <div class="enter-box right">进入</div>
-              </div>
-            </div>
-            <!-- 5 -->
-            <div class="recommend-room">
-              <div class="top">
-                <div class="room-name">23年暨南大学考研冲鸭</div>
-                <div class="more"><i class="iconfont">&#xe684;</i></div>
-              </div>
-              <div class="middle">
-                <div class="left">
+              <!-- 5 -->
+              <div class="recommend-room">
+                  <div class="top">
+                      <div class="room-name">23年暨南大学考研冲鸭</div>
+                      <div class="more"><i class="iconfont">&#xe601;</i></div>
+                  </div>
+                  <div class="middle">
+                      <!-- <div class="left">
                   <div class="cover-box"><img src="./images/discuss.jpg" alt=""></div>
                 </div>
                 <div class="right">
-                  <div class="lock"><i class="iconfont">&#xe7fb;</i></div>
+                  <div class="lock"><i class="iconfont">&#xe7fa;</i></div>
                   <div class="live">在线人数：<br>10/10</div>
-                </div>
-
+                </div> -->
+                      <div class="people-num">在线人数：<span>22</span></div>
+                      <div class="keyword">关键词：<span>22级考研</span>、<span>暨南大学</span></div>
+                  </div>
+                  <div class="bottom">
+                      <div class="id-box left">ID:00709940</div>
+                      <div class="enter-box right">了解详情</div>
+                  </div>
               </div>
-              <div class="bottom">
-                <div class="id-box left">ID:00709940</div>
-                <div class="enter-box right">进入</div>
-              </div>
-            </div>
-            <!-- 6 -->
-            <div class="recommend-room">
-              <div class="top">
-                <div class="room-name">23年暨南大学考研冲鸭</div>
-                <div class="more"><i class="iconfont">&#xe684;</i></div>
-              </div>
-              <div class="middle">
-                <div class="left">
+              <!-- 6 -->
+              <div class="recommend-room">
+                  <div class="top">
+                      <div class="room-name">23年暨南大学考研冲鸭</div>
+                      <div class="more"><i class="iconfont">&#xe601;</i></div>
+                  </div>
+                  <div class="middle">
+                      <!-- <div class="left">
                   <div class="cover-box"><img src="./images/discuss.jpg" alt=""></div>
                 </div>
                 <div class="right">
-                  <div class="lock"><i class="iconfont">&#xe7fb;</i></div>
+                  <div class="lock"><i class="iconfont">&#xe7fa;</i></div>
                   <div class="live">在线人数：<br>10/10</div>
-                </div>
-
-              </div>
-              <div class="bottom">
-                <div class="id-box left">ID:00709940</div>
-                <div class="enter-box right">进入</div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </li>
-      <!-- 房间 -->
-      <li class="school-bgc school-box">
-        <div class="open-door-pro" id="room"></div>
-        <!-- 时钟 -->
-        <div class="clock">
-          <div class="inner-circle">
-            <div class="hands">
-              <div class="dots"></div>
-              <div class="hand hour-hand"></div>
-              <div class="hand minute-hand"></div>
-              <div class="hand second-hand"></div>
-            </div>
-          </div>
-        </div>
-        <!-- 收音机 -->
-        <div class="radio-wraper">
-          <!-- 收音机容器 -->
-          <div class="radio-container">
-            <!-- 收音机播放器 -->
-            <div class="player">
-              <!-- 播放器音乐信息和音轨部分 -->
-              <div class="player-track">
-                <!-- 专辑名 -->
-                <div class="album-name"></div>
-                <!-- 音乐信息：歌手-音乐名 -->
-                <div class="track-name"></div>
-                <!-- 音乐时间 -->
-                <div class="track-time">
-                  <div class="current-time"></div>
-                  <div class="total-time"></div>
-                </div>
-                <!-- 进度盒子 -->
-                <div class="progress-box">
-                  <div class="hover-time"></div>
-                  <div class="hover-bar"></div>
-                  <div class="progress-bar"></div>
-                </div>
-              </div>
-              <!-- 播放器封面和控制器部分 -->
-              <div class="player-content">
-                <!-- 专辑封面 -->
-                <div class="album-cover">
-                  <img src="./mp3/cover/自习音乐.png" alt="" class="active" />
-                  <img src="./mp3/cover/自习音乐2.png"> <img src="./mp3/cover/自习音乐3.png" alt="">
-                </div>
-                <!-- 控制器，只有三个：上一曲 播放暂停 下一曲 -->
-                <div class="play-controls">
-                  <div class="control">
-                    <div class="button play-prev">
-                      <i class="fa fa-step-backward"></i>
-                    </div>
+                </div> -->
+                      <div class="people-num">在线人数：<span>22</span></div>
+                      <div class="keyword">关键词：<span>22级考研</span>、<span>暨南大学</span></div>
                   </div>
-                  <div class="control">
-                    <div class="button play-pause">
-                      <i class="fa fa-play"></i>
-                    </div>
+                  <div class="bottom">
+                      <div class="id-box left">ID:00709940</div>
+                      <div class="enter-box right">了解详情</div>
                   </div>
-                  <div class="control">
-                    <div class="button play-next">
-                      <i class="fa fa-step-forward"></i>
-                    </div>
-                  </div>
-                </div>
               </div>
-            </div>
-
           </div>
-        </div>
-        <!-- 日历 -->
-        <div class="calender-wrap room-content">
-          <div class="calender-box" id="calender">
-            <div class="top">
-              <button type="button" class="pre-mon">上个月</button>
-              <div id="month"></div>
-              <button type="button" class="next-mon">下个月</button>
-            </div>
-            <div class="week">
-              <ul>
-                <li class="evrday">日</li>
-                <li class="evrday">一</li>
-                <li class="evrday">二</li>
-                <li class="evrday">三</li>
-                <li class="evrday">四</li>
-                <li class="evrday">五</li>
-                <li class="evrday">六</li>
-              </ul>
-            </div>
-            <div id="day"></div>
-          </div>
-          <div class="do">
-            <div class="do-top">
-              <p class="undo-banner">to do list:</p>
-              <span class="do-time"></span>
-              <div class="right-do">
-                <i class="iconfont add-icon-one">&#xe624;</i>
-                <i class="iconfont history-icon">&#xe675;</i>
+          <!-- 房间详细信息 -->
+          <div class="room-info">
+              <!-- 房主信息 -->
+              <div class="master-info clearfix">
+                  <div class="avatar left"><img src="./images/user.png" alt=""></div>
+                  <div class="master-name left">房主：<span>不考上暨大不改名</span></div>
               </div>
-            </div>
-            <ul>
-              <li><span class="do-circle"></span><span class="do-content" contenteditable="true">7:00 起床洗漱</span></li>
-              <li><span class="do-circle"></span><span class="do-content" contenteditable="true">记历年真题考过的词汇</span></li>
-              <li><span class="do-circle"></span><span class="do-content" contenteditable="true">做全书上的概率部分或概率讲义</span>
-              </li>
-              <li><span class="do-circle"></span><span class="do-content"
-                  contenteditable="true">直接怼1000题，然后仔细看答案解析，觉得答案解析还不够的定位到精讲精练再认真把这一块看一遍。对答案时不要将对错直接写在题目上
-                  各种分析整理各种背</span></li>
-              <li><span class="do-circle"></span><span class="do-content"
-                  contenteditable="true">官网指定的参考书，能收集到历年真题的一定要认真研究，官网指定的参考书一定要认真看，找考同一门专业课的学长学姐咨询</span></li>
-              <li><span class="do-circle"></span><span class="do-content" contenteditable="true">23:30准备睡觉</span></li>
-            </ul>
-          </div>
-        </div>
-        <!-- 便签 -->
-        <div class="note-content room-content " id="note-content">
-          <div class="note-top">
-            <p>计划清单</p>
-            <p class="do-time"></p>
-          </div>
-          <div class="undo-ban">
-            <div class="undo">
-              <div class="do-top">
-                <span class="undo-banner">to do list:</span>
-                <div class="right-do">
-                  <i class="iconfont add-icon-one">&#xe624;</i>
-                  <i class="iconfont history-icon">&#xe675;</i>
-                </div>
+              <!-- 房间信息 -->
+              <div class="clearfix">
+                  <div class="room-name room-inner-info">房间名：<span>22级暨南大学考研冲鸭</span></div>
+                  <div class="keyword room-inner-info">关键词：<span>22级</span>、<span>暨南大学</span></div>
+                  <div class="people-num room-inner-info">房间人数：<span>28</span>/<span>30</span></div>
               </div>
-                  <ul>
-                      <li><span class="do-circle"></span><span class="do-content" contenteditable="true">7:00 起床洗漱</span></li>
-                      <li><span class="do-circle"></span><span class="do-content" contenteditable="true">记历年真题考过的词汇</span></li>
-                      <li><span class="do-circle"></span><span class="do-content" contenteditable="true">做全书上的概率部分或概率讲义</span></li>
-                      <li><span class="do-circle"></span><span class="do-content" contenteditable="true">直接怼1000题，然后仔细看答案解析，觉得答案解析还不够的定位到精讲精练再认真把这一块看一遍。对答案时不要将对错直接写在题目上，最后快速翻一翻留个眼熟多好，没必要跟辅导班笔记一样的，各种分析整理各种背</span></li>
-                      <li><span class="do-circle"></span><span class="do-content" contenteditable="true">官网指定的参考书，能收集到历年真题的一定要认真研究，官网指定的参考书一定要认真看，找考同一门专业课的学长学姐咨询</span></li>
-                      <li><span class="do-circle"></span><span class="do-content" contenteditable="true">23:30准备睡觉</span></li>
-                  </ul>
+              <!-- 房间简介 -->
+              <div class="room-inner-introduction">
+                  本人考研党，目标是暨南大学，希望想一起冲击暨南大学的同学能在群聊中成为朋友，大家一起加油，朝着梦想一步一步地接近
               </div>
-              <div class="often">
-                  <ul>
-                  <p>最近常做：</p>
-                  <i class="iconfont add-icon-three">&#xe67a;</i>
-                      <li>会让发动机查看不热JFK让发看不热JFK让发动机查看不热JFK但是vi但是vi</li>
-                      <li>会让发动机查看不热JFK但是vi</li>
-                      <li>会看不热JFK让发不JFK让发不热JFK但是JFK但是vi</li>
-                      <li>会让发动机查看不热JFK但是vi</li>
-                      <li>会让发动机查看不热JFK但是vi</li>
-                  </ul>
-              </div>
-                </div>
-                <div class="note-banner">
-              <div class="note">
-                  <div class="do-top">
-                      <span class="undo-banner">need to learn:</span>
-                      <div class="right-do">
-                      <input type="file" id="file-up" accept=".doc,.docx,.ppt,.pptx,.txt,.jpg,.png,.xls,.xlsx" multiple="true" title="点击上传文件"/>
-                          <i class="iconfont add-icon-two">&#xec4d;</i>
-                          <i class="iconfont history-icon_two">&#xe65d;</i>
-                      </div>
-                  </div>
-                  <ul>
-                     <li>
-                      <i class='iconfont'>&#xe6a1;</i>
-                      <span class='note-title'>hugijm,lsxjiogklcx</span>
-                      <br/>
-                      <span class='note-size'>jgoif</span>
-                      <i class="iconfont delete-icon">&#xe606;</i>
-                      <i class="iconfont preview-icon">&#xe660;</i>
-                  </li>
-                  <li>
-                      <i class='iconfont'>&#xe6a1;</i>
-                      <span class='note-title'>hugijm,lsxjiogklcx</span>
-                      <br/>
-                      <span class='note-size'>jgoif</span>
-                      <i class="iconfont delete-icon">&#xe606;</i>
-                      <i class="iconfont preview-icon">&#xe660;</i>
-                  </li>
-                  </ul>
-              </div>
-              <div class="delete-history">
-                  <ul>
-                  <p>最近删除：</p>
-                  </ul>
-              </div>
-                </div>
-                <iframe src="./【微信公众号：启鑫云课堂】2022年考研数学（一）真题.pdf"  width='1000' height='720' frameborder="0" id="ifm" scrolling="no"></iframe>
-              </iframe>
-                </div>
-                <!-- 书架 -->
-
-                <!-- 分别对应的按钮 -->
-                <div class="radio circle share-circle" id="radio-circle">
-                  <div class="mouse-inner-circle"></div>
-                </div>
-                <div class="calender-banner circle share-circle">
-                  <div class="mouse-inner-circle"></div>
-                </div>
-                <div class="plan circle share-circle">
-                  <div class="mouse-inner-circle"></div>
-                </div>
-                <div class="shelf-banner circle">
-                  <div class="mouse-inner-circle"></div>
-                </div>
-        </li>
-        <!-- 首页 -->
-        <li class="school-box2 school-box">
-          <div class="school-button discuss-button">
-            <i class="iconfont">&#xe624;</i>
+              <!-- 进入房间按钮 -->
+              <div class="enter-room">进入房间</div>
+              <!-- 男的 -->
+              <div class="man"><img src="./images/man.png" alt=""></div>
+              <!-- 女的 -->
+              <div class="woman"><img src="./images/woman.png" alt=""></div>
+              <!-- 关闭按钮 -->
+              <div class="room-close"><i class="iconfont"></i></div>
           </div>
-          <div class="left-school-button school-button room-button">
-            <i class="iconfont">&#xe6a7;</i>
-          </div>
-          <div class="school-button question-button">
-            <i class="iconfont">&#xe75e;</i>
-          </div>
+      </div>
         </li>
         <!-- 问题 -->
-        <li class="school-box3 school-box" id="question">
+        <li class="school-box3 school-box">
           <div class="question-banner">
           <div class="langhua1 langhua">
             <img src="./images/langhua2.png" alt="">
@@ -514,7 +391,7 @@
                 </div>
                 <div class="bottom">
                   <div class="left">
-                    <span data-id="0"><i class="iconfont"></i></span>
+                    <span data-id="0"><i class="iconfont">&#xe602;</i></span>
                     <span data-id="1"><i class="iconfont">&#xec80;</i></span>
                   </div>
                   <div class="right">
@@ -679,7 +556,6 @@
             </div>
             <div class="beike5 beike">
               <img src="./images/beike5.png" alt="">
-
             </div>
           </div>
           <!-- 点击贝壳出现的问题框 -->
@@ -710,34 +586,258 @@
           </div>
         </div>
         </li>
+        <!-- 房间 -->
+        <li class="school-bgc school-box">
+        <div class="house-box">
+          <!-- 门 -->
+          <div class="open-door-pro" id="room"></div>
+          <div class="cloud-bt cloud-bt-sec">
+            <p><i class="iconfont">&#xe612;</i>点击房门</p> 
+            <p><i class="iconfont">&#xe724;</i>进入房间</p>
+           </div>
+          <div class="open-circle"></div>
+          <div class="room-tips"></div>
+          <!-- 删除 -->
+          <div class="delete-d"><i class="iconfont">&#xe640;</i></div>
+          <!-- 时钟 -->
+                <div class="clock">
+            <div class="inner-circle">
+              <div class="hands">
+                <div class="dots"></div>
+                <div class="hand hour-hand"></div>
+                <div class="hand minute-hand"></div>
+                <div class="hand second-hand"></div>
+              </div>
+            </div>
+                </div>
+                <!-- 收音机 -->
+                <div class="radio-wraper room-content">
+                  <!-- 收音机容器 -->
+                  <div class="radio-container">
+                    <!-- 收音机播放器 -->
+                    <div class="player">
+                      <!-- 播放器音乐信息和音轨部分 -->
+                      <div class="player-track">
+                        <!-- 专辑名 -->
+                        <div class="album-name"></div>
+                        <!-- 音乐信息：歌手-音乐名 -->
+                        <div class="track-name"></div>
+                        <!-- 音乐时间 -->
+                        <div class="track-time">
+                          <div class="current-time"></div>
+                          <div class="total-time"></div>
+                        </div>
+                        <!-- 进度盒子 -->
+                        <div class="progress-box">
+                          <div class="hover-time"></div>
+                          <div class="hover-bar"></div>
+                          <div class="progress-bar"></div>
+                        </div>
+                      </div>
+                      <!-- 播放器封面和控制器部分 -->
+                      <div class="player-content">
+                        <!-- 专辑封面 -->
+                        <div class="album-cover">
+                          <img src="./mp3/cover/自习音乐.png" alt="" class="active" />
+                          <img src="./mp3/cover/自习音乐2.png" > <img src="./mp3/cover/自习音乐3.png" alt="">
+                        </div>
+                        <!-- 控制器，只有三个：上一曲 播放暂停 下一曲 -->
+                        <div class="play-controls">
+                          <div class="control">
+                            <div class="button play-prev">
+                              <i class="fa fa-step-backward"></i>
+                            </div>
+                          </div>
+                          <div class="control">
+                            <div class="button play-pause">
+                              <i class="fa fa-play"></i>
+                            </div>
+                          </div>
+                          <div class="control">
+                            <div class="button play-next">
+                              <i class="fa fa-step-forward"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 日历 -->
+                <div class="calender-wrap room-content">
+                  <div class="calender-box" id="calender">
+                    <div class="top">
+                      <button type="button" class="pre-mon">上个月</button>
+                      <div id="month"></div>
+                      <button type="button" class="next-mon">下个月</button>
+                    </div>
+                    <div class="week">
+                      <ul>
+                        <li class="evrday">日</li>
+                        <li class="evrday">一</li>
+                        <li class="evrday">二</li>
+                        <li class="evrday">三</li>
+                        <li class="evrday">四</li>
+                        <li class="evrday">五</li>
+                        <li class="evrday">六</li>
+                      </ul>
+                    </div>
+                    <div id="day"></div>
+                  </div>
+                  <div class="do">
+                      <div class="do-top">
+                      <p class="undo-banner">to do list:</p>
+                      <span class="do-time"></span>
+                      <div class="right-do">
+                        <i class="iconfont add-icon-one"></i>
+                        <i class="iconfont history-icon del-icon">&#xe622;</i>
+                    </div>
+                  </div>
+                      <ul>
+                          <li><span class="do-circle"></span><span class="do-content" contenteditable="true">7:00 起床洗漱</span></li>
+                          <li><span class="do-circle"></span><span class="do-content" contenteditable="true">记历年真题考过的词汇</span></li>
+                          <li><span class="do-circle"></span><span class="do-content" contenteditable="true">做全书上的概率部分或概率讲义</span></li>
+                          <li><span class="do-circle"></span><span class="do-content" contenteditable="true">直接怼1000题，然后仔细看答案解析，觉得答案解析还不够的定位到精讲精练再认真把这一块看一遍。对答案时不要将对错直接写在题目上 各种分析整理各种背</span></li>
+                          <li><span class="do-circle"></span><span class="do-content" contenteditable="true">官网指定的参考书，能收集到历年真题的一定要认真研究，官网指定的参考书一定要认真看，找考同一门专业课的学长学姐咨询</span></li>
+                          <li><span class="do-circle"></span><span class="do-content" contenteditable="true">23:30准备睡觉</span></li>
+                      </ul>
+                  </div>
+                </div>
+                <!-- 便签 -->
+                <div class="note-content room-content " id="note-content">
+                    <div class="note-top">
+                        <p>计划清单</p> 
+                        <p class="do-time"></p> 
+                    </div>
+                  <div class="undo-ban">
+              <div class="undo">
+                  <div class="do-top">
+                  <span class="undo-banner">to do list:</span>
+                  <div class="right-do">
+                      <i class="iconfont add-icon-one">&#xe624;</i>
+                      <i class="iconfont history-icon">&#xe675;</i>
+                  </div>
+              </div>
+                  <ul>
+                      <li><span class="do-circle"></span><span class="do-content" contenteditable="true">7:00 起床洗漱</span></li>
+                      <li><span class="do-circle"></span><span class="do-content" contenteditable="true">记历年真题考过的词汇</span></li>
+                      <li><span class="do-circle"></span><span class="do-content" contenteditable="true">做全书上的概率部分或概率讲义</span></li>
+                      <li><span class="do-circle"></span><span class="do-content" contenteditable="true">直接怼1000题，然后仔细看答案解析，觉得答案解析还不够的定位到精讲精练再认真把这一块看一遍。对答案时不要将对错直接写在题目上，最后快速翻一翻留个眼熟多好，没必要跟辅导班笔记一样的，各种分析整理各种背</span></li>
+                      <li><span class="do-circle"></span><span class="do-content" contenteditable="true">官网指定的参考书，能收集到历年真题的一定要认真研究，官网指定的参考书一定要认真看，找考同一门专业课的学长学姐咨询</span></li>
+                      <li><span class="do-circle"></span><span class="do-content" contenteditable="true">23:30准备睡觉</span></li>
+                  </ul>
+              </div>
+              <div class="often">
+                  <ul>
+                  <p>最近常做：</p>
+                  <i class="iconfont add-icon-three">&#xe67a;</i>
+                      <li>会让发动机查看不热JFK让发看不热JFK让发动机查看不热JFK但是vi但是vi</li>
+                      <li>会让发动机查看不热JFK但是vi</li>
+                      <li>会看不热JFK让发不JFK让发不热JFK但是JFK但是vi</li>
+                      <li>会让发动机查看不热JFK但是vi</li>
+                      <li>会让发动机查看不热JFK但是vi</li>
+                  </ul>
+              </div>
+                </div>
+                <div class="note-banner">
+              <div class="note">
+                  <div class="do-top">
+                      <span class="undo-banner">need to learn:</span>
+                      <div class="right-do">
+                      <input type="file" id="file-up" accept=".doc,.docx,.ppt,.pptx,.txt,.jpg,.png,.xls,.xlsx" multiple="true" title="点击上传文件"/>
+                          <i class="iconfont add-icon-two">&#xec4d;</i>
+                          <i class="iconfont history-icon_two">&#xe65d;</i>
+                      </div>
+                  </div>
+                  <ul>
+                     <li>
+                      <i class='iconfont'>&#xe6a1;</i>
+                      <span class='note-title'>hugijm,lsxjiogklcx</span>
+                      <br/>
+                      <span class='note-size'>jgoif</span>
+                      <i class="iconfont delete-icon">&#xe606;</i>
+                      <i class="iconfont preview-icon pre">&#xec86;</i>
+                  </li>
+                  <li>
+                    <i class='iconfont'>&#xe6a1;</i>
+                    <span class='note-title'>hugijm,lsxjiogklcx</span>
+                    <br/>
+                    <span class='note-size'>jgoif</span>
+                    <i class="iconfont delete-icon">&#xe606;</i>
+                    <i class="iconfont preview-icon pre">&#xec86;</i>
+                </li>
+                  <li>
+                      <i class='iconfont'>&#xe6a1;</i>
+                      <span class='note-title'>hugijm,lsxjiogklcx</span>
+                      <br/>
+                      <span class='note-size'>jgoif</span>
+                      <i class="iconfont delete-icon">&#xe606;</i>
+                      <i class="iconfont preview-icon pre">&#xec86;</i>
+                  </li>
+                  </ul>
+              </div>
+              <div class="delete-history">
+                  <ul>
+                  <p>最近删除：</p>
+                  </ul>
+              </div>
+                </div>
+                </div>
+                <!-- 分别对应的按钮 -->
+                <div class="school-button share-circle radio-button" id="radio-circle">
+                  <div class="discuss-ban">
+                    <div class="discuss-bt radio-bt">
+                      <div class="discuss-inner"></div>
+                    </div>
+                    <div class="discuss-box radio-box share-box">音乐播放</div>
+                  </div>
+                </div>
+                <div class="school-button cl-button share-circle">
+                  <div class="discuss-ban">
+                    <div class="discuss-bt cl-bt">
+                      <div class="discuss-inner"></div>
+                    </div>
+                    <div class="discuss-box cl-box share-box">查看计划</div>
+                  </div>
+                </div>
+                <div class="school-button plan-button share-circle">
+                  <div class="discuss-ban">
+                    <div class="discuss-bt plan-bt">
+                      <div class="discuss-inner"></div>
+                    </div>
+                    <div class="discuss-box plan-box share-box">制定计划</div>
+                  </div>
+                </div>
+                <div class="school-button sl-button share-circle shelf-banner">
+                  <div class="discuss-ban">
+                    <div class="discuss-bt sl-bt">
+                      <div class="discuss-inner"></div>
+                    </div>
+                    <div class="discuss-box sl-box share-box">资料广场</div>
+                  </div>
+                </div>
+        </div>
+        </li>
       </ul>
     </div>
-          <!-- 侧边栏 -->
-          <div class="slide-nav">
+      <!-- 侧边栏 -->
+    <div class="slide-nav">
             <ul>
               <li>
-                <a href="./index.html">
                   <i class="iconfont">&#xe670;</i>
                   <p>首页</p>
-                </a>
               </li>
               <li>
-                <a href="#discuss">
                   <i class="iconfont">&#xe60c;</i>
-                  <p>讨论自习</p>
-                </a>
+                  <p>讨论房</p>
               </li>
               <li>
-                <a href="#question">
                   <i class="iconfont">&#xe80c;</i>
                   <p>问题广场</p>
-                </a>
               </li>
-              <li class="dd">
-                <a href="#room">
+              <li>
                   <i class="iconfont">&#xe66d;</i>
                   <p>个人房间</p>
-                </a>
               </li>
               <li>
                 <a href="./first.html" target="_blank">
@@ -746,6 +846,6 @@
                 </a>
               </li>
             </ul>
-          </div>
+    </div>
   </body>
 </html>

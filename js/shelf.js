@@ -11,6 +11,47 @@ window.addEventListener('load',function(){
   //   }
   // })
 
+
+  // 试题出现
+var num=1;
+let try_ul=document.querySelector('.try-content .try-banner');
+let try_more=document.querySelector('.next-try');
+  function tryFun(try_topic,try_sch){
+    let try_li=document.createElement('div');
+    try_li.className="pre";
+    try_li.innerHTML="<p class='try-topic'>"+try_topic+"</p><p class='co-icon'><i class='iconfont'>&#xe6b4;</i><span>"+try_sch+"</span></p><p class='yu-icon'><i class='iconfont'>&#xec86;</i><span class='pre'>"+"预览"+"</span></p>"
+    if(document.querySelectorAll('.try-banner div').length<13*num){
+      try_ul.insertBefore(try_li,try_more);
+         // 重复代码很多 这个函数 没有用到在不同函数调用同一个封装函数
+    }
+    function ifme(){
+      let pre=document.querySelectorAll('.pre');
+      for(let i=0;i<pre.length;i++){
+          pre[i].addEventListener('click',function(){
+              window.open('../iframe.html');
+          })
+      }
+      
+  }
+  ifme();
+  }
+  // 展开更多
+  try_ul.addEventListener('scroll',function(){
+    if(document.querySelectorAll('.try-banner div').length<13*num){
+         tryFun();
+    }
+    // 出现
+    if(document.querySelectorAll('.try-banner div').length>12){
+      try_more.style.display="block";
+    }
+  })
+  // 点击展开更多传入
+  try_more.addEventListener('click',function(){
+    num++;
+    console.log(num);
+    tryFun();
+  })
+
   // 回到首页部分
   const back=document.querySelector('.back-first');
   back.addEventListener('click',function(){
@@ -240,21 +281,31 @@ suo();
       if(this.count==0){
         let file_li=document.createElement('li');
         file_li.className="shelf-first";
-        file_li.innerHTML="<i class='iconfont note-icon'>&#xe6c2;</i>"+"新建文件夹"+"<i class='down-arrow'></i><div class='shelf-sec'><ul></ul></div>";
+        file_li.innerHTML="<i class='iconfont note-icon'>&#xe6c2;</i><span class='shelf-s'>"+"新建文件夹"+"</span><i class='down-arrow'></i><div class='shelf-sec'><ul></ul></div>";
         document.querySelector('.note-shelf').appendChild(file_li);
+        // 添加可编辑属性
+        let divId = document.createAttribute("contenteditable");
+        divId.value = 'true';
+        document.querySelector('.shelf-s').setAttributeNode(divId);
         suo();
         sec();
+        onload();
       }
       // 新建文件
       if(this.count==1){
         let shelf_two=document.querySelectorAll('.shelf-sec ul')[a];
         let file_li=document.createElement('li');
         file_li.innerHTML="<span>新建文件</span>";
+        // 添加可编辑属性
+        let divId = document.createAttribute("contenteditable");
+        divId.value = 'true';
+        file_li.setAttributeNode(divId);
         shelf_two.appendChild(file_li);
         suo();
         suoSec();
         d();
         sec();
+        onload();
       }
       // 删除文件夹
       if(this.count==2){
@@ -316,17 +367,22 @@ function d(){
   note_add.addEventListener('click',function(){
     let add_li=document.createElement('li');
     add_li.className="shelf-first";
-    add_li.innerHTML="<i class='iconfont note-icon'>&#xe6c2;</i>新建文件夹<i class='down-arrow'></i><div class='shelf-sec'><ul></ul></div>";
-    note_shelf.appendChild(add_li);    
+    add_li.innerHTML="<i class='iconfont note-icon'>&#xe6c2;</i><span class='shelf-s'>"+"新建文件夹"+"</span><i class='down-arrow'></i><div class='shelf-sec'><ul></ul></div>";
+        document.querySelector('.note-shelf').appendChild(file_li);
+        // 添加可编辑属性
+        let divId = document.createAttribute("contenteditable");
+        divId.value = 'true';
+        document.querySelector('.shelf-s').setAttributeNode(divId);
     suo();
     sec();
+    onload();
   }) 
 
 
 // 鼠标标注
    let textDom = document.querySelector('.shelf-note-content');
    let val = "";
-   let top_li=document.querySelectorAll('.add-top ul li');
+   let top_li=document.querySelectorAll('.add-top .add-ic');
   //  上面功能的选择
   for(let i=0;i<top_li.length;i++){
     top_li[i].count=i;
@@ -340,14 +396,14 @@ function d(){
           console.log("files: ", files);
           for(let i=0;i<files.length;i++){
             console.log(files[i].name);
-            add(this.count,val);
           }
         })
       }
     })
   }
   // 鼠标事件监听 鼠标拖动的文本
-   textDom.onmouseup = function () {
+   textDom.onmouseup = function (e) {
+    e.stopPropagation();
    //释放鼠标的时候，调用testSelection()方法
     val = testSelection();
     // console.log(val)
@@ -385,9 +441,13 @@ function add(type, str) {
   rHtml = text.replace(rReg,"<span style='background-color:red;'>"+str+"</span>");
 } else if (type == 4) {
   rHtml = text.replace(rReg,"<span style='color:red;'>"+str+"</span>");
-} else if (type == 5) {
-  rHtml = text.replace(rReg,"<span style='color:red;'>"+str+"</span>");
-} 
+} else if (type == 5||type == 6) {
+let title=document.querySelector('.select');
+  rHtml = text.replace(rReg,title.innerHTML.substring(0,4)+str+title.innerHTML.slice(-5,-1)+">");
+}
+else if(type == 7||type==8||type == 9||type == 10||type==11){
+  rHtml = text.replace(rReg,top_li[type].innerHTML.substring(0,4)+str+top_li[type].innerHTML.slice(-5,-1)+">");
+}
   textDom.innerHTML = rHtml;
 }
 
@@ -411,5 +471,51 @@ let title_i=document.querySelector('.title-i');
 document.addEventListener('click',function(){
   title_sec.classList.remove('title-active');
 })
+
+// 单击双击
+var  clickTimeId;
+let shelfLi=document.querySelectorAll('.shelf-fir ul li span');
+function  onload() {
+  document.addEventListener( 'click' , onDocumentClick);
+  for(let i=0;i<shelfLi.length;i++){
+    shelfLi[i].addEventListener( 'dblclick' , onDocumenDblClick);
+}
+}
+function  onDocumentClick(event) {
+  // 取消上次延时未执行的方法
+  clearTimeout(clickTimeId);
+  //执行延时
+  clickTimeId = setTimeout( function () {
+    //此处为单击事件要执行的代码
+    // console.log( "鼠标单击" );
+  }, 250);
+}
+function  onDocumenDblClick(event) {
+  // 取消上次延时未执行的方法
+  clearTimeout(clickTimeId);
+  console.log( "鼠标双击" );
+  console.log(shelfLi.length);
+  let shelf_con = document.createAttribute("contenteditable");
+  shelf_con.value = 'true';
+  this.setAttributeNode(shelf_con);
+  edit();
+  
+}
+onload();
+function edit(){
+  document.addEventListener('click',function(){
+    for(let i=0;i<document.querySelectorAll('.shelf-fir ul li span').length;i++){
+      document.querySelectorAll('.shelf-fir ul li span')[i].addEventListener('click',function(e){
+        e.stopPropagation();
+      })
+      let shelf_n = document.createAttribute("contenteditable");
+      shelf_n.value = 'false';
+      console.log(1);
+      document.querySelectorAll('.shelf-fir ul li span')[i].setAttributeNode(shelf_n);
+     
+    }
+  })
+}
+
 
 })

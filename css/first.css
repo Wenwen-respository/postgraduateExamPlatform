@@ -1,4 +1,581 @@
-.first{
-    width: 773px;
-    margin: 0 auto;
+
+body {
+    background-color: rgb(243, 243, 243);
+    /* font-family: yuan; */
+    color:rgb(82, 81, 81);
+    font-weight: 500;
+    font-family: cursive;
 }
+.yiyan{
+    text-align: center;
+    line-height: 50px;
+}
+/* 侧边导航栏 */
+.sidebar-nav {
+    position: fixed;
+    top: 60%;
+    right: -2px;
+    transform: translateY(-50%);
+    padding: 15px;
+    background-color: #FFF;
+    border-radius: 20px;
+    z-index: 10;
+}
+
+.sidebar-nav .nav-item {
+    position: relative;
+    padding: 15px;
+    cursor: pointer;
+}
+.sidebar-nav .nav-item:nth-child(1)::after,
+.sidebar-nav .nav-item:nth-child(2)::after,
+.sidebar-nav .nav-item:nth-child(3)::after,
+.sidebar-nav .nav-item:nth-child(4)::after,
+.sidebar-nav .nav-item:nth-child(5)::after,
+.sidebar-nav .nav-item:nth-child(6)::after{
+    opacity: 0;
+    content: "产品简介";
+    position: absolute;
+    top: 6px;
+    left: -125px;
+    width: 100px;
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: all ease .5s;
+}
+
+.sidebar-nav .nav-item:nth-child(1):hover::after {
+    opacity: 1;
+}
+
+.sidebar-nav .nav-item:nth-child(2)::after {
+    content: "首页";
+}
+
+.sidebar-nav .nav-item:nth-child(2):hover::after {
+    opacity: 1;
+}
+
+.sidebar-nav .nav-item:nth-child(3)::after {
+    content: "讨论房";
+}
+
+.sidebar-nav .nav-item:nth-child(3):hover::after {
+    opacity: 1;
+}
+
+.sidebar-nav .nav-item:nth-child(4)::after {
+    content: "小房间";
+}
+
+.sidebar-nav .nav-item:nth-child(4):hover::after {
+    opacity: 1;
+}
+
+.sidebar-nav .nav-item:nth-child(5)::after {
+    content: "问题房";
+}
+
+.sidebar-nav .nav-item:nth-child(5):hover::after {
+    opacity: 1;
+}
+
+.sidebar-nav .nav-item:nth-child(6)::after {
+    content: "回到顶部";
+}
+
+.sidebar-nav .nav-item:nth-child(6):hover::after {
+    opacity: 1;
+}
+
+.sidebar-nav .nav-item i {
+    font-size: 40px;
+    font-weight: 600;
+    color: #ccc;
+    transition: all ease .5s;
+}
+
+.sidebar-nav .nav-item:hover i {
+    color: #444;
+}
+
+.sidebar-nav .nav-item.active i {
+    color: #444;
+}
+
+.panel {
+    width: 100%;
+    height: 100vh;
+}
+
+/* 项目介绍 */
+.project-introduction {
+    position: relative;
+}
+
+.project-introduction .img-box {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 250px;
+    width: 500px;
+    height: 500px;
+    box-shadow: 3px 3px 10px rgb(187, 184, 184);
+}
+
+.project-introduction .img-box.active {
+    animation: leftdisplay 1s forwards;
+}
+
+@keyframes leftdisplay {
+    0% {
+        left: 50px;
+    }
+
+    100% {
+        left: 250px;
+    }
+}
+
+.project-introduction .text-box {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 750px;
+    width: 500px;
+    height: 500px;
+    padding: 50px;
+    font-size: 30px;
+    line-height: 1.5;
+    font-weight: 600;
+    box-sizing: border-box;
+    background-color: rgba(221, 238, 250, 0.827);
+    box-shadow: 3px 3px 10px rgb(187, 184, 184);
+    /* box-shadow: 3px 3px 10px rgb(212, 207, 207); */
+}
+
+.project-introduction .text-box.active {
+    animation: rightdisplay 1s forwards;
+}
+
+@keyframes rightdisplay {
+    0% {
+        left: 950px;
+    }
+
+    100% {
+        left: 750px;
+    }
+}
+
+.project-introduction .text-box>div {
+    font-size: 35px;
+}
+
+.project-introduction .img-box img {
+    width: 100%;
+}
+
+/* 几个模块共用 */
+.focus-box-wraper {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1000px;
+    height: 488px;
+}
+
+.focus-box-wraper .btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.focus-box-wraper .btn.left-btn {
+    left: -50px;
+}
+
+.focus-box-wraper .btn.right-btn {
+    right: -50px;
+}
+
+.focus-box-wraper .btn i {
+    display: block;
+    font-size: 40px;
+    font-weight: 600;
+    color: #444;
+    cursor: pointer;
+}
+
+.focus-box-wraper .btn.right-btn i {
+    transform: rotateZ(180deg);
+}
+
+.focus-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.focus-box ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 9999px;
+    height: 100%;
+}
+
+
+.focus-box ul li {
+    position: relative;
+    float: left;
+    width: 1000px;
+    height: 100%;
+}
+
+.focus-box ul li img {
+    display: block;
+    width: 100%;
+}
+
+/* 首页 */
+.home-page {
+    position: relative;
+    /* background-color: #eae9ed; */
+}
+
+.home-page .home-page-text {
+    position: absolute;
+    top: 50px;
+    left: 120px;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: cursive;
+}
+
+.home-page .home-page-text span {
+    font-size: 40px;
+}
+
+
+.home-page .focus-box ul li.first .line {
+    position: absolute;
+    top: 50px;
+    left: 550px;
+    width: 120px;
+    height: 60px;
+    transform: rotateX(180deg);
+}
+
+.home-page .focus-box ul li.first .func-intro {
+    position: absolute;
+    top: 110px;
+    left: 325px;
+    width: 180px;
+    text-align: center;
+    padding: 20px;
+    line-height: 1.5;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 30px;
+    background-color: #fff;
+    box-shadow: 5px 5px 20px -10px #000;
+    filter: opacity(0.5);
+    cursor: default;
+}
+
+.home-page .focus-box ul li.second .line {
+    position: absolute;
+    top: 130px;
+    left: 110px;
+    width: 120px;
+    height: 60px;
+    transform: rotateZ(160deg);
+}
+
+.home-page .focus-box ul li.second .func-intro {
+    position: absolute;
+    top: 110px;
+    left: 255px;
+    width: 180px;
+    text-align: center;
+    padding: 20px;
+    line-height: 1.5;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 30px;
+    background-color: #fff;
+    box-shadow: 5px 5px 20px -10px #000;
+    filter: opacity(0.5);
+    cursor: default;
+}
+
+.home-page .focus-box ul li.third .line {
+    position: absolute;
+    top: 310px;
+    left: 80px;
+    width: 120px;
+    height: 60px;
+    transform: rotateZ(160deg);
+}
+
+.home-page .focus-box ul li.third .func-intro {
+    position: absolute;
+    top: 300px;
+    left: 220px;
+    width: 180px;
+    text-align: center;
+    padding: 20px;
+    line-height: 1.5;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 30px;
+    background-color: #fff;
+    box-shadow: 5px 5px 20px -10px #000;
+    filter: opacity(0.5);
+    cursor: default;
+}
+
+
+
+/* 讨论房 */
+.discuss-room {
+    position: relative;
+    /* background-color: #eae9ed; */
+}
+
+.discuss-room .discuss-room-text {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    line-height: 1.5;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: cursive;
+}
+
+.discuss-room .discuss-room-text span {
+    font-size: 40px;
+}
+
+/* 小房间 */
+.small-room {
+    position: relative;
+    /* background-color: #eae9ed; */
+}
+
+.small-room .small-room-text {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    line-height: 1.5;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: cursive;
+}
+
+.small-room .small-room-text span {
+    font-size: 40px;
+}
+
+.small-room .focus-box ul li.second .line {
+    position: absolute;
+    top: 142px;
+    left: 756px;
+    width: 120px;
+    height: 60px;
+    transform: rotateX(180deg);
+}
+
+.small-room .focus-box ul li.second .func-intro {
+    position: absolute;
+    top: 217px;
+    left: 574px;
+    width: 180px;
+    text-align: center;
+    padding: 20px;
+    line-height: 1.5;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 30px;
+    background-color: #fff;
+    box-shadow: 5px 5px 20px -10px #000;
+    filter: opacity(0.8);
+    cursor: default;
+}
+
+.small-room .focus-box ul li.third .line {
+    position: absolute;
+    top: 47px;
+    left: 753px;
+    width: 120px;
+    height: 60px;
+    transform: rotateX(180deg);
+}
+
+.small-room .focus-box ul li.third .func-intro {
+    position: absolute;
+    top: 115px;
+    left: 574px;
+    width: 180px;
+    text-align: center;
+    padding: 20px;
+    line-height: 1.5;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 30px;
+    background-color: #fff;
+    box-shadow: 5px 5px 20px -10px #000;
+    filter: opacity(0.8);
+    cursor: default;
+}
+
+.small-room .focus-box ul li.forth .line {
+    position: absolute;
+    top: 308px;
+    left: 793px;
+    width: 120px;
+    height: 60px;
+    transform: rotateX(180deg);
+}
+
+.small-room .focus-box ul li.forth .func-intro {
+    position: absolute;
+    top: 371px;
+    left: 579px;
+    width: 180px;
+    text-align: center;
+    padding: 20px;
+    line-height: 1.5;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 30px;
+    background-color: #fff;
+    box-shadow: 5px 5px 20px -10px #000;
+    filter: opacity(0.8);
+    cursor: default;
+}
+
+.small-room .focus-box ul li.fifth .line {
+    position: absolute;
+    top: 181px;
+    left: 56px;
+    width: 120px;
+    height: 60px;
+    transform: rotateZ(143deg);
+}
+
+.small-room .focus-box ul li.fifth .func-intro {
+    position: absolute;
+    top: 163px;
+    left: 190px;
+    width: 180px;
+    text-align: center;
+    padding: 20px;
+    line-height: 1.5;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 30px;
+    background-color: #fff;
+    box-shadow: 5px 5px 20px -10px #000;
+    filter: opacity(0.8);
+    cursor: default;
+}
+
+/* 问题房 */
+.question-room {
+    position: relative;
+    /* background-color: #eae9ed; */
+}
+
+.question-room .question-room-text {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    line-height: 1.5;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: cursive;
+}
+
+.question-room .question-room-text span {
+    font-size: 40px;
+}
+
+.question-room .focus-box ul li.first .line {
+    position: absolute;
+    top: 207px;
+    left: 423px;
+    width: 120px;
+    height: 60px;
+    transform: rotateZ(300deg);
+}
+
+.question-room .focus-box ul li.first .func-intro {
+    position: absolute;
+    top: 222px;
+    left: 190px;
+    width: 180px;
+    text-align: center;
+    padding: 20px;
+    line-height: 1.5;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 30px;
+    background-color: #fff;
+    box-shadow: 5px 5px 20px -10px #000;
+    filter: opacity(0.8);
+    cursor: default;
+}
+
+.question-room .focus-box ul li.second .line {
+    position: absolute;
+    top: 300px;
+    left: 200px;
+    width: 120px;
+    height: 60px;
+    transform: rotateZ(329deg);
+}
+
+.question-room .focus-box ul li.second .func-intro {
+    position: absolute;
+    top: 221px;
+    left: 38px;
+    width: 180px;
+    text-align: center;
+    padding: 20px;
+    line-height: 1.5;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 30px;
+    background-color: #fff;
+    box-shadow: 5px 5px 20px -10px #000;
+    filter: opacity(0.8);
+    cursor: default;
+}
+::-webkit-scrollbar{
+    width: 10px;  
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb{/*滚动条里面小方块*/
+      border-radius: 36px;
+      -webkit-box-shadow: inset 0 0 5px rgba(203, 197, 197, 0.2);
+      background: #dce0df;
+  }
+  ::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-track{/*滚动条里面轨道*/
+      -webkit-box-shadow: inset 0 0 5px rgba(47, 46, 46, 0.2);
+      border-radius: 36px;
+      background: #ffffff;
+  }

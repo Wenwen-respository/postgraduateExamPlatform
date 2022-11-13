@@ -33,7 +33,7 @@ window.addEventListener('load', function () {
     console.log(group_chat_button);
     console.log(private_chat_button);
     // 点击右上角回到讨论页
-    let start_discuss = this.document.querySelector('.start-discuss');
+    let start_discuss = document.querySelector('.start-discuss');
     start_discuss.addEventListener('click', function () {
         for (let i = 0; i < discuss_interface.length; i++) {
             if (discuss_interface[i].classList.contains('active')) {
@@ -46,7 +46,7 @@ window.addEventListener('load', function () {
     let return_button = this.document.querySelector('.return-button');
     return_button.addEventListener('click', function () {
         setTimeout(function () {
-            window.open('./index.html');
+            window.location.href='./index.html';
         }, 500);
     })
 
@@ -56,50 +56,65 @@ window.addEventListener('load', function () {
     for (let i = 0; i < dialogue.length; i++) {
         dialogue[i].scrollTop = dialogue[i].scrollHeight;
     }
-    // 鼠标放在人身上的时候会浮现它的信息
-    let info = this.document.querySelectorAll('.info');
-    let info_dotted = this.document.querySelectorAll('.info-dotted');
-    for (let i = 0; i < info.length; i++) {
-        // info_dotted[i].addEventListener('mouseenter', function (e) {
-        //     e.stopPropagation();
-        //     info_dotted[i].children[0].style.animationName = 'appear';
-        //     info_dotted[i].children[0].style.animationDuration = '1s';
-        //     info_dotted[i].children[0].style.opacity = '1';
-        //     info_dotted[i].children[0].style.display = 'block';
-        // })
-        // info_dotted[i].addEventListener('mouseleave', function (e) {
-        //     e.stopPropagation();
-        //     info_dotted[i].children[0].style.animationName = 'disappear';
-        //     info_dotted[i].children[0].style.animationDuration = '1s';
-        //     info_dotted[i].children[0].style.opacity = '0';
-        //     info_dotted[i].children[0].style.display = 'none';
-        // })
-        info_dotted[i].addEventListener('click', function (e) {
+    // 点击人身上的时候会浮现它的信息
+    let friend_info = this.document.querySelector('.friend-info');
+    let dotted = this.document.querySelectorAll('.dotted');
+    for (let i = 0; i < dotted.length; i++) {
+        dotted[i].addEventListener('click', function (e) {
             e.stopPropagation();
-            info_dotted[i].children[0].style.animationName = 'appear';
-            info_dotted[i].children[0].style.animationDuration = '1s';
-            info_dotted[i].children[0].style.opacity = '1';
-            info_dotted[i].children[0].style.display = 'block';
-        })
-        this.document.body.addEventListener('click', function (e) {
-            e.stopPropagation();
-            info_dotted[i].children[0].style.animationName = 'disappear';
-            info_dotted[i].children[0].style.animationDuration = '1s';
-            info_dotted[i].children[0].style.opacity = '0';
-            info_dotted[i].children[0].style.display = 'none';
+            friend_info.style.display = 'block';
         })
     }
+    // 点击其他地方，信息消失
+    this.document.body.addEventListener('click', function () {
+        friend_info.style.display = 'none';
+    })
+    friend_info.addEventListener('click', function (e) {
+        e.stopPropagation();
+    })
+    // let info = this.document.querySelectorAll('.info');
+    // let info_dotted = this.document.querySelectorAll('.info-dotted');
+    // for (let i = 0; i < info.length; i++) {
+    // info_dotted[i].addEventListener('mouseenter', function (e) {
+    //     e.stopPropagation();
+    //     info_dotted[i].children[0].style.animationName = 'appear';
+    //     info_dotted[i].children[0].style.animationDuration = '1s';
+    //     info_dotted[i].children[0].style.opacity = '1';
+    //     info_dotted[i].children[0].style.display = 'block';
+    // })
+    // info_dotted[i].addEventListener('mouseleave', function (e) {
+    //     e.stopPropagation();
+    //     info_dotted[i].children[0].style.animationName = 'disappear';
+    //     info_dotted[i].children[0].style.animationDuration = '1s';
+    //     info_dotted[i].children[0].style.opacity = '0';
+    //     info_dotted[i].children[0].style.display = 'none';
+    // })
+    // info_dotted[i].addEventListener('click', function (e) {
+    //     e.stopPropagation();
+    //     info_dotted[i].children[0].style.animationName = 'appear';
+    //     info_dotted[i].children[0].style.animationDuration = '1s';
+    //     info_dotted[i].children[0].style.opacity = '1';
+    //     info_dotted[i].children[0].style.display = 'block';
+    // })
+    // this.document.body.addEventListener('click', function (e) {
+    //     e.stopPropagation();
+    //     info_dotted[i].children[0].style.animationName = 'disappear';
+    //     info_dotted[i].children[0].style.animationDuration = '1s';
+    //     info_dotted[i].children[0].style.opacity = '0';
+    //     info_dotted[i].children[0].style.display = 'none';
+    // })
+    // }
 
     // 点击私信跳转到私聊
     let private_letter = this.document.querySelectorAll('.private-letter');
     for (let i = 0; i < private_letter.length; i++) {
         private_letter[i].addEventListener('click', function () {
-            setTimeout(function () {
-                info_dotted[i].children[0].style.animationName = 'disappear';
-                info_dotted[i].children[0].style.animationDuration = '1s';
-                info_dotted[i].children[0].style.opacity = '0';
-                info_dotted[i].children[0].style.display = 'none';
-            }, 100);
+            // setTimeout(function () {
+            //     info_dotted[i].children[0].style.animationName = 'disappear';
+            //     info_dotted[i].children[0].style.animationDuration = '1s';
+            //     info_dotted[i].children[0].style.opacity = '0';
+            //     info_dotted[i].children[0].style.display = 'none';
+            // }, 100);
             // 自动出现讨论界面
             for (let i = 0; i < discuss_interface.length; i++) {
                 if (discuss_interface[i].classList.contains('active')) {

@@ -181,5 +181,9 @@ function scale(contain,dot){
       };
   };
 }
-    // scale('.calender-box','.calender-scale')
+    let del_ic=document.querySelector('.del-icon');
+    let doing=document.querySelector('.do');
+    del_ic.addEventListener('click',function(){
+      doing.style.opacity=0;
+    })
 })

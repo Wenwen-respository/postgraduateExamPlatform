@@ -123,14 +123,16 @@ window.addEventListener('load', function () {
 
     // 点击标题，跳转到问题详情页 
     beike_hiddenBox_question.addEventListener('click', function () {
-        window.open("answer.html?qId=" + this.getAttribute("qid"));
+        window.location.href="../answer.html"
+        // window.open("answer.html?qId=" + this.getAttribute("qid"));
     })
     // 点击评论，也是跳转到问题详情页
     let comment_btn = this.document.querySelectorAll('.comment');
     for (let i = 0; i < comment_btn.length; i++) {
         comment_btn[i].onclick = function (e) {
             e.stopPropagation();
-            window.open("answer.html?qId=" + this.getAttribute("qid"));
+            window.location.href="../answer.html"
+            // window.open("answer.html?qId=" + this.getAttribute("qid"));
         }
     }
     // 点击贝壳的隐藏框，跳转到回答详情页
@@ -198,7 +200,7 @@ window.addEventListener('load', function () {
     let back_index = this.document.querySelector('.back-index');
     back_index.addEventListener('click', function () {
         setTimeout(function () {
-            window.open('./index.html');
+            window.location.href="../index.html";
         }, 500);
         console.log(back_index);
     })

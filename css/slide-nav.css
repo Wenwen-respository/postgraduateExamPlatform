@@ -1,7 +1,6 @@
 a{
     text-decoration: none;
     color: #333;
-    font-size: 18px;
 }
 .slide-nav ul li{
     margin: 10px 0;
@@ -13,6 +12,7 @@ a{
     text-align: center;
     box-shadow: 0px 0px 24px 0px rgb(4 1 1 / 32%);
     position: relative;
+    cursor: pointer;
 }
 .slide-nav ul li i{
     font-size: 60px;
@@ -24,7 +24,7 @@ a{
     position: absolute;
     right: 0;
     top: 20%;
-    z-index: 11111;
+    z-index: 1111111111111111111!important;
     transform: translateX(70px);
 }
 .slide-nav ul li p{
@@ -38,5 +38,6 @@ a{
     transition: all .5s;
     background-color: rgba(212, 247, 252);
     color: #333;
+    font-size: 18px;
 
 }

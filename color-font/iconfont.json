@@ -6,6 +6,69 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "6894489",
+      "name": "大学",
+      "font_class": "daxue",
+      "unicode": "e653",
+      "unicode_decimal": 58963
+    },
+    {
+      "icon_id": "12593304",
+      "name": "学校",
+      "font_class": "xuexiao1",
+      "unicode": "e6f6",
+      "unicode_decimal": 59126
+    },
+    {
+      "icon_id": "22232290",
+      "name": "学校",
+      "font_class": "xuexiao2",
+      "unicode": "f718",
+      "unicode_decimal": 63256
+    },
+    {
+      "icon_id": "24111607",
+      "name": "排名",
+      "font_class": "paiming",
+      "unicode": "faff",
+      "unicode_decimal": 64255
+    },
+    {
+      "icon_id": "27787288",
+      "name": "排名",
+      "font_class": "guanjun",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "31523379",
+      "name": "排名",
+      "font_class": "paiming1",
+      "unicode": "e83c",
+      "unicode_decimal": 59452
+    },
+    {
+      "icon_id": "1572539",
+      "name": "奖牌",
+      "font_class": "medal",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "5148416",
+      "name": "优秀",
+      "font_class": "icon-test",
+      "unicode": "e636",
+      "unicode_decimal": 58934
+    },
+    {
+      "icon_id": "10176448",
+      "name": "热门",
+      "font_class": "remen1",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
       "icon_id": "12593307",
       "name": "数学",
       "font_class": "shuxue1",
@@ -13,46 +76,11 @@
       "unicode_decimal": 59128
     },
     {
-      "icon_id": "3833183",
-      "name": "数学",
-      "font_class": "shuxue",
-      "unicode": "e607",
-      "unicode_decimal": 58887
-    },
-    {
-      "icon_id": "3833191",
-      "name": "英语",
-      "font_class": "yingyu",
-      "unicode": "e608",
-      "unicode_decimal": 58888
-    },
-    {
       "icon_id": "3859971",
       "name": "专业",
       "font_class": "zhuanye",
       "unicode": "e609",
       "unicode_decimal": 58889
-    },
-    {
-      "icon_id": "3865681",
-      "name": "政治",
-      "font_class": "zhengzhi",
-      "unicode": "e60a",
-      "unicode_decimal": 58890
-    },
-    {
-      "icon_id": "4075985",
-      "name": "政治",
-      "font_class": "zhengzhi1",
-      "unicode": "e60f",
-      "unicode_decimal": 58895
-    },
-    {
-      "icon_id": "5158714",
-      "name": "D-政治法律",
-      "font_class": "D-zhengzhifalv",
-      "unicode": "e616",
-      "unicode_decimal": 58902
     },
     {
       "icon_id": "5162809",
@@ -74,20 +102,6 @@
       "font_class": "zhuanyeshuji",
       "unicode": "e777",
       "unicode_decimal": 59255
-    },
-    {
-      "icon_id": "19598162",
-      "name": "数学@2x",
-      "font_class": "shuxue2x",
-      "unicode": "e64b",
-      "unicode_decimal": 58955
-    },
-    {
-      "icon_id": "19598167",
-      "name": "英语@2x",
-      "font_class": "yingyu2x",
-      "unicode": "e64c",
-      "unicode_decimal": 58956
     },
     {
       "icon_id": "20478144",
@@ -153,13 +167,6 @@
       "unicode_decimal": 58886
     },
     {
-      "icon_id": "11043773",
-      "name": "17删除",
-      "font_class": "shanchu6",
-      "unicode": "e645",
-      "unicode_decimal": 58949
-    },
-    {
       "icon_id": "14433098",
       "name": "添加",
       "font_class": "tianjia1",
@@ -195,20 +202,6 @@
       "unicode_decimal": 58916
     },
     {
-      "icon_id": "8358225",
-      "name": "预览",
-      "font_class": "yulan",
-      "unicode": "e660",
-      "unicode_decimal": 58976
-    },
-    {
-      "icon_id": "9114442",
-      "name": "93预览",
-      "font_class": "yulan1",
-      "unicode": "e649",
-      "unicode_decimal": 58953
-    },
-    {
       "icon_id": "15676330",
       "name": "xlsx",
       "font_class": "xlsx1",
@@ -242,13 +235,6 @@
       "font_class": "txtwenjian",
       "unicode": "e686",
       "unicode_decimal": 59014
-    },
-    {
-      "icon_id": "12600676",
-      "name": "docb",
-      "font_class": "docb",
-      "unicode": "e68a",
-      "unicode_decimal": 59018
     },
     {
       "icon_id": "13301856",

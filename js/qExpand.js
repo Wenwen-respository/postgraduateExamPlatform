@@ -20,52 +20,9 @@ let filter1 = '.png';
 let filter2 = '.jpg';
 let filter3 = '.jpeg';
 let array1 = [filter1, filter2, filter3];
-let area = document.querySelector('.beike-area');
 // let
 tInput.maxlength = realize.innerHTML;
-const pageCount = 5;
-window.addEventListener('load',function() {
 
-    const userId = getUrlParam('pid');
-    if (userId == null) {
-        // 说明是用户进行登录操作 如果不是用户进行登录操作的
-    }
-    else {
-        // 说明是用户访问 首先会判断是否还在线中
-        axios({
-            url : urlPrefix + 'question/queryOther.do',
-            method : 'get',
-            params : {
-                pid : userId,
-                pageCount : pageCount
-            }
-        }).then(res => {
-            if (res.flag) {
-                let beikas = document.querySelectorAll('.beike');
-                for (let i = 0;i < beikas.length;i ++) beikas[i].hidden = true; // 隐藏元素
-                if (res.data == null || res.data.length === 0) {
-                    return;
-                }
-                for (let i = 0;i < res.data.length;i ++) {
-                    // 全部都进行隐藏操作
-                    let beike = beikas[i];
-                    let solution = res.data[i].solution == null ? '暂无解析' : res.data[i].solution;
-                    beike.setAttribute('qId',res.data[i].id);
-                    beike.querySelector('img').src = './images/beike' + (i + 1) + '.png';
-                    beike.querySelector('.question').innerHTML = '<span class="tag">问题</span>' + res.data[i].title;
-                    beike.querySelector('.question').setAttribute('qId',res.data[i].id);
-                    beike.querySelector('.analysis').innerHTML = '<span class="tag">解析</span>' + solution;
-                    beike.querySelector('.answer-area').hidden = true; // 隐藏元素
-                    beike.hidden = false; // 显示元素
-                }
-            }
-            else {
-                if ("用户已经下线" === res.message) window.location.href = 'register.html';
-                console.log(res.message);
-            }
-        })
-    }
-})
 tInput.addEventListener('keyup', function (events) {
     let value = this.value;
     if (value.length >= 5) {
@@ -96,7 +53,6 @@ addIFlag.addEventListener('click', function () {
 // 添加事件 获得资源
 
 fImageInput.addEventListener('change', function () {
-    const userId = getUrlParam('pid');
 
     let qImage = document.querySelectorAll('.qImage');
     console.log(this.files);
@@ -224,7 +180,7 @@ for (let i = 0; i < fSpan.length; i++) {
     })
 }
 // 将表情包添加到数据库 由于这个时候未连接用户页面 所以使用的方式是测试方式 使用的id是zhangsan用户的
-const userId = getUrlParam('pid');
+const userId = '1665204142358941414';
 document.querySelector('.addCustomize input[type="file"]').addEventListener('change', function () {
     if (this.files == null || this.files.length === 0) return;
     for (let i = 0; i < this.files.length; i++) {
@@ -295,10 +251,10 @@ submit.addEventListener('click', function () {
     // 程序运行到这里 就说明已经都满足了 解析文本是否有元素节点
     let images = getImage(); // 获取图片信息
     // 程序首先需要跟缓存的图片进行对比 对比成功了之后才能插入数据
-    if (images != null || images.length !== 0) {
+    if (images == null || images.length === 0) {
         let str = '';
         for (let i = 0; i < images.length; i++) {
-            str += "," + images[i];
+            str += ":" + images[i];
         }
         str.substr(str.length - 1, str.length);
         axios({
@@ -311,16 +267,16 @@ submit.addEventListener('click', function () {
             }
         }).then(res => {
             if (res.flag) {
-                // 成功了之后就再次发送请求 由于上一次请求是成功的 所以这个时候就直接执行添加操作就可以了 暂时不管这个东西了
+                // 成功了之后就再次发送请求 由于上一次请求是成功的 所以这个时候就直接执行添加操作就可以了
                 let qId = res.data;
                 let title = tInput.value;
                 axios({
                     url: urlPrefix + "customize/insertQuestion.do",
-                    method: 'get',
-                    params: {
-                        content: html,
+                    method: 'post',
+                    data: {
                         title: title,
                         qId: qId,
+                        content: html,
                         pid: userId
                     }
                 }).then(res => {
@@ -358,12 +314,6 @@ submit.addEventListener('click', function () {
         })
     }
 })
-function parseLegalString(html) {
-    while (html.indexOf('"') !== -1) {
-        html.replaceAll(/"/g,"'");
-    }
-    return html;
-}
 // 获得所有的图片信息 返回的是一个数组
 function getImage() {
     let divs = qBody.querySelectorAll('.qImage'); // 获取到这一个
@@ -376,178 +326,106 @@ function getImage() {
         if (images != null && images.length !== 0) {
             // 有可能会有多张照片信息
             for (let j = 0; j < images.length; j++) {
-                result[result.length] = images[j].src;
+                result[result.length] = images[i].src;
             }
         }
     }
     return result.length === 0 ? null : result;
 }
 
-// 为点击贝壳出现评论绑定事件
-let beikes = document.querySelectorAll('.beike');
-for (let i = 0;i < beikes.length;i ++) {
-    beikes[i].addEventListener('click',function() {
-        let qId = this.getAttribute('qid'); // 获取问题的主键id值
-        if (qId == null) return;
-        axios({
-            url : urlPrefix + 'question/queryComments.do',
-            method : 'get',
-            params : {
-                qId : qId
-            }
-        }).then(res => {
-            if (res.flag) {
-                let area = this.querySelector('.answer-area'); // 获取贝壳区域
-                area.innerHTML = '';
-                if (res.data == null || res.data.length === 0) return;
-                for (let i = 0; i < res.data.length; i ++) {
-                    let compose = new Date(res.data[i].create).toLocaleDateString();
-                    let html = '<div class="answer-box" cId="' + res.data[i].id + '">' +
-                        '                                              <div class="top">' +
-                        '                                                  <div class="avatar"><img src="' + res.data[i].headshot + '" alt=""></div>' +
-                        '                                                  <div class="info">' +
-                        '                                                      <div class="name">' + res.data[i].name + '</div>' +
-                        '                                                      <div class="time">' + compose + '</div>' +
-                        '                                                  </div>' +
-                        '                                              </div>' +
-                        '                                              <div class="middle">' + res.data[i].content + '</div>'  +
-                        '                                               <div class="bottom"> ' +
-                        '                                                   <span><i class="iconfont">&#xe8b0;</i>分享</span>' +
-                        '                                                   <span><i class="iconfont">&#xe891;</i>评论</span>' +
-                        '                                                   <span class="like"><i class="iconfont">&#xec7f;</i>点赞</span> ' +
-                        '                                               </div>' +
-                        '                                          </div>';
-                    area.innerHTML += html;
-                }
-                area.hidden = false; // 显示元素
-            }
-            else {
-                console.log(res.message);
-            }
-        })
-    })
-}
+// 控制贝壳的随机分布 由于外部盒子已经有了相对定位了 所以只需要移动里面的位置就可以了
 
-// 绑定海浪刷新事件 刷新海浪进行操作
-const langhua = document.querySelector('.langhua1');
-langhua.addEventListener('click',function() {
-    // 进行ajax请求 重新部署页面进行操作
-    // 说明是用户访问 首先会判断是否还在线中
-    let i = 0;
-    setTimeout(function() {
-            clearTimeout();
-            axios({
-                url : urlPrefix + 'question/queryOther.do',
-                method : 'get',
-                params : {
-                    pid : userId,
-                    pageCount : pageCount
-                }
-            }).then(res => {
-                if (res.flag) {
-                    let beikas = document.querySelectorAll('.beike');
-                    for (let i = 0;i < beikas.length;i ++) beikas[i].hidden = true; // 隐藏元素
-                    if (res.data == null || res.data.length === 0) {
-                        return;
-                    }
-                    for (let i = 0;i < res.data.length;i ++) {
-                        // 全部都进行隐藏操作
-                        let beike = beikas[i];
-                        let solution = res.data[i].solution == null ? '暂无解析' : res.data[i].solution;
-                        beike.setAttribute('qId',res.data[i].id);
-                        beike.querySelector('img').src = './images/beike' + (i + 1) + '.png';
-                        beike.querySelector('.question').innerHTML = '<span class="tag">问题</span>' + res.data[i].title;
-                        beike.querySelector('.analysis').innerHTML = '<span class="tag">解析</span>' + solution;
-                        beike.querySelector('.answer-area').hidden = true; // 隐藏元素
-                        beike.hidden = false; // 显示元素
-                    }
-                }
-                else {
-                    if ("用户已经下线" === res.message) window.location.href = 'register.html';
-                    console.log(res.message);
-                }
-            })
-    },2500)
-})
+// async function randomLocation() {
+//     let beikas = document.querySelectorAll('.beike-area>div');
+//     let area = document.querySelector('.beike-area');
+//     const oWidth = area.offsetWidth;
+//     const oHeight = area.offsetHeight;
+//     console.log(oWidth +":" + oHeight)
+//     let arrayX = []
+//     let arrayY = []
+//     for (let i = 0;i < beikas.length;i ++) {
+//         let x = 0;
+//         let y = 0;
+//         while (true) {
+//             await generateX(oWidth).then(result => {
+//                 console.log(x);
+//                 x = result;
+//             });
+//             let flag = true;
+//             await isConflictX(x,arrayX).then((result) => flag = result);
+//             if (!flag) {
+//                 while (true) {
+//                     await generateY(oHeight).then(result => {
+//                         y = result;
+//                     });
+//                     await isConflictY(y,arrayY).then((result) => flag = result);
+//                     if (!flag) break;
+//                 }
+//                 break;
+//             }
+//         }
+//         let left = x - 100 < 0 ? 0 : (x - 100);
+//         let top = y - 100 < 0 ? 0 : (y - 100);
+//         beikas[i].style.left = left + 'px';
+//         beikas[i].style.top = top + 'px';
+//         arrayX[arrayX.length] = left;
+//         arrayY[arrayY.length] = top;
+//     }
+// }
+// // 判断是否冲突
+// async function isConflict(x,y,obj,obj1) {
+//     let flag = isConflictX(x,obj);
+//     let flag1 = isConflictY(y,obj1);
+//     return flag && flag1;
+// }
+// async function isConflictX(t,obj) {
+//     if (t == null && obj.length === 0) return true;
+//     if (t != null && obj.length === 0) return false;
+//     // if (t == null) return true;
+//     let count = 0;
+//     for (let i = 0; i < obj.length; i++) {
+//         if (Math.abs(t - obj[i]) < 100) count++;
+//     }
+//     return count !== 0;
+// }
+// async function isConflictY(y,obj) {
+//     if (y == null && obj.length === 0) return true;
+//     if (y != null && obj.length === 0) return false;
+//     // if (y == null) return true;
+//     let count = 0;
+//     for (let i = 0; i < obj.length; i++) {
+//         let sub = Math.abs(y - obj[i]);
+//         console.log(sub);
+//         if (Math.abs(y - obj[i]) < 100) count++;
+//     }
+//     return count !== 0;
+// }
+// // 随机生成x
+// async function generateX(oWidth) {
+//     let result = null;
+//     while (true) {
+//         let temp = Math.floor(Math.random() * 700);
+//         if (temp < 0 || temp > oWidth) continue;
+//         result = temp;
+//         break;
 
-// 绑定用户历史提问的操作 这一个操作的执行时间在用户点击历史提问的时候
-let historyDiv = document.querySelector('.header .right');
-historyDiv.addEventListener('click',function() {
-    const pid = getUrlParam('pid');
-    if (pid == null) {
-        console.log("请先登录");
-        return;
-    }
-    axios({
-        url : urlPrefix + 'question/historyByPid.do',
-        method : 'get',
-        params : {
-            pId : pid
-        }
-    }).then(res => {
-        if (res.flag){
-            // 说明响应成功了
-            console.log(res.data);
-            let ul = document.querySelector('.history-content>ul');
-            ul.innerHTML = ''; // 清空元素
-            if (res.data == null || res.data.length === 0) {
-                return;
-            }
-            for (let i = 0;i < res.data.length;i++) {
-                let answer = res.data[i].comment >= 10000 ? (res.data[i].comment / 10000) + '万' : res.data[i].comment;
-                let html = '  <li><a href="./answer.html?qId=' + res.data[i].id + '" target="_blank">' + res.data[i].title + '</a>\n' +
-                    '                    <div class="answer-num right">' + answer +'个回答</div>\n' +
-                    '                </li>';
-                ul.innerHTML += html;
-            }
-        }
-        else {
-            if ('用户已经下线' === res.message) window.location.href = 'register.html';
-        }
-    })
-})
-
-// 为搜索框绑定时间进行操作
-let searchButton =  document.querySelector('.search-box .right button');
-let sInput = document.querySelector('.search-box .left input');
-let myQuestionBox = document.querySelector('.my-question-box');
-searchButton.addEventListener('click',function() {
-    let value = sInput.value;
-    if (value == null || value.length === '') return;
-    // 如果程序运行到这里 那么就根据关键词进行搜索操作吧
-    axios({
-        url : urlPrefix + "question/queryByWord.do",
-        method : 'get',
-        params : {
-            pid : getUrlParam('pid'),
-            word : value,
-            pageCount : pageCount,
-        }
-    }).then(res => {
-        if (res.flag) {
-            let beikas = document.querySelectorAll('.beike');
-            for (let i = 0;i < beikas.length;i ++) beikas[i].hidden = true; // 隐藏元素
-            if (res.data == null || res.data.length === 0) {
-                return;
-            }
-            for (let i = 0;i < res.data.length;i ++) {
-                // 全部都进行隐藏操作
-                let beike = beikas[i];
-                let solution = res.data[i].solution == null ? '暂无解析' : res.data[i].solution;
-                beike.setAttribute('qId',res.data[i].id);
-                beike.querySelector('img').src = './images/beike' + (i + 1) + '.png';
-                beike.querySelector('.question').innerHTML = '<span class="tag">问题</span>' + res.data[i].title;
-                beike.querySelector('.question').setAttribute('qId',res.data[i].id);
-                beike.querySelector('.analysis').innerHTML = '<span class="tag">解析</span>' + solution;
-                beike.querySelector('.answer-area').hidden = true; // 隐藏元素
-                beike.hidden = false; // 显示元素
-            }
-            document.querySelector('.my-question-backdrop').style.display = 'none';
-            document.querySelector('.my-question-box').style.display = 'none';
-        }
-        else {
-            if ("用户已经下线" === res.message) window.location.href = 'register.html';
-            console.log(res.message);
-        }
-    })
-})
+//     }
+//     return result;
+// }
+// // 随机生成y元素
+// async function generateY(oHeight) {
+//     let result = null;
+//     while (true) {
+//         let temp = Math.floor(Math.random() * 400);
+//         if (temp < 0 || temp > oHeight) continue;
+//         result = temp;
+//         break;
+//     }
+//     return result;
+// }
+// let sweat = document.querySelector('.langhua1');
+// sweat.addEventListener('click',function() {
+//     setTimeout(function () {
+//         randomLocation();
+//     },4 * 1000)
+// })

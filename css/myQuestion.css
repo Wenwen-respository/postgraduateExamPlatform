@@ -1,7 +1,7 @@
 /* 我的问题 */
 .my-question {
     position: absolute;
-    right: 120px;
+    right: 0;
     bottom: 0;
     width: 180px;
     height: 180px;
@@ -30,7 +30,6 @@
 
 .my-question-backdrop {
     display: none;
-    opacity: 0;
     position: absolute;
     top: 0;
     right: 0;
@@ -39,22 +38,10 @@
     z-index: 5;
     background-color: rgba(18, 18, 18, .65);
     transition: background-color .3s ease-out;
-    animation: appear .5s;
-}
-
-.my-question-backdrop.active {
-    animation: appear .5s;
-    display: block;
-    opacity: 1;
-}
-
-.my-question-backdrop.passive {
-    animation: disappear .5s;
 }
 
 .my-question-box {
     display: none;
-    opacity: 0;
     position: fixed;
     top: 0;
     right: 0;
@@ -68,17 +55,6 @@
     border-radius: 50px;
     z-index: 5;
     /* overflow: hidden; */
-
-}
-
-.my-question-box.active {
-    animation: appear .5s, popup .5s;
-    display: block;
-    opacity: 1;
-}
-
-.my-question-box.passive {
-    animation: disappear .5s, popback .5s;
 }
 
 .close.close-question {
@@ -163,12 +139,11 @@
     border-radius: 10px;
     font-weight: 700;
     box-shadow: 0 0 10px 2px rgb(0 0 0 / 6%);
-    overflow: auto;
-
 }
 
-
-
+.ask {
+    overflow: auto;
+}
 
 .qContent {
     display: inline-block;
@@ -202,7 +177,7 @@
     border-right: 0;
     border-top: 0;
     border-bottom: 1px solid #999999;
-    margin: 10px 0 0 15px;
+    margin: 10px 0 0 10px;
     padding-left: 5px;
     /*border-radius: 5px;*/
     font-size: 24px;
@@ -212,16 +187,10 @@
 
 .questionBody {
     outline: none;
-    /* width: 100%; */
-    margin: 20px;
+    width: 100%;
+    margin: 10px 0 0 10px;
     font-size: 20px;
     font-weight: 400;
-}
-
-.questionBody:empty::before {
-    content: "内容";
-    font-size: 20px;
-    color: #ccc;
 }
 
 .questionBody>div {
@@ -253,11 +222,7 @@
     font-weight: 400;
 }
 
-.ask .top {
-    position: relative;
-}
-
-.ask .bottom .left {
+.now-content .bottom .left {
     position: absolute;
     top: 121px;
     left: 10px;
@@ -268,29 +233,28 @@
     box-shadow: 0 0 10px 2px rgb(0 0 0 / 6%);
 }
 
-.ask .bottom .right {
+.now-content .bottom .right {
     position: absolute;
     bottom: 45px;
     right: 80px;
 }
 
-.ask .bottom .right button {
+.right button {
     border: 0;
     width: 100px;
     height: 35px;
     border-radius: 10px;
     font-size: 16px;
     color: #999999;
-    cursor: pointer;
 }
 
-.ask .bottom .left span {
+.now-content .bottom .left span {
     cursor: pointer;
     display: inline-block;
     margin: 10px 0 8px 10px;
 }
 
-.ask .bottom .left span .iconfont {
+.now-content .bottom .left span .iconfont {
     color: #999999;
     font-size: 30px;
 }
@@ -366,6 +330,7 @@
 
 .image {
     overflow: hidden;
+    ;
 }
 
 .image input[type='file'] {
@@ -428,17 +393,16 @@
 
 .my-question-box .search-content {
     display: none;
+    padding: 150px;
 }
 
 .my-question-box .search-content .left input {
     width: 400px;
-    padding: 0 50px;
+    margin: 0 50px;
     font-size: 20px;
     height: 50px;
     border: 0;
     outline: none;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
 }
 
 .my-question-box .search-content .right button {
@@ -453,86 +417,14 @@
     display: inline-block;
     font-size: 18px;
     cursor: pointer;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
 }
 
 .my-question-box .search-content .search-box {
-    position: relative;
     height: 50px;
     /* border-radius: 50px; */
-    /* background-color: #fff; */
-    border-radius: 10px;
-    padding: 50px 150px 30px;
-    padding-top: 50px;
-    transition: all ease .5s;
-    z-index: 10;
-}
-
-/* 搜索发现模块 */
-.search-find {
-    /* display: none; */
-    padding: 0 150px;
-}
-
-.search-find h3 {
-    padding-bottom: 15px;
-    border-bottom: 1px solid #000;
-}
-
-.search-find ul {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 10px;
-}
-
-.search-find ul li {
-    float: left;
-    width: 50%;
-    padding: 10px 10px;
-    box-sizing: border-box;
-    cursor: default;
-}
-
-.search-find ul li:hover {
     background-color: #fff;
 }
 
-/* 搜索相关 */
-.search-link {
-    display: none;
-    position: absolute;
-    top: 110px;
-    width: calc(100% - 300px);
-    padding: 20px;
-    background-color: #fff;
-    box-sizing: border-box;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px -5px #888888;
-}
-
-.search-link ul li {
-    padding: 5px 30px;
-}
-
-/* 搜索出来的问题 */
-.search-question {
-    display: none;
-    margin: 0 100px;
-    max-height: 360px;
-    /* height: 200px; */
-    background-color: pink;
-    overflow-y: auto;
-    border-radius: 10px;
-}
-
-.question-item {
-    padding: 10px;
-    padding-bottom: 0;
-    background-color: #fff;
-}
-
-/* 历史提问 */
 .my-question-box .history-content {
     display: none;
     max-height: 450px;
@@ -547,43 +439,4 @@
     list-style: none;
     background-color: #fff;
     border-radius: 5px;
-}
-
-.my-question-box .history-content ul li .top {
-    height: 30px;
-    line-height: 30px;
-}
-
-.my-question-box .history-content ul li .top a {
-    font-size: 20px;
-    font-weight: 600;
-    color: #444;
-}
-
-.my-question-box .history-content ul li .top .time {
-    margin-right: 20px;
-}
-
-.my-question-box .history-content ul li .bottom {
-    margin-top: 5px;
-    height: 30px;
-    line-height: 30px;
-}
-
-.my-question-box .history-content ul li .bottom .like-num {
-    display: inline-block;
-    margin-left: 20px;
-    font-size: 18px;
-}
-
-.my-question-box .history-content ul li .bottom .answer-num {
-    display: inline-block;
-    margin-left: 20px;
-    font-size: 18px;
-}
-
-.my-question-box .history-content ul li .bottom .time {
-    display: inline-block;
-    margin-left: 280px;
-    font-size: 16px;
 }

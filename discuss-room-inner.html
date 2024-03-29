@@ -11,11 +11,11 @@
     <link rel="stylesheet" href="./no-color-font/iconfont.css">
     <link rel="stylesheet" href="./css/discuss-room-together.css">
     <link rel="stylesheet" href="./css/discuee-room-inner.css">
+    <link rel="stylesheet" href="./css/school.css">
     <script src="./js/discuss-room-inner.js"></script>
+    <script src="./js/count.js"></script>
 </head>
-<div class="discuss-room-inner-bg">
-    <img src="./images/discuss-bg.png" alt="">
-</div>
+<div class="discuss-room-inner-bg"><img src="./images/10.png"></div>
 <!-- 头部信息模块 -->
 <div class="discuss-header">
     <div class="return-button left">返回首页</div>
@@ -197,6 +197,281 @@
     <!-- 关闭 -->
     <i class="discuss-close iconfont">&#xe66e;</i>
 </div>
+<div class="edit-bgc"></div>
+    <div class="edit-content">
+      <div class="user-info user-head">
+        <form action="">
+        <img src="./images/user.png" alt="" class="user-avatar" />
+        <span class="user-edit">点击头像可更换照片</span>
+        <div class="user-data">
+        <p class="name-edit">
+          <span>昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称：</span>
+          <input type="text" name="" placeholder="易研为定">
+        </p>
+        <p class="name-edit sex-edit">
+          <span>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</span>
+          <input type="radio" name="sex" id="boy" checked><label for="boy">男</label>
+          <input type="radio" name="sex" id="girl"><label for="girl">女</label>
+        </p>
+        <p class="name-edit">
+          <span>年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龄：</span>
+          <input type="text" name="" placeholder="20岁">
+        </p>
+        <p class="name-edit">
+          <span>简&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;介：</span>
+          <input type="text" name="" placeholder="一定要上岸">
+        </p>
+        <p class="name-edit">
+            <span>报考专业：</span>
+            <input type="text" name="" placeholder="金融学">
+        </p>
+        <p class="name-edit school-edit-one ">
+            <span>所在地区：</span>
+            <span class="school-edit-content school-edit-two">
+                <select name="" id="pro">
+                    <option>广东省</option>
+                    <option>上海市</option>
+                    <option>天津市</option>
+                    <option>重庆市</option>
+                    <option>河北省</option>
+                    <option>山西省</option>
+                    <option>内蒙古自治区</option>
+                    <option>辽宁省</option>
+                    <option>吉林省</option>
+                    <option>黑龙江省</option>
+                    <option>江苏省</option>
+                    <option>浙江省</option>
+                    <option>安徽省</option>
+                    <option>福建省</option>
+                    <option>江西省</option>
+                    <option>山东省</option>
+                    <option>河南省</option>
+                    <option>湖北省</option>
+                    <option>湖南省</option>
+                    <option>北京市</option>
+                    <option>广西壮族自治区</option>
+                    <option>海南省</option>
+                    <option>四川省</option>
+                    <option>贵州省</option>
+                    <option>云南省</option>
+                    <option>西藏自治区</option>
+                    <option>陕西省</option>
+                    <option>甘肃省</option>
+                    <option>宁夏回族自治区</option>
+                    <option>青海省</option>
+                    <option>新疆维吾尔族自治区</option>
+                    <option>香港特别行政区</option>
+                    <option>澳门特别行政区</option>
+                    <option>台湾省</option>
+                  </select>
+                <select name="" id="city">
+                    <option value="" selected>广州</option>
+                </select>
+            </span>
+          </p>
+        <p class="name-edit school-edit-one">
+          <span>所在学校：</span>
+          <span class="school-edit-content">
+            <select name="" id="">
+              <option value="" selected>暨南大学</option>
+              <option value="">北京大学</option>
+              <option value="">中国人民大学</option>
+              <option value="">清华大学</option>
+              <option value="">北京交通大学</option>
+              <option value="">北京工业大学</option>
+              <option value="">北京航空航天大学</option>
+              <option value="">南开大学</option>
+              <option value="">北京科技大学</option>
+              <option value="">北方工业大学</option>
+              <option value="">中国地质大学</option>
+              <option value="">天津大学</option>
+              <option value="">武汉大学</option>
+              <option value="">北京第二外国语学院</option>
+              <option value="">中国人民公安大学</option>
+              <option value="">中央美术学院</option>
+              <option value="">中央音乐学院</option>
+              <option value="">中国政法大学</option>
+              <option value="">中国社会科学院大学</option>
+              <option value="">中国建筑设计研究院</option>
+              <option value="">中山大学</option>
+              <option value="">华南理工大学</option>
+              <option value="">暨南大学</option>
+              <option value="">汕头大学</option>
+              <option value="">深圳大学</option>
+              <option value="">五邑大学</option>
+              <option value="">广东工业大学</option>
+              <option value="">华南农业大学</option>
+              <option value="">华南农业大学</option>
+              <option value="">广州中医药大学</option>
+              <option value="">广州大学</option>
+              <option value="">广西大学</option>
+              <option value="">广西医科大学</option>
+              <option value="">广西师范大学</option>
+              <option value="">桂林电子工业学院</option>
+              <option value="">桂林工学院</option>
+              <option value="">海南大学</option>
+              <option value="">华南热带农业大学</option>
+              <option value="">海南医学院</option>
+              <option value="">华北电力大学</option>
+              <option value="">河北大学</option>
+              <option value="">烟台大学</option>
+              <option value="">济南大学</option>
+              <option value="">太原理工大学</option>
+              <option value="">山西农业大学</option>
+              <option value="">复旦大学</option>
+              <option value="">同济大学</option>
+              <option value="">上海交通大学</option>
+              <option value="">华东师范大学</option>
+              <option value="">上海外国语大学</option>
+              <option value="">上海财经大学</option>
+              <option value="">上海大学</option>
+              <option value="">内蒙古大学</option>
+              <option value="">内蒙古民族大学</option>
+              <option value="">山东大学</option>
+              <option value="">中国海洋大学</option>
+              <option value="">青岛大学</option>
+              <option value="">山东科技大学</option>
+              <option value="">沈阳工业大学</option>
+              <option value="">中国医科大学</option>
+              <option value="">沈阳大学</option>
+              <option value="">辽宁大学</option>
+              <option value="">大连理工大学</option>
+              <option value="">景德镇陶瓷学院</option>
+              <option value="">东华理工学院</option>
+              <option value="">江西师范大学</option>
+              <option value="">南昌大学</option>
+              <option value="">苏州大学</option>
+              <option value="">中国药科大学</option>
+              <option value="">南京农业大学</option>
+              <option value="">江南大学</option>
+              <option value="">中国矿业大学</option>
+              <option value="">东南大学</option>
+              <option value="">南京大学</option>
+              <option value="">湖南科技大学</option>
+              <option value="">长沙理工大学</option>
+              <option value="">吉首大学</option>
+              <option value="">湘潭大学</option>
+              <option value="">湖南大学</option>
+              <option value="">中南大学</option>
+              <option value="">河南工业大学</option>
+              <option value="">河南科技大学</option>
+              <option value="">河南理工大学</option>
+              <option value="">河南大学</option>
+              <option value="">郑州大学</option>
+              <option value="">河北建筑工程学院</option>
+              <option value="">中国人民武装警察部队学院</option>
+              <option value="">河北师范大学</option>
+              <option value="">河北科技大学</option>
+              <option value="">燕山大学</option>
+
+            </select>
+          </span>
+        </p>
+        <p class="name-edit school-edit-one">
+          <span>目标院校：</span>
+          <span class="school-edit-content">
+            <select name="" id="">
+              <option value="">北京大学</option>
+              <option value="" >暨南大学</option>
+              <option value="">中国人民大学</option>
+              <option value="">清华大学</option>
+              <option value="">北京交通大学</option>
+              <option value="">北京工业大学</option>
+              <option value="">北京航空航天大学</option>
+              <option value="">南开大学</option>
+              <option value="">北京科技大学</option>
+              <option value="">北方工业大学</option>
+              <option value="">中国地质大学</option>
+              <option value="">天津大学</option>
+              <option value="">武汉大学</option>
+              <option value="">北京第二外国语学院</option>
+              <option value="">中国人民公安大学</option>
+              <option value="">中央美术学院</option>
+              <option value="">中央音乐学院</option>
+              <option value="">中国政法大学</option>
+              <option value="">中国社会科学院大学</option>
+              <option value="">中国建筑设计研究院</option>
+              <option value="">中山大学</option>
+              <option value="">华南理工大学</option>
+              <option value="">暨南大学</option>
+              <option value="">汕头大学</option>
+              <option value="">深圳大学</option>
+              <option value="">五邑大学</option>
+              <option value="">广东工业大学</option>
+              <option value="">华南农业大学</option>
+              <option value="">华南农业大学</option>
+              <option value="">广州中医药大学</option>
+              <option value="">广州大学</option>
+              <option value="">广西大学</option>
+              <option value="">广西医科大学</option>
+              <option value="">广西师范大学</option>
+              <option value="">桂林电子工业学院</option>
+              <option value="">桂林工学院</option>
+              <option value="">海南大学</option>
+              <option value="">华南热带农业大学</option>
+              <option value="">海南医学院</option>
+              <option value="">华北电力大学</option>
+              <option value="">河北大学</option>
+              <option value="">烟台大学</option>
+              <option value="">济南大学</option>
+              <option value="">太原理工大学</option>
+              <option value="">山西农业大学</option>
+              <option value="">复旦大学</option>
+              <option value="">同济大学</option>
+              <option value="">上海交通大学</option>
+              <option value="">华东师范大学</option>
+              <option value="">上海外国语大学</option>
+              <option value="">上海财经大学</option>
+              <option value="">上海大学</option>
+              <option value="">内蒙古大学</option>
+              <option value="">内蒙古民族大学</option>
+              <option value="">山东大学</option>
+              <option value="">中国海洋大学</option>
+              <option value="">青岛大学</option>
+              <option value="">山东科技大学</option>
+              <option value="">沈阳工业大学</option>
+              <option value="">中国医科大学</option>
+              <option value="">沈阳大学</option>
+              <option value="">辽宁大学</option>
+              <option value="">大连理工大学</option>
+              <option value="">景德镇陶瓷学院</option>
+              <option value="">东华理工学院</option>
+              <option value="">江西师范大学</option>
+              <option value="">南昌大学</option>
+              <option value="">苏州大学</option>
+              <option value="">中国药科大学</option>
+              <option value="">南京农业大学</option>
+              <option value="">江南大学</option>
+              <option value="">中国矿业大学</option>
+              <option value="">东南大学</option>
+              <option value="">南京大学</option>
+              <option value="">湖南科技大学</option>
+              <option value="">长沙理工大学</option>
+              <option value="">吉首大学</option>
+              <option value="">湘潭大学</option>
+              <option value="">湖南大学</option>
+              <option value="">中南大学</option>
+              <option value="">河南工业大学</option>
+              <option value="">河南科技大学</option>
+              <option value="">河南理工大学</option>
+              <option value="">河南大学</option>
+              <option value="">郑州大学</option>
+              <option value="">河北建筑工程学院</option>
+              <option value="">中国人民武装警察部队学院</option>
+              <option value="">河北师范大学</option>
+              <option value="">河北科技大学</option>
+              <option value="">燕山大学</option>
+
+            </select>
+          </span>
+        </p>
+        <button class="button-one">取消</button>
+        <button class="button-two">确定</button>
+      </div>
+    </form>
+      </div>
+      <i class="discuss-cl iconfont">&#xe66e;</i>
+    </div>
 <!-- 研友信息 -->
 <!-- <div class="info-dotted info-dotted1">
     <div class="info">
@@ -354,11 +629,6 @@
         <div class="target info-item"><i class="iconfont">&#xe607;</i>目标院校：<span>暨南大学</span></div>
         <div class="major info-item"><i class="iconfont">&#xe617;</i>报考专业：<span>金融学</span></div>
         <div class="time info-item"><i class="iconfont">&#xe616;</i>已加入易研为定：<span>100天</span></div>
-        <div class="tag info-item">
-            <i class="iconfont">&#xe63e;</i>标签：
-            <span class="tag-item">夜猫子</span>
-            <span class="tag-item">拖延症晚期</span>
-        </div>
     </div>
     <div class="right">
         <div class="self-introduction">
@@ -407,7 +677,6 @@
 <div class="dotted dotted29"></div>
 <div class="dotted dotted30"></div>
 
-<body>
 
 </body>
 

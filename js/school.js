@@ -21,6 +21,9 @@ window.addEventListener('load', function () {
             slide_web[j].className = slide_web[j].className.replace(" first-active", "").trim();
             }
             slide_web[this.index].className = slide_web[this.index].className + " first-active";
+            if(i==2){
+                window.open('../question.html');
+            }
         })
     } 
 
@@ -86,6 +89,7 @@ window.addEventListener('load', function () {
             slide_web[j].className = slide_web[j].className.replace(" first-active", "").trim();
             }
             slide_web[2].className = slide_web[2].className + " first-active";
+        window.open('../question.html');
     })
 
     // 书架圈圈出现消失以及点击
@@ -164,4 +168,9 @@ window.addEventListener('load', function () {
         share_box[i].style.opacity=0;
     })
    }
+
+    
+
+   
+
 })

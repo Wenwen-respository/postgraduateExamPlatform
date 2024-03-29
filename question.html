@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>问题海滩</title>
+    <link rel="shortcut icon" href="./favicon/favicon3.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./font_3332416_td1j0l1qgvn/iconfont.css">
+    <link rel="stylesheet" href="./css/question.css">
+    <link rel="stylesheet" href="./css/myQuestion.css">
+
+</head>
+
+<body>
+    <div class="langhua1 langhua">
+        <img src="./images/langhua2.png" alt="">
+    </div>
+    <div class="langhua2 langhua">
+        <img src="./images/langhua3.png" alt="">
+    </div>
+    <div class="langhua3 langhua">
+        <img src="./images/langhua2.png" alt="">
+    </div>
+    <div class="bank">
+        <!-- 海浪提醒 -->
+        <!-- <div class="wave-text">点击海浪，刷新问题</div> -->
+        <img src="./images/bank.png" alt="">
+    </div>
+
+    <!-- 左下角 回到首页 螃蟹 -->
+    <div class="back-index">
+        <!-- <div class="crab-text">点击螃蟹，回到首页</div> -->
+    </div>
+    <!-- 右下角 我的问题 石头 -->
+    <div class="my-question">
+        <!-- <div class="stone-text">点击石头，发起提问</div> -->
+    </div>
+    <div class="my-question-backdrop"></div>
+    <div class="my-question-box">
+        <div class="close close-question"><i class="iconfont">&#xe66e;</i></div>
+        <div class="header">
+            <div class="left nav active">发起提问</div>
+            <div class="middle nav">搜索提问</div>
+            <div class="right nav">历史提问</div>
+        </div>
+        <!-- 发起提问 -->
+        <div class="now-content content active">
+            <div class="ask">
+                <div class="question">
+                    <input type="text" name="title" class="questionHeader" maxlength="30" />
+                    <div class="questionBody" contenteditable="true">
+                        <div>
+                            <img class="qCustomize" src="./images/th.jpg" alt="">
+                        </div>
+                        <!--                        <div class="qImage">-->
+                        <!--                            <img  src="images/th.jpg" alt=""  style="display: inline-block"/>-->
+                        <!--                        </div>-->
+                    </div>
+                    <div class="titleSize">
+                        <span id="reality">0</span> / <span id="realize">30</span>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="left">
+                        <span data-id="0"><i class="iconfont">&#xe602;</i></span>
+                        <span data-id="1"><i class="iconfont">&#xec80;</i></span>
+                    </div>
+                    <div class="right">
+                        <button class="send-button">发送</button>
+                    </div>
+                    <div class="function" hidden>
+                        <!-- 表情包 -->
+                        <div class="customize" hidden>
+                            <ul>
+                                <li><img src="images/th.jpg" alt=""></li>
+                                <!-- 下面这一个是添加表情包的样式操作 -->
+                                <li class="addCustomize">
+                                    <input type="file" name="filename" multiple="multiple" />
+                                    <span>+</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- 图片 -->
+                        <div class="image" hidden>
+                            <div class="add">
+                                <input type="file" name="filename" multiple="multiple">
+                                <span>+</span>
+                                <!--                               -->
+                            </div>
+                            <!--                            <img src="images/th.jpg" alt="">-->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 搜索提问 -->
+        <div class="search-content content">
+            <div class="search-box">
+                <div class="left"><input type="text"></div>
+                <div class="right"><button>搜索</button></div>
+            </div>
+        </div>
+        <!-- 历史提问 -->
+        <div class="history-content content">
+            <ul>
+                <li><a href="./answer.html" target="_blank">第一次考研需要注意哪些问题？</a>
+                    <div class="answer-num right">1个回答</div>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+    <div class="beike-area">
+        <div class="beike1 beike">
+            <img src="./images/beike1.png" alt="">
+            <div class="beike-hiddenBox">
+                <div class="beike-hiddenBox-inner">
+                    <div class="close close-beike"><i class="iconfont">&#xe66e;</i></div>
+                    <h2 class="question"><span class="tag">问题</span>第一次考研需要注意哪些问题？</h2>
+                    <!-- <p class="qContent">
+                        <span class="tag">内容</span>
+                    </p> -->
+                    <div class="analysis"><span class="tag">解析</span>暂无解析</div>
+                    <div class="answer-area">
+                        <div class="answer-box">
+                            <div class="top">
+                                <div class="avatar"><img src="./images/avatar.png" alt=""></div>
+                                <div class="info">
+                                    <div class="name">努力努力再努力</div>
+                                    <div class="time">两小时前</div>
+                                </div>
+                            </div>
+                            <div class="middle">
+                                第一次考研一定要全面了解考研，结合自身情况选择合适考研目标，做好相应复习规划并坚持到考研结束呀！具体而言，我们要了解考研，明确考研目标并坚持考研复习，做好万全准备呀！
+                            </div>
+                            <div class="bottom">
+                                <span><i class="iconfont">&#xe8b0;</i>分享</span>
+                                <span><i class="iconfont">&#xe891;</i>评论</span>
+                                <span class="like"><i class="iconfont">&#xec7f;</i>点赞</span>
+                            </div>
+                        </div>
+                        <div class="answer-box">
+                            <div class="top">
+                                <div class="avatar"><img src="./images/avatar.png" alt=""></div>
+                                <div class="info">
+                                    <div class="name">努力努力再努力</div>
+                                    <div class="time">两小时前</div>
+                                </div>
+                            </div>
+                            <div class="middle">
+                                第一次考研一定要全面了解考研，结合自身情况选择合适考研目标，做好相应复习规划并坚持到考研结束呀！具体而言，我们要了解考研，明确考研目标并坚持考研复习，做好万全准备呀！
+                            </div>
+                            <div class="bottom">
+                                <span><i class="iconfont">&#xe8b0;</i>分享</span>
+                                <span><i class="iconfont">&#xe891;</i>评论</span>
+                                <span class="like"><i class="iconfont">&#xec7f;</i>点赞</span>
+                            </div>
+                        </div>
+                    </div>
+                    .
+                </div>
+            </div>
+        </div>
+        <div class="beike2 beike">
+            <img src="./images/beike2.png" alt="">
+            <div class="beike-hiddenBox">
+                <div class="beike-hiddenBox-inner">
+                    <div class="close close-beike"><i class="iconfont">&#xe66e;</i></div>
+                    <h2 class="question"><span class="tag">问题</span>第一次考研需要注意哪些问题？</h2>
+                    <div class="analysis"><span class="tag">解析</span>暂无解析</div>
+                    <div class="answer-area">
+                        <div class="answer-box">
+                            <div class="top">
+                                <div class="avatar"><img src="./images/avatar.png" alt=""></div>
+                                <div class="info">
+                                    <div class="name">努力努力再努力</div>
+                                    <div class="time">两小时前</div>
+                                </div>
+                            </div>
+                            <div class="middle">
+                                第一次考研一定要全面了解考研，结合自身情况选择合适考研目标，做好相应复习规划并坚持到考研结束呀！具体而言，我们要了解考研，明确考研目标并坚持考研复习，做好万全准备呀！
+                            </div>
+                            <div class="bottom">
+                                <span><i class="iconfont">&#xe8b0;</i>分享</span>
+                                <span><i class="iconfont">&#xe891;</i>评论</span>
+                                <span class="like"><i class="iconfont">&#xec7f;</i>点赞</span>
+                            </div>
+                        </div>
+                        <div class="answer-box">
+                            <div class="top">
+                                <div class="avatar"><img src="./images/avatar.png" alt=""></div>
+                                <div class="info">
+                                    <div class="name">努力努力再努力</div>
+                                    <div class="time">两小时前</div>
+                                </div>
+                            </div>
+                            <div class="middle">
+                                第一次考研一定要全面了解考研，结合自身情况选择合适考研目标，做好相应复习规划并坚持到考研结束呀！具体而言，我们要了解考研，明确考研目标并坚持考研复习，做好万全准备呀！
+                            </div>
+                            <div class="bottom">
+                                <span><i class="iconfont">&#xe8b0;</i>分享</span>
+                                <span><i class="iconfont">&#xe891;</i>评论</span>
+                                <span class="like"><i class="iconfont">&#xec7f;</i>点赞</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="beike3 beike">
+            <img src="./images/beike3.png" alt="">
+            <div class="beike-hiddenBox">
+                <div class="beike-hiddenBox-inner">
+                    <div class="close close-beike"><i class="iconfont">&#xe66e;</i></div>
+                    <h2 class="question"><span class="tag">问题</span>第一次考研需要注意哪些问题？</h2>
+                    <div class="analysis"><span class="tag">解析</span>暂无解析</div>
+                    <div class="answer-area">
+                        <div class="answer-box">
+                            <div class="top">
+                                <div class="avatar"><img src="./images/avatar.png" alt=""></div>
+                                <div class="info">
+                                    <div class="name">努力努力再努力</div>
+                                    <div class="time">两小时前</div>
+                                </div>
+                            </div>
+                            <div class="middle">
+                                第一次考研一定要全面了解考研，结合自身情况选择合适考研目标，做好相应复习规划并坚持到考研结束呀！具体而言，我们要了解考研，明确考研目标并坚持考研复习，做好万全准备呀！
+                            </div>
+                            <div class="bottom">
+                                <span><i class="iconfont">&#xe8b0;</i>分享</span>
+                                <span><i class="iconfont">&#xe891;</i>评论</span>
+                                <span class="like"><i class="iconfont">&#xec7f;</i>点赞</span>
+                            </div>
+                        </div>
+                        <div class="answer-box">
+                            <div class="top">
+                                <div class="avatar"><img src="./images/avatar.png" alt=""></div>
+                                <div class="info">
+                                    <div class="name">努力努力再努力</div>
+                                    <div class="time">两小时前</div>
+                                </div>
+                            </div>
+                            <div class="middle">
+                                第一次考研一定要全面了解考研，结合自身情况选择合适考研目标，做好相应复习规划并坚持到考研结束呀！具体而言，我们要了解考研，明确考研目标并坚持考研复习，做好万全准备呀！
+                            </div>
+                            <div class="bottom">
+                                <span><i class="iconfont">&#xe8b0;</i>分享</span>
+                                <span><i class="iconfont">&#xe891;</i>评论</span>
+                                <span class="like"><i class="iconfont">&#xec7f;</i>点赞</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="beike4 beike">
+            <img src="./images/beike4.png" alt="">
+            <div class="beike-hiddenBox">
+                <div class="beike-hiddenBox-inner">
+                    <div class="close close-beike"><i class="iconfont">&#xe66e;</i></div>
+                    <h2 class="question"><span class="tag">问题</span>第一次考研需要注意哪些问题？</h2>
+                    <div class="analysis"><span class="tag">解析</span>暂无解析</div>
+                    <div class="answer-area">
+                        <div class="answer-box">
+                            <div class="top">
+                                <div class="avatar"><img src="./images/avatar.png" alt=""></div>
+                                <div class="info">
+                                    <div class="name">努力努力再努力</div>
+                                    <div class="time">两小时前</div>
+                                </div>
+                            </div>
+                            <div class="middle">
+                                第一次考研一定要全面了解考研，结合自身情况选择合适考研目标，做好相应复习规划并坚持到考研结束呀！具体而言，我们要了解考研，明确考研目标并坚持考研复习，做好万全准备呀！
+                            </div>
+                            <div class="bottom">
+                                <span><i class="iconfont">&#xe8b0;</i>分享</span>
+                                <span><i class="iconfont">&#xe891;</i>评论</span>
+                                <span class="like"><i class="iconfont">&#xec7f;</i>点赞</span>
+                            </div>
+                        </div>
+                        <div class="answer-box">
+                            <div class="top">
+                                <div class="avatar"><img src="./images/avatar.png" alt=""></div>
+                                <div class="info">
+                                    <div class="name">努力努力再努力</div>
+                                    <div class="time">两小时前</div>
+                                </div>
+                            </div>
+                            <div class="middle">
+                                第一次考研一定要全面了解考研，结合自身情况选择合适考研目标，做好相应复习规划并坚持到考研结束呀！具体而言，我们要了解考研，明确考研目标并坚持考研复习，做好万全准备呀！
+                            </div>
+                            <div class="bottom">
+                                <span><i class="iconfont">&#xe8b0;</i>分享</span>
+                                <span><i class="iconfont">&#xe891;</i>评论</span>
+                                <span class="like"><i class="iconfont">&#xec7f;</i>点赞</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="beike5 beike">
+            <img src="./images/beike5.png" alt="">
+            <div class="beike-hiddenBox">
+                <div class="beike-hiddenBox-inner">
+                    <div class="close close-beike"><i class="iconfont">&#xe66e;</i></div>
+                    <h2 class="question"><span class="tag">问题</span>第一次考研需要注意哪些问题？</h2>
+                    <div class="analysis"><span class="tag">解析</span>暂无解析</div>
+                    <div class="answer-area">
+                        <div class="answer-box">
+                            <div class="top">
+                                <div class="avatar"><img src="./images/avatar.png" alt=""></div>
+                                <div class="info">
+                                    <div class="name">努力努力再努力</div>
+                                    <div class="time">两小时前</div>
+                                </div>
+                            </div>
+                            <div class="middle">
+                                第一次考研一定要全面了解考研，结合自身情况选择合适考研目标，做好相应复习规划并坚持到考研结束呀！具体而言，我们要了解考研，明确考研目标并坚持考研复习，做好万全准备呀！
+                            </div>
+                            <div class="bottom">
+                                <span><i class="iconfont">&#xe8b0;</i>分享</span>
+                                <span><i class="iconfont">&#xe891;</i>评论</span>
+                                <span class="like"><i class="iconfont">&#xec7f;</i>点赞</span>
+                            </div>
+                        </div>
+                        <div class="answer-box">
+                            <div class="top">
+                                <div class="avatar"><img src="./images/avatar.png" alt=""></div>
+                                <div class="info">
+                                    <div class="name">努力努力再努力</div>
+                                    <div class="time">两小时前</div>
+                                </div>
+                            </div>
+                            <div class="middle">
+                                第一次考研一定要全面了解考研，结合自身情况选择合适考研目标，做好相应复习规划并坚持到考研结束呀！具体而言，我们要了解考研，明确考研目标并坚持考研复习，做好万全准备呀！
+                            </div>
+                            <div class="bottom">
+                                <span><i class="iconfont">&#xe8b0;</i>分享</span>
+                                <span><i class="iconfont">&#xe891;</i>评论</span>
+                                <span class="like"><i class="iconfont">&#xec7f;</i>点赞</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+<script src="./js/question.js"></script>
+<script src="./js/qExpand.js"></script>
+
+</html>

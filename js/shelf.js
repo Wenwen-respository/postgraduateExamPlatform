@@ -11,6 +11,19 @@ window.addEventListener('load',function(){
   //   }
   // })
 
+  // 学校信息查看
+  function unni(){
+    let unni=document.querySelectorAll('.unni');
+    for(let i=0;i<unni.length;i++){
+      unni[i].addEventListener('click',function(e){
+        e.stopPropagation();
+        window.open('../map.html');
+      // window.location.href="../map.html";
+      })
+    }
+  }
+  unni();
+ 
 
   // 试题出现
 var num=1;
@@ -19,7 +32,8 @@ let try_more=document.querySelector('.next-try');
   function tryFun(try_topic,try_sch){
     let try_li=document.createElement('div');
     try_li.className="pre";
-    try_li.innerHTML="<p class='try-topic'>"+try_topic+"</p><p class='co-icon'><i class='iconfont'>&#xe6b4;</i><span>"+try_sch+"</span></p><p class='yu-icon'><i class='iconfont'>&#xec86;</i><span class='pre'>"+"预览"+"</span></p>"
+    try_li.innerHTML="<p class='try-topic'>"+try_topic+"</p><p class='co-icon unni'><i class='iconfont'>&#xe6b4;</i><span>"+try_sch+"</span></p><p class='yu-icon'><i class='iconfont'>&#xec86;</i><span class='pre'>"+"预览"+"</span></p>"
+    
     if(document.querySelectorAll('.try-banner div').length<13*num){
       try_ul.insertBefore(try_li,try_more);
          // 重复代码很多 这个函数 没有用到在不同函数调用同一个封装函数
@@ -39,6 +53,7 @@ let try_more=document.querySelector('.next-try');
   try_ul.addEventListener('scroll',function(){
     if(document.querySelectorAll('.try-banner div').length<13*num){
          tryFun();
+         unni();
     }
     // 出现
     if(document.querySelectorAll('.try-banner div').length>12){
@@ -50,6 +65,7 @@ let try_more=document.querySelector('.next-try');
     num++;
     console.log(num);
     tryFun();
+    unni();
   })
 
   // 回到首页部分
@@ -368,7 +384,7 @@ function d(){
     let add_li=document.createElement('li');
     add_li.className="shelf-first";
     add_li.innerHTML="<i class='iconfont note-icon'>&#xe6c2;</i><span class='shelf-s'>"+"新建文件夹"+"</span><i class='down-arrow'></i><div class='shelf-sec'><ul></ul></div>";
-        document.querySelector('.note-shelf').appendChild(file_li);
+        document.querySelector('.note-shelf').appendChild(add_li);
         // 添加可编辑属性
         let divId = document.createAttribute("contenteditable");
         divId.value = 'true';
@@ -432,7 +448,7 @@ function add(type, str) {
   let rHtml = "";
   if (type == 0) {
     rHtml = text.replace(rReg, "<span style='font-weight:700;'>"+str+"</span>");
-    // console.log(rHtml);
+    console.log(rHtml);
 } else if (type == 1) {
     rHtml = text.replace(rReg, "<span style='font-style: italic;'>"+str+"</span>");
 } else if (type == 2) {
@@ -516,6 +532,9 @@ function edit(){
     }
   })
 }
-
+  let shelf_more=document.querySelector('.shelf-more');
+  shelf_more.addEventListener('click',function(){
+    window.open('../map.html')
+  })
 
 })

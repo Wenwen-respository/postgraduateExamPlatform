@@ -1,8 +1,8 @@
 window.addEventListener('load',function(){
-    var tody = new Date(); //获取当前时间
-    var year = tody.getFullYear(); //获取当前年份
-    var month = tody.getMonth() + 1; //获取当前月份
-    var day = tody.getDate(); //获取当前日
+    var tody = new Date(); 
+    var year = tody.getFullYear(); 
+    var month = tody.getMonth() + 1; 
+    var day = tody.getDate(); 
     var allday = 0;
     const doWhat = document.querySelector(".do");
     const calender_box = document.querySelector(".calender-box");
